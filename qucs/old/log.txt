@@ -1,0 +1,33 @@
+Output:
+-------
+
+Starting new simulation on Sun 23. Jan 2022 at 22:39:31:605
+
+creating netlist... done.
+Starting C:/Program Files/QUCKS/bin/qucsator.exe
+
+project location: 
+modules to load: 0
+factorycreate.size() is 0
+factorycreate has registered:
+parsing netlist...
+checking netlist...
+netlist content
+      2 Diode instances
+      2 IProbe instances
+      2 C instances
+      2 VProbe instances
+      2 R instances
+      1 Vac instances
+      1 TR instances
+creating netlist...
+
+Simulation ended on Sun 23. Jan 2022 at 22:39:31:745
+Ready.
+
+
+
+Errors and Warnings:
+--------------------
+
+

@@ -1,0 +1,30 @@
+<Qucs Schematic 0.0.19>
+<Properties>
+  <View=0,-120,1431,1097,1,0,180>
+  <Grid=10,10,0>
+  <DataSet=ind_sol_test.dat>
+  <DataDisplay=ind_sol_test.sch>
+  <OpenDisplay=1>
+  <Script=ind_sol_test.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 170 712 1054 532 3 #c0c0c0 1 00 1 0 0.0002 0.004 1 -0.08 0.02 0.08 1 -1 0.2 1 315 0 225 "" "" "">
+	<"Vo.Vt" #0000ff 0 3 0 0 0>
+	  <Mkr 0.000764 238 -338 3 0 0>
+	<"Vi.Vt" #ff0000 0 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>
