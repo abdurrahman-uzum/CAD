@@ -1,9 +1,0 @@
-source $TELENV
-###
-### User Preferences section
-### This section is computer generated.
-### Please do not modify to the end of the file.
-### Place your hand edits above this section.
-###
-set psmpath = . symbols .. ../symbols C:/Cadence/SPB_17.4/share/local/pcb/symbols C:/Cadence/SPB_17.4/share/pcb/pcb_lib/symbols C:/Cadence/SPB_17.4/share/pcb/allegrolib/symbols D:/cad/cadence/cdssetup/OrCAD_Capture/17.4.0/downloaded_parts/allegropcb
-set padpath = . symbols .. ../symbols C:/Cadence/SPB_17.4/share/local/pcb/padstacks C:/Cadence/SPB_17.4/share/pcb/pcb_lib/symbols C:/Cadence/SPB_17.4/share/pcb/allegrolib/symbols D:/cad/cadence/cdssetup/OrCAD_Capture/17.4.0/downloaded_parts/allegropcb
