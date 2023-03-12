@@ -1,0 +1,252 @@
+
+**** 11/21/22 06:01:14 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Ultrasonic_Generator-US_tran1"  [ D:\cad\cadence\EED3009-PSpiceFiles\Ultrasonic_Generator\US_tran1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "US_tran1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 50ms 0 1us 
+.OPTIONS ADVCONV
+.OPTIONS GMIN= 1.0E-9
+.PROBE64 N([VOUT1])
+.INC "..\Ultrasonic_Generator.net" 
+
+
+
+**** INCLUDING Ultrasonic_Generator.net ****
+* source EED3009
+X_U1         0 VOUT2 N06711 VCC N02335 N02197 N02197 VCC 555B
+C_C1         0 N02197  10u  TC=0,0 
+C_C2         0 N02335  10n  TC=0,0 
+R_R1         N02197 VCC  1k TC=0,0 
+V_V1         VCC 0 12V
+C_C3         0 N03246  10u  TC=0,0 
+R_R2         N03246 VCC  1k TC=0,0 
+C_C4         0 N03350  10n  TC=0,0 
+X_U2         0 VOUT1 N06786 VCC N03350 N03246 N03246 VCC 555B
+V_V2         N06135 0  
++PULSE 12V 0V 0 1n 1n 100u 1s
+R_R6         VOUT2 N06135  50k TC=0,0 
+R_R7         N06711 VOUT1  100 TC=0,0 
+R_R8         N06786 VOUT2  100 TC=0,0 
+R_R9         0 N06786  10k TC=0,0 
+R_R10         0 N06711  10k TC=0,0 
+
+**** RESUMING US_tran1.cir ****
+.END
+
+**** 11/21/22 06:01:14 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Ultrasonic_Generator-US_tran1"  [ D:\cad\cadence\EED3009-PSpiceFiles\Ultrasonic_Generator\US_tran1.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.qnpn555    X_U1.qpnp555    X_U2.qnpn555    X_U2.qpnp555    
+               NPN             PNP             NPN             PNP             
+       LEVEL    1               1               1               1            
+          IS   14.340000E-15  650.600000E-18   14.340000E-15  650.600000E-18 
+          BF   65.62           70.35           65.62           70.35         
+          NF    1               1               1               1            
+         VAF   74.03          115.7            74.03          115.7          
+         IKF     .02             .02             .02             .02         
+         ISE   19.480000E-15  180.500000E-15   19.480000E-15  180.500000E-15 
+          NE    1.208           1.829           1.208           1.829        
+          BR    9.715           4.146           9.715           4.146        
+          NR    1               1               1               1            
+         ISS    0               0               0               0            
+          RB   10              10              10              10            
+          RE    0               0               0               0            
+          RC    1                .715           1                .715        
+         CJE   40.000000E-12   40.000000E-12   40.000000E-12   40.000000E-12 
+         VJE     .75             .75             .75             .75         
+         MJE     .377            .3357           .377            .3357       
+         CJC   40.000000E-12   40.000000E-12   40.000000E-12   40.000000E-12 
+         VJC     .75             .75             .75             .75         
+         MJC     .3416           .5383           .3416           .5383       
+        XCJC    1               1               1               1            
+         CJS    0               0               0               0            
+         VJS     .75             .75             .75             .75         
+          TF    1.000000E-09    1.000000E-09    1.000000E-09    1.000000E-09 
+         XTF    3               1.7             3               1.7          
+         VTF    1.7             5               1.7             5            
+         ITF     .6              .65             .6              .65         
+          TR   58.980000E-09  119.900000E-09   58.980000E-09  119.900000E-09 
+         XTB    1.5             1.5             1.5             1.5          
+          KF    0               0               0               0            
+          AF    1               1               1               1            
+          CN    2.42            2.2             2.42            2.2          
+           D     .87             .52             .87             .52         
+
+
+Starting pseudo-transient algorithm.
+
+ERROR -- Convergence problem in transient bias point calculation
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VCC)   12.0000  (VOUT1)   10.1800  (VOUT2)    9.2527  (N02197)     .0503     
+
+(N02335)    7.9950 (N03246)    7.9985 (N03350)    8.0002 (N06135)   12.0000     
+
+(N06711)   10.1830 (N06786)    9.2574 (X_U1.9)   11.2670 (X_U2.9)   11.2660     
+
+(X_U1.10)     .0103                   (X_U1.11)   11.4360                       
+
+(X_U1.12)     .7222                   (X_U1.13) 533.6E-06                       
+
+(X_U1.14)    1.3763                   (X_U1.15)     .0026                       
+
+(X_U1.16)     .6343                   (X_U1.17)   11.2840                       
+
+(X_U1.18)   11.5710                   (X_U1.19)    3.6745                       
+
+(X_U1.20)   11.9240                   (X_U1.21)     .6334                       
+
+(X_U1.22)     .5422                   (X_U1.23)    3.7041                       
+
+(X_U1.24)    3.9236                   (X_U1.25)    4.1048                       
+
+(X_U1.26)     .3960                   (X_U1.27)     .4033                       
+
+(X_U1.28)   10.8270                   (X_U1.29)     .4003                       
+
+(X_U1.30)    7.4494                   (X_U1.31)    5.9352                       
+
+(X_U1.32)    6.8147                   (X_U2.10)     .0271                       
+
+(X_U2.11)   10.5180                   (X_U2.12)     .6848                       
+
+(X_U2.13)     .0326                   (X_U2.14)    1.3188                       
+
+(X_U2.15)     .6695                   (X_U2.16)     .6185                       
+
+(X_U2.17)   11.3020                   (X_U2.18)   11.3030                       
+
+(X_U2.19)    4.6533                   (X_U2.20)   11.9240                       
+
+(X_U2.21)     .6472                   (X_U2.22)     .4389                       
+
+(X_U2.23)    5.2457                   (X_U2.24)    3.9893                       
+
+(X_U2.25)    4.0636                   (X_U2.26)     .3896                       
+
+(X_U2.27)     .3941                   (X_U2.28)    9.9003                       
+
+(X_U2.29)     .3973                   (X_U2.30)    7.4707                       
+
+(X_U2.31)    7.4699                   (X_U2.32)    6.8539                   
+
+
+  These voltages failed to converge:
+
+    V(N02197)                 =     12.00V  \    50.33mV
+    V(N03246)                 =     11.98V  \     7.999V
+    V(N03350)                 =     8.061V  \     8.000V
+    V(VOUT2)                  =     10.71V  \     9.253V
+    V(N06711)                 =     10.71V  \     10.18V
+    V(VOUT1)                  =     10.71V  \     10.18V
+    V(N06786)                 =     10.70V  \     9.257V
+    V(X_U1.18)                =     11.59V  \     11.57V
+    V(X_U1.31)                =     10.83V  \     5.935V
+    V(X_U1.19)                =    463.28V  \     3.675V
+    V(X_U1.20)                =     12.00V  \     11.92V
+    V(X_U1.22)                =   516.61mV  \   542.17mV
+    V(X_U1.24)                =     5.194V  \     3.924V
+    V(X_U1.25)                =     3.998V  \     4.105V
+    V(X_U1.21)                =   606.73mV  \   633.45mV
+    V(X_U1.23)                =     5.766V  \     3.704V
+    V(X_U1.14)                =     1.379V  \     1.376V
+    V(X_U1.13)                =   548.87uV  \   533.57uV
+    V(X_U1.12)                =   725.19mV  \   722.22mV
+    V(X_U1.10)                =    9.357mV  \    10.33mV
+    V(X_U1.11)                =     11.95V  \     11.44V
+    V(X_U1.26)                =    2.627mV  \   395.99mV
+    V(X_U1.29)                =    2.634mV  \   400.34mV
+    V(X_U1.27)                =    2.700mV  \   403.27mV
+    V(X_U1.28)                =     11.35V  \     10.83V
+    V(X_U2.18)                =     10.25V  \     11.30V
+    V(X_U2.31)                =     10.50V  \     7.470V
+    V(X_U2.32)                =     8.828V  \     6.854V
+    V(X_U2.17)                =     12.31V  \     11.30V
+    V(X_U2.30)                =     8.436V  \     7.471V
+    V(X_U2.15)                =     67.19V  \   669.48mV
+    V(X_U2.16)                =  -397.62mV  \   618.51mV
+    V(X_U2.19)                =    277.99V  \     4.653V
+    V(X_U2.9)                 =     11.01V  \     11.27V
+    V(X_U2.20)                =     11.77V  \     11.92V
+    V(X_U2.22)                =     15.22V  \   438.89mV
+    V(X_U2.24)                =    277.35V  \     3.989V
+    V(X_U2.25)                =     4.030V  \     4.064V
+    V(X_U2.21)                =     17.47V  \   647.24mV
+    V(X_U2.23)                =     6.109V  \     5.246V
+    V(X_U2.14)                =    -91.67V  \     1.319V
+    V(X_U2.13)                =     34.95V  \    32.60mV
+    V(X_U2.12)                =    -58.54V  \   684.80mV
+    V(X_U2.10)                =     63.17V  \    27.09mV
+    V(X_U2.11)                =     11.95V  \     10.52V
+    V(X_U2.26)                =   132.20uV  \   389.58mV
+    V(X_U2.29)                =   138.03uV  \   397.28mV
+    V(X_U2.27)                =   130.74uV  \   394.11mV
+    V(X_U2.28)                =     11.35V  \      9.90V
+
+  These supply currents failed to converge:
+
+    I(V_V1)                   =   -37.22mA  \   -28.12mA
+    I(V_V2)                   =   -25.87uA  \   -54.95uA
+
+  These devices failed to converge:
+    X_U1.q_q2 X_U1.q_q1 X_U1.q_q5d X_U1.q_q5 X_U1.q_q11 X_U1.q_q9 X_U1.q_q10 
+    X_U1.q_q8 X_U1.q_q7 X_U1.q_q12 X_U1.q_q13 X_U1.q_q18 X_U1.q_q20 X_U1.q_q26 
+    X_U1.q_q27 X_U1.q_q14 X_U2.q_q2 X_U2.q_q1 X_U2.q_q4 X_U2.q_q3 X_U2.q_q5d 
+    X_U2.q_q5 X_U2.q_q6d X_U2.q_q6 X_U2.q_q11 X_U2.q_q9 X_U2.q_q10 X_U2.q_q8 
+    X_U2.q_q12 X_U2.q_q13 X_U2.q_q16 X_U2.q_q15 X_U2.q_q17 X_U2.q_q18 
+    X_U2.q_q19 X_U2.q_q21 X_U2.q_q22 X_U2.q_q22d X_U2.q_q20 X_U2.q_q23 
+    X_U2.q_q26 X_U2.q_q27 X_U2.q_q24 X_U2.q_q25 X_U2.q_q14 
+
+**** Interrupt ****
+
+          JOB ABORTED
+
+**** 11/21/22 06:01:14 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Ultrasonic_Generator-US_tran1"  [ D:\cad\cadence\EED3009-PSpiceFiles\Ultrasonic_Generator\US_tran1.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =     2065.66
+  Total job time (using Solver 1)   =    23417.50
+

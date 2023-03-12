@@ -1,0 +1,17 @@
+.ALIASES
+V_Control          Control(+=VCON -=0 ) CN @EED3009.LPF(sch_1):INS17472@SOURCE.VPULSE.Normal(chips)
+X_S2    S2(1=VCON 2=0 3=VUS 4=VSWT ) CN @EED3009.LPF(sch_1):INS17314@ANALOG.S.Normal(chips)
+X_S1    S1(1=VCON 2=0 3=VSWT 4=0 ) CN @EED3009.LPF(sch_1):INS17420@ANALOG.S.Normal(chips)
+V_Ultrasonic          Ultrasonic(+=VUS -=0 ) CN @EED3009.LPF(sch_1):INS17264@SOURCE.VPULSE.Normal(chips)
+D_D1            D1(A=N17686 C=VOA ) CN @EED3009.LPF(sch_1):INS17873@SCHOTTKY.MBR0520LT1.Normal(chips)
+C_C2            C2(1=0 2=VOA ) CN @EED3009.LPF(sch_1):INS18140@ANALOG.C.Normal(chips)
+R_R1            R1(1=VSWT 2=N17686 ) CN @EED3009.LPF(sch_1):INS18207@ANALOG.R.Normal(chips)
+R_R2            R2(1=0 2=VOA ) CN @EED3009.LPF(sch_1):INS18280@ANALOG.R.Normal(chips)
+X_U1A           U1A(A=VOA Y=N18551 VCC=$G_DPWR GND=$G_DGND ) CN @EED3009.LPF(sch_1):INS18454@74HC.74HC14.Normal(chips)
+X_U1B           U1B(A=N18551 Y=VOD VCC=$G_DPWR GND=$G_DGND ) CN @EED3009.LPF(sch_1):INS18501@74HC.74HC14.Normal(chips)
+_    _(Vcon=VCON)
+_    _(Voa=VOA)
+_    _(Vod=VOD)
+_    _(Vswt=VSWT)
+_    _(Vus=VUS)
+.ENDALIASES

@@ -1,0 +1,117 @@
+
+**** 11/21/22 12:23:28 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Ultrasonic_Generator-us_gen_tran2"  [ d:\cad\cadence\eed3009-PSpiceFiles\Ultrasonic_Generator\us_gen_tran2.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "us_gen_tran2.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 100us 0 100ns SKIPBP 
+.OPTIONS ADVCONV
+.OPTIONS GMIN= 1.0E-9
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\Ultrasonic_Generator.net" 
+
+
+
+**** INCLUDING Ultrasonic_Generator.net ****
+* source EED3009
+X_U1         0 VOUT2 VOUT1 VCC N02335 N02197 N02197 VCC 555B
+C_C1         0 N02197  2.2nF  TC=0,0 
+C_C2         0 N02335  10n  TC=0,0 
+R_R1         N02197 VCC  5.1k TC=0,0 
+V_V1         VCC 0 12V
+C_C3         0 N03246  2.2nF  TC=0,0 
+R_R2         N03246 VCC  5.1k TC=0,0 
+C_C4         0 N03350  10n  TC=0,0 
+X_U2         0 VOUT1 VOUT2 VCC N03350 N03246 N03246 VCC 555B
+V_V2         N06135 0  
++PULSE 12V 0V 0 1n 1n 10u 1s
+R_R6         VOUT2 N06135  50k TC=0,0 
+
+**** RESUMING us_gen_tran2.cir ****
+.END
+
+**** 11/21/22 12:23:28 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Ultrasonic_Generator-us_gen_tran2"  [ d:\cad\cadence\eed3009-PSpiceFiles\Ultrasonic_Generator\us_gen_tran2.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.qnpn555    X_U1.qpnp555    X_U2.qnpn555    X_U2.qpnp555    
+               NPN             PNP             NPN             PNP             
+       LEVEL    1               1               1               1            
+          IS   14.340000E-15  650.600000E-18   14.340000E-15  650.600000E-18 
+          BF   65.62           70.35           65.62           70.35         
+          NF    1               1               1               1            
+         VAF   74.03          115.7            74.03          115.7          
+         IKF     .02             .02             .02             .02         
+         ISE   19.480000E-15  180.500000E-15   19.480000E-15  180.500000E-15 
+          NE    1.208           1.829           1.208           1.829        
+          BR    9.715           4.146           9.715           4.146        
+          NR    1               1               1               1            
+         ISS    0               0               0               0            
+          RB   10              10              10              10            
+          RE    0               0               0               0            
+          RC    1                .715           1                .715        
+         CJE   40.000000E-12   40.000000E-12   40.000000E-12   40.000000E-12 
+         VJE     .75             .75             .75             .75         
+         MJE     .377            .3357           .377            .3357       
+         CJC   40.000000E-12   40.000000E-12   40.000000E-12   40.000000E-12 
+         VJC     .75             .75             .75             .75         
+         MJC     .3416           .5383           .3416           .5383       
+        XCJC    1               1               1               1            
+         CJS    0               0               0               0            
+         VJS     .75             .75             .75             .75         
+          TF    1.000000E-09    1.000000E-09    1.000000E-09    1.000000E-09 
+         XTF    3               1.7             3               1.7          
+         VTF    1.7             5               1.7             5            
+         ITF     .6              .65             .6              .65         
+          TR   58.980000E-09  119.900000E-09   58.980000E-09  119.900000E-09 
+         XTB    1.5             1.5             1.5             1.5          
+          KF    0               0               0               0            
+          AF    1               1               1               1            
+          CN    2.42            2.2             2.42            2.2          
+           D     .87             .52             .87             .52         
+
+
+
+          JOB CONCLUDED
+
+**** 11/21/22 12:23:28 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Ultrasonic_Generator-us_gen_tran2"  [ d:\cad\cadence\eed3009-PSpiceFiles\Ultrasonic_Generator\us_gen_tran2.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .47
+

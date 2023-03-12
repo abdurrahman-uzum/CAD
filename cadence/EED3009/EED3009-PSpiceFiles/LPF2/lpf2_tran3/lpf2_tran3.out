@@ -1,0 +1,533 @@
+
+**** 12/03/22 20:34:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF2-lpf2_tran3"  [ D:\cad\cadence\eed3009-pspicefiles\lpf2\lpf2_tran3.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "lpf2_tran3.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.INC "C:/Users/Abdurrahman/Desktop/cd4007/cd4007.lib" 
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+
+**** INCLUDING cd4007.lib ****
+.model nnMOS NMOS (LEVEL=2 VTo=1.4 Kp=.6m LAMBDA=0.005)
+.model ppMOS PMOS (LEVEL=2 VTo=-1.0 KP=.6m LAMBDA=0.01)
+
+**** RESUMING lpf2_tran3.cir ****
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 20ms 1ms 1us 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\LPF2.net" 
+
+
+
+**** INCLUDING LPF2.net ****
+* source EED3009
+R_R12         N80591 N80505  1k TC=0,0 
+C_C1         VIN N80591  1uF IC=-2.50V TC=0,0 
+R_R3         N80891 VDD  10k TC=0,0 
+R_R4         0 N80891  10k TC=0,0 
+R_R10         N80591 VDD  10k TC=0,0 
+R_R13         0 N80591  10k TC=0,0 
+R_R9         N80505 VPA  22k TC=0,0 
+X_U5A         N80891 N80505 VPA VDD 0 awblm358 PARAMS: AVOL=1E+5 VOS=2E-3
++  GBW=1E+6 IBOS=5E-9 IB=45E-9 CMRR=3.16228E+3 PSRR=1E+5 SR=0.5E+6 ISOURCE=40E-3
++  VPDIF=1
+V_V3         VDD 0 5V
+X_U6A         N86495 N80891 VDD 0 VPC LM393
+R_R19         VPC VDD  1k TC=0,0 
+C_C2         0 N90235  1n IC=4V TC=0,0 
+V_Ultrasonic         VUS 0  
++PULSE -100mV 100mV 0 0.5us 0.5us 12.5u 25u
+X_S1    VCON 0 N88343 0 LPF2_S1 
+X_S2    VCON 0 VUS N88343 LPF2_S2 
+R_R16         VIN N88343  500 TC=0,0 
+X_U6B         N90763 N89030 VDD 0 VOUT LM393
+R_R25         0 N89030  33k TC=0,0 
+R_R26         N89030 VDD  22k TC=0,0 
+R_R29         VOUT VDD  1k TC=0,0 
+R_R30         VLP N90763  10k TC=0,0 
+X_U7A         N90235 VLP VLP VDD 0 awblm358 PARAMS: AVOL=1E+5 VOS=2E-3 GBW=1E+6
++  IBOS=5E-9 IB=45E-9 CMRR=3.16228E+3 PSRR=1E+5 SR=0.5E+6 ISOURCE=40E-3 VPDIF=1
+R_R31         N90763 VOUT  40k TC=0,0 
+R_R33         N86495 VPC  100k TC=0,0 
+R_R34         VPA N86495  10k TC=0,0 
+D_D1         VPC N99516 MBR0520LT1 
+R_R22         N99516 N90235  33k TC=0,0 
+R_R35         0 N90235  330k TC=0,0 
+R_R32         N999801 0  100k TC=0,0 
+X_V4         N999801 0 VRNDMN PARAMS: NVAL=5
+V_Control         VCON 0  
++PULSE 0V 5V 2ms 1n 1n 250u 6.25ms
+
+.subckt LPF2_S1 1 2 3 4  
+S_S1         3 4 1 2 _S1
+RS_S1         1 2 1G
+.MODEL         _S1 VSWITCH Roff=1e6 Ron=1.0 Voff=5V Von=0V
+.ends LPF2_S1
+
+.subckt LPF2_S2 1 2 3 4  
+S_S2         3 4 1 2 _S2
+RS_S2         1 2 1G
+.MODEL         _S2 VSWITCH Roff=1e6 Ron=1.0 Voff=0V Von=5V
+.ends LPF2_S2
+
+**** RESUMING lpf2_tran3.cir ****
+.END
+
+**** 12/03/22 20:34:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF2-lpf2_tran3"  [ D:\cad\cadence\eed3009-pspicefiles\lpf2\lpf2_tran3.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               MBR0520LT1      X_U6A.x_lm393.dx 
+          IS    1.000000E-06  800.000000E-18 
+           N     .874519                     
+          BV   20                            
+         IBV   20.000000E-06                 
+          RS     .125754        1            
+          TT    1.000000E-09                 
+         CJO  202.130000E-12                 
+          VJ     .386524                     
+           M     .463876                     
+          EG     .6                          
+         XTI    2.49881                      
+
+
+               X_U6B.x_lm393.dx 
+          IS  800.000000E-18 
+          RS    1            
+
+
+**** 12/03/22 20:34:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF2-lpf2_tran3"  [ D:\cad\cadence\eed3009-pspicefiles\lpf2\lpf2_tran3.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U6A.x_lm393.qin 
+               PNP             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF    2.000000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.2          
+           D     .52         
+
+
+               X_U6A.x_lm393.qmi 
+               NPN             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF    1.002000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+               X_U6A.x_lm393.qmo 
+               NPN             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF    1.000000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    1.000000E-15 
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          TR  475.400000E-09 
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+               X_U6A.x_lm393.qoc 
+               NPN             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF   20.690000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    1.000000E-15 
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          TF    3.540000E-09 
+          TR  472.800000E-09 
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+               X_U6B.x_lm393.qin 
+               PNP             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF    2.000000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.2          
+           D     .52         
+
+
+               X_U6B.x_lm393.qmi 
+               NPN             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF    1.002000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+               X_U6B.x_lm393.qmo 
+               NPN             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF    1.000000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    1.000000E-15 
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          TR  475.400000E-09 
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+               X_U6B.x_lm393.qoc 
+               NPN             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF   20.690000E+03 
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    1.000000E-15 
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          TF    3.540000E-09 
+          TR  472.800000E-09 
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 12/03/22 20:34:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF2-lpf2_tran3"  [ D:\cad\cadence\eed3009-pspicefiles\lpf2\lpf2_tran3.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               nnMOS           ppMOS           
+               NMOS            PMOS            
+       LEVEL    2               2            
+           L  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06 
+         VTO    1.4            -1            
+          KP  600.000000E-06  600.000000E-06 
+       GAMMA    0               0            
+         PHI     .6              .6          
+      LAMBDA    5.000000E-03     .01         
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .8              .8          
+        PBSW     .8              .8          
+          CJ    0               0            
+        CJSW    0               0            
+        CGSO    0               0            
+        CGDO    0               0            
+        CGBO    0               0            
+         TOX  100.000000E-09  100.000000E-09 
+          XJ    0               0            
+       UCRIT   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+**** 12/03/22 20:34:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF2-lpf2_tran3"  [ D:\cad\cadence\eed3009-pspicefiles\lpf2\lpf2_tran3.sim ] 
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_S1._S1        X_S2._S2        
+         RON    1               1            
+        ROFF    1.000000E+06    1.000000E+06 
+         VON    0               5            
+        VOFF    5               0            
+
+
+**** 12/03/22 20:34:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF2-lpf2_tran3"  [ D:\cad\cadence\eed3009-pspicefiles\lpf2\lpf2_tran3.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    5.0000  (  VIN)-562.9E-06  (  VLP)    4.1410  (  VPA)    2.4701      
+
+(  VPC)    2.8008  (  VUS)    -.1000  ( VCON)    0.0000  ( VOUT)    4.9832      
+
+(N80505)    2.4982 (N80591)    2.4994 (N80891)    2.5004 (N86495)    2.5004     
+
+(N88343)-1.223E-06 (N89030)    3.0007 (N90235)   -4.0000 (N90763)    4.3094     
+
+(N99516)    2.6805 (N999801)     .0058                                          
+
+(X_U6A.x_lm393.7)    3.8933           (X_U6A.x_lm393.8)     .6429               
+
+(X_U6A.x_lm393.9)     .7383           (X_U6B.x_lm393.7)    4.4115               
+
+(X_U6B.x_lm393.8)     .6503           (X_U6B.x_lm393.9)     .0179               
+
+(X_U6A.x_lm393.10)     .7383          (X_U6A.x_lm393.11)     .7383              
+
+(X_U6A.x_lm393.21)    3.2504          (X_U6A.x_lm393.22)    3.2504              
+
+(X_U6B.x_lm393.10)     .0179          (X_U6B.x_lm393.11)     .0179              
+
+(X_U6B.x_lm393.21)    5.0594          (X_U6B.x_lm393.22)    3.7507              
+
+(X_U5A.xinstlm358.1)     .0398        (X_U5A.xinstlm358.2)    3.0921            
+
+(X_U5A.xinstlm358.4)     .0396        (X_U5A.xinstlm358.5)    3.0921            
+
+(X_U5A.xinstlm358.6)    2.5003        (X_U5A.xinstlm358.7) 1000.0000            
+
+(X_U5A.xinstlm358.9)    3.1034        (X_U7A.xinstlm358.1) 4.656E-09            
+
+(X_U7A.xinstlm358.2)   -3.2642        (X_U7A.xinstlm358.4)   -3.2934            
+
+(X_U7A.xinstlm358.5)   -3.2929        (X_U7A.xinstlm358.6)   -4.0000            
+
+(X_U7A.xinstlm358.7) 1000.0000        (X_U7A.xinstlm358.9)    3.1034            
+
+(X_U5A.xinstlm358.10)    2.4972       (X_U5A.xinstlm358.11)    1.5816           
+
+(X_U5A.xinstlm358.12)    0.0000       (X_U5A.xinstlm358.14)    2.4999           
+
+(X_U5A.xinstlm358.15)    2.4999       (X_U5A.xinstlm358.16)    -.4069           
+
+(X_U5A.xinstlm358.17)    3.1060       (X_U5A.xinstlm358.18)    2.4999           
+
+(X_U5A.xinstlm358.20) 40.03E-06       (X_U5A.xinstlm358.21)     .9745           
+
+(X_U5A.xinstlm358.22)    1.5701       (X_U5A.xinstlm358.24) 1000.8000           
+
+(X_U5A.xinstlm358.25)    2.4972       (X_U5A.xinstlm358.26)    3.2250           
+
+(X_U5A.xinstlm358.27)    1.7693       (X_U7A.xinstlm358.10)    4.1651           
+
+(X_U7A.xinstlm358.11)  237.3700       (X_U7A.xinstlm358.12)    0.0000           
+
+(X_U7A.xinstlm358.14)    2.4998       (X_U7A.xinstlm358.15)    2.4998           
+
+(X_U7A.xinstlm358.16)   -1.0617       (X_U7A.xinstlm358.17)   -3.2642           
+
+(X_U7A.xinstlm358.18)  -59.6140       (X_U7A.xinstlm358.20) 40.03E-06           
+
+(X_U7A.xinstlm358.21)    2.6454       (X_U7A.xinstlm358.22)    3.2410           
+
+(X_U7A.xinstlm358.24) 1000.8000       (X_U7A.xinstlm358.25)    4.1651           
+
+(X_U7A.xinstlm358.26)    4.8929       (X_U7A.xinstlm358.27)    3.4372       
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V3        -3.850E-03
+    V_Ultrasonic   1.000E-07
+    V_Control    0.000E+00
+    X_U5A.xinstlm358.VFI7  -6.808E-08
+    X_U5A.xinstlm358.VFI6  -6.807E-08
+    X_U5A.xinstlm358.VREF   1.487E+00
+    X_U6A.x_lm393.vi1   2.498E-08
+    X_U6A.x_lm393.vi2   2.499E-08
+    X_U6A.x_lm393.v1   9.636E-08
+    X_U6B.x_lm393.vi1  -5.043E-12
+    X_U6B.x_lm393.vi2   4.997E-08
+    X_U6B.x_lm393.v1  -4.966E-12
+    X_U7A.xinstlm358.VFI7  -6.722E+03
+    X_U7A.xinstlm358.VFI6  -6.722E+03
+    X_U7A.xinstlm358.VREF   1.487E+00
+
+    TOTAL POWER DISSIPATION  -2.97E+03  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 12/03/22 20:34:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF2-lpf2_tran3"  [ D:\cad\cadence\eed3009-pspicefiles\lpf2\lpf2_tran3.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =        3.67
+

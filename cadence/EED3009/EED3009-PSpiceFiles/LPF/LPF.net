@@ -1,0 +1,27 @@
+* source EED3009
+V_Control         VCON 0  
++PULSE 0V 5V 1m 1n 1n 250u 6.67m
+X_S2    VCON 0 VUS VSWT LPF_S2 
+X_S1    VCON 0 VSWT 0 LPF_S1 
+V_Ultrasonic         VUS 0  
++PULSE 0V 5V 0 1n 1n 12.5u 25u
+D_D1         N17686 VOA MBR0520LT1 
+C_C2         0 VOA  1n  TC=0,0 
+R_R1         VSWT N17686  33k TC=0,0 
+R_R2         0 VOA  330k TC=0,0 
+X_U1A         VOA N18551 $G_DPWR $G_DGND 74HC14 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U1B         N18551 VOD $G_DPWR $G_DGND 74HC14 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+
+.subckt LPF_S2 1 2 3 4  
+S_S2         3 4 1 2 _S2
+RS_S2         1 2 1G
+.MODEL         _S2 VSWITCH Roff=1e6 Ron=1.0 Voff=0V Von=5V
+.ends LPF_S2
+
+.subckt LPF_S1 1 2 3 4  
+S_S1         3 4 1 2 _S1
+RS_S1         1 2 1G
+.MODEL         _S1 VSWITCH Roff=1e6 Ron=1.0 Voff=5V Von=0V
+.ends LPF_S1

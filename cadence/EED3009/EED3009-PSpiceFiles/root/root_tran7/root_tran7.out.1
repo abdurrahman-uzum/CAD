@@ -1,0 +1,947 @@
+
+**** 12/02/22 07:11:56 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "root-root_tran7"  [ D:\cad\cadence\EED3009-PSpiceFiles\root\root_tran7.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "root_tran7.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.INC "C:/Users/Abdurrahman/Desktop/cd4007/cd4007.lib" 
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+
+**** INCLUDING cd4007.lib ****
+.model nnMOS NMOS (LEVEL=2 VTo=1.4 Kp=.6m LAMBDA=0.005)
+.model ppMOS PMOS (LEVEL=2 VTo=-1.0 KP=.6m LAMBDA=0.01)
+
+**** RESUMING root_tran7.cir ****
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10ms 0 
+.OPTIONS ADVCONV
+.OPTIONS ABSTOL= 1u
+.OPTIONS DIGINITSTATE= 0
+.OPTIONS GMIN= 1.0E-9
+.OPTIONS RELTOL= 0.01
+.OPTIONS VNTOL= 100u
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\root.net" 
+
+
+
+**** INCLUDING root.net ****
+* source EED3009
+C_C_eq         N293890 VO-  1.82nF  TC=0,0 
+R_R6         N29421 N29217  54.66k TC=0,0 
+R_R7         N29853 VDD  89k TC=0,0 
+M_M4         VO+ SOUND VDD VDD ppMOS           
+M_M3         VO+ SOUND 0 0 nnMOS           
+R_R5         N29217 VDD  1k TC=0,0 
+R_R8         N29991 N29853  3.6k TC=0,0 
+C_C4         0 N29421  330pF IC=1.65V TC=0,0 
+X_U3         0 N29991 N29999 VDD N30031 N29991 N29853 VDD 555C
+V_V1         VDD 0 5V
+M_M6         VO- /SOUND VDD VDD ppMOS           
+X_U1A         N29999 TRANSMIT $G_DPWR $G_DGND 74HC14 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+M_M1         /SOUND SOUND 0 0 nnMOS           
+X_U2         0 N29421 SOUND TRANSMIT N29551 N29421 N29217 VDD 555C
+M_M2         /SOUND SOUND VDD VDD ppMOS           
+C_C7         0 N30031  10n  TC=0,0 
+C_C5         0 N29551  10n  TC=0,0 
+M_M5         VO- /SOUND 0 0 nnMOS           
+R_R_esr         VO+ N293890  10 TC=0,0 
+C_C6         0 N29991  100nF  TC=0,0 
+R_R2         0 N31319  330k TC=0,0 
+R_R1         N68879 N312390  33k TC=0,0 
+D_D1         N312390 N31319 MBR0520LT1 
+C_C2         0 N31319  1n  TC=0,0 
+X_U4B         N31341 ECHO $G_DPWR $G_DGND 74HC14 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U4A         N31319 N31341 $G_DPWR $G_DGND 74HC14 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_CD4026_1_U3         CD4026_1_N004852 C_CLK N32613 M_UN0001 $G_DPWR $G_DGND
++  DFF
+X_CD4026_1_U2         N32655 N32667 CD4026_1_N004852  $G_DPWR $G_DGND AND2
+X_CD4026_1_U1A         C_CLK N32745 $D_HI N32655 N32659 N32663 N32667
++  $G_CD4000_VDD $G_CD4000_VSS CD4518B PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_CD4026_2_U3         CD4026_2_N004852 N32613 N84729 M_UN0002 $G_DPWR $G_DGND
++  DFF
+X_CD4026_2_U2         N32671 N32683 CD4026_2_N004852  $G_DPWR $G_DGND AND2
+X_CD4026_2_U1A         N32613 N32745 $D_HI N32671 N32675 N32679 N32683
++  $G_CD4000_VDD $G_CD4000_VSS CD4518B PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+R_R15         0 N68651  10k TC=0,0 
+R_R3         N68861 VDD  10k TC=0,0 
+R_R10         N68669 VDD  10k TC=0,0 
+R_R13         0 N68669  10k TC=0,0 
+R_R17         N74666 N74582  3.3k TC=0,0 
+C_C8         0 N74666  1nF IC=1.65V TC=0,0 
+R_R4         0 N68861  10k TC=0,0 
+C_C9         0 N74696  10n  TC=0,0 
+V_V2         N68767 0  
++SIN 0V 50mV 40kHz 0 0 0
+X_U7         ECHO TR_PULSE N32745 $G_DPWR $G_DGND OR2
+R_R11         VDD N68651  10k TC=0,0 
+X_U5A         N68861 N68585 N68597 VDD 0 awblm358 PARAMS: AVOL=1E+5 VOS=2E-3
++  GBW=1E+6 IBOS=5E-9 IB=45E-9 CMRR=3.16228E+3 PSRR=1E+5 SR=0.5E+6 ISOURCE=40E-3
++  VPDIF=1
+R_R16         N74582 VDD  3890 TC=0,0 
+R_R14         N68879 N68651  20k TC=0,0 
+R_R9         N68585 N68597  22k TC=0,0 
+X_U6         0 N74666 C_CLK VDD N74696 N74666 N74582 VDD 555C
+R_R12         N68669 N68585  1k TC=0,0 
+C_C1         N68767 N68669  1uF  TC=0,0 
+X_U5B         N68651 N68597 N68879 VDD 0 awblm358 PARAMS: AVOL=1E+5 VOS=2E-3
++  GBW=1E+6 IBOS=5E-9 IB=45E-9 CMRR=3.16228E+3 PSRR=1E+5 SR=0.5E+6 ISOURCE=40E-3
++  VPDIF=1
+X_D2         N84981 0 LED PARAMS: IS=1.7603e-27 RS=2  BV=5 IBV=10e-6         
+R_R18         N84981 N84729  10k TC=0,0 
+
+**** RESUMING root_tran7.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node N31319
+*
+* Moving X_U4A.U1:IN1 from analog node N31319 to new digital node N31319$AtoD
+X$N31319_AtoD1
++ N31319
++ N31319$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_HC_ST
++       PARAMS: CAPACITANCE=   3.5000E-12
+*
+* Analog/Digital interface for node N84729
+*
+* Moving X_CD4026_2_U3.U1:Q1 from analog node N84729 to new digital node N84729$DtoA
+X$N84729_DtoA1
++ N84729$DtoA
++ N84729
++ $G_DPWR
++ $G_DGND
++ DtoAdefault
++       PARAMS: DRVH=  50     DRVL=  50     CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N29999
+*
+* Moving X_U1A.U1:IN1 from analog node N29999 to new digital node N29999$AtoD
+X$N29999_AtoD1
++ N29999
++ N29999$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_HC_ST
++       PARAMS: CAPACITANCE=   3.5000E-12
+*
+* Analog/Digital interface for node TRANSMIT
+*
+* Moving X_U1A.U1:OUT1 from analog node TRANSMIT to new digital node TRANSMIT$DtoA
+X$TRANSMIT_DtoA1
++ TRANSMIT$DtoA
++ TRANSMIT
++ $G_DPWR
++ $G_DGND
++ DtoA_HC
++       PARAMS: DRVH=  87     DRVL=  87     CAPACITANCE=   0     
+*
+* Analog/Digital interface for node C_CLK
+*
+* Moving X_CD4026_1_U1A.UCD4518BLOG:IN1 from analog node C_CLK to new digital node C_CLK$AtoD
+X$C_CLK_AtoD1
++ C_CLK
++ C_CLK$AtoD
++ $G_CD4000_VDD
++ $G_CD4000_VSS
++ AtoD_4000B
++       PARAMS: CAPACITANCE=   0     
+* Moving X_CD4026_1_U3.U1:CLK from analog node C_CLK to new digital node C_CLK$AtoD2
+X$C_CLK_AtoD2
++ C_CLK
++ C_CLK$AtoD2
++ $G_DPWR
++ $G_DGND
++ AtoDdefault
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$CD4000_PWR 0 CD4000_PWR
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 12/02/22 07:11:56 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "root-root_tran7"  [ D:\cad\cadence\EED3009-PSpiceFiles\root\root_tran7.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               MBR0520LT1      X_U3.DIODE      X_U2.DIODE      X_U6.DIODE      
+          IS    1.000000E-06   10.000000E-15   10.000000E-15   10.000000E-15 
+           N     .874519                                                     
+          BV   20                                                            
+         IBV   20.000000E-06                                                 
+          RS     .125754         .01             .01             .01         
+          TT    1.000000E-09                                                 
+         CJO  202.130000E-12                                                 
+          VJ     .386524                                                     
+           M     .463876                                                     
+          EG     .6                                                          
+         XTI    2.49881                                                      
+
+
+               X_D2.model201   D74CLMP         
+          IS    1.760300E-27    1.000000E-15 
+           N    2                            
+          BV    5                            
+         IBV   10.000000E-06                 
+          RS    2               2            
+         CJO                    2.000000E-12 
+
+
+**** 12/02/22 07:11:56 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "root-root_tran7"  [ D:\cad\cadence\EED3009-PSpiceFiles\root\root_tran7.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U3.JNEMOD     X_U2.JNEMOD     X_U6.JNEMOD     
+               NJF             NJF             NJF             
+         VTO   -2.5            -2.5            -2.5          
+        BETA    5.120000E-06    5.120000E-06    5.120000E-06 
+
+
+**** 12/02/22 07:11:56 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "root-root_tran7"  [ D:\cad\cadence\EED3009-PSpiceFiles\root\root_tran7.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               nnMOS           ppMOS           X_U3.PCHAN555   X_U3.NCHAN555   
+               NMOS            PMOS            PMOS            NMOS            
+       LEVEL    2               2               1               1            
+           L  100.000000E-06  100.000000E-06  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06  100.000000E-06  100.000000E-06 
+         VTO    1.4            -1               -.2              .2          
+          KP  600.000000E-06  600.000000E-06   20.000000E-06   20.000000E-06 
+       GAMMA    0               0               0               0            
+         PHI     .6              .6              .6              .6          
+      LAMBDA    5.000000E-03     .01            0               0            
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+        CGSO    0               0               1.000000E-12    1.000000E-12 
+        CGDO    0               0               1.000000E-12    1.000000E-12 
+        CGBO    0               0               1.000000E-12    1.000000E-12 
+         TOX  100.000000E-09  100.000000E-09    0               0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+               X_U3.PCHAN555_OUT               X_U2.PCHAN555   X_U2.NCHAN555   
+               PMOS                            PMOS            NMOS            
+       LEVEL    1                               1               1            
+           L  100.000000E-06                  100.000000E-06  100.000000E-06 
+           W  100.000000E-06                  100.000000E-06  100.000000E-06 
+         VTO    -.2                             -.2              .2          
+          KP   20.000000E-06                   20.000000E-06   20.000000E-06 
+       GAMMA    0                               0               0            
+         PHI     .6                              .6              .6          
+      LAMBDA    0                               0               0            
+          IS   10.000000E-15                   10.000000E-15   10.000000E-15 
+          JS    0                               0               0            
+          PB     .8                              .8              .8          
+        PBSW     .8                              .8              .8          
+         CBD  200.000000E-12                                                 
+          CJ    0                               0               0            
+        CJSW    0                               0               0            
+        CGSO    1.000000E-12                    1.000000E-12    1.000000E-12 
+        CGDO    1.000000E-12                    1.000000E-12    1.000000E-12 
+        CGBO    1.000000E-12                    1.000000E-12    1.000000E-12 
+         TOX    0                               0               0            
+          XJ    0                               0               0            
+       UCRIT   10.000000E+03                   10.000000E+03   10.000000E+03 
+      DIOMOD    1                               1               1            
+         VFB    0                               0               0            
+        LETA    0                               0               0            
+        WETA    0                               0               0            
+          U0    0                               0               0            
+        TEMP    0                               0               0            
+         VDD    5                               5               5            
+       XPART    0                               0               0            
+
+
+               X_U2.PCHAN555_OUT               X_U6.PCHAN555   X_U6.NCHAN555   
+               PMOS                            PMOS            NMOS            
+       LEVEL    1                               1               1            
+           L  100.000000E-06                  100.000000E-06  100.000000E-06 
+           W  100.000000E-06                  100.000000E-06  100.000000E-06 
+         VTO    -.2                             -.2              .2          
+          KP   20.000000E-06                   20.000000E-06   20.000000E-06 
+       GAMMA    0                               0               0            
+         PHI     .6                              .6              .6          
+      LAMBDA    0                               0               0            
+          IS   10.000000E-15                   10.000000E-15   10.000000E-15 
+          JS    0                               0               0            
+          PB     .8                              .8              .8          
+        PBSW     .8                              .8              .8          
+         CBD  200.000000E-12                                                 
+          CJ    0                               0               0            
+        CJSW    0                               0               0            
+        CGSO    1.000000E-12                    1.000000E-12    1.000000E-12 
+        CGDO    1.000000E-12                    1.000000E-12    1.000000E-12 
+        CGBO    1.000000E-12                    1.000000E-12    1.000000E-12 
+         TOX    0                               0               0            
+          XJ    0                               0               0            
+       UCRIT   10.000000E+03                   10.000000E+03   10.000000E+03 
+      DIOMOD    1                               1               1            
+         VFB    0                               0               0            
+        LETA    0                               0               0            
+        WETA    0                               0               0            
+          U0    0                               0               0            
+        TEMP    0                               0               0            
+         VDD    5                               5               5            
+       XPART    0                               0               0            
+
+
+               X_U6.PCHAN555_OUT 
+               PMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    -.2          
+          KP   20.000000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+         CBD  200.000000E-12 
+          CJ    0            
+        CJSW    0            
+        CGSO    1.000000E-12 
+        CGDO    1.000000E-12 
+        CGBO    1.000000E-12 
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 12/02/22 07:11:56 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "root-root_tran7"  [ D:\cad\cadence\EED3009-PSpiceFiles\root\root_tran7.sim ] 
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DIN74           DIN74HC         
+      S0NAME 0               0               
+       S0TSW    3.500000E-09    5.000000E-09 
+       S0RLO    7.13            1            
+       S0RHI  389             100.000000E+03 
+      S1NAME 1               1               
+       S1TSW    5.500000E-09    5.000000E-09 
+       S1RLO  467             100.000000E+03 
+       S1RHI  200               1            
+      S2NAME X               X               
+       S2TSW    3.500000E-09    5.000000E-09 
+       S2RLO   42.9           110            
+       S2RHI  116             100            
+      S3NAME R               R               
+       S3TSW    3.500000E-09    5.000000E-09 
+       S3RLO   42.9           110            
+       S3RHI  116             100            
+      S4NAME F               F               
+       S4TSW    3.500000E-09    5.000000E-09 
+       S4RLO   42.9           110            
+       S4RHI  116             100            
+      S5NAME Z               Z               
+       S5TSW    3.500000E-09    5.000000E-09 
+       S5RLO  200.000000E+03  200.000000E+03 
+       S5RHI  200.000000E+03  200.000000E+03 
+
+
+**** 12/02/22 07:11:56 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "root-root_tran7"  [ D:\cad\cadence\EED3009-PSpiceFiles\root\root_tran7.sim ] 
+
+
+ ****     Digital Output MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DO74HC_ST       DO4000B         DO74            
+    TIMESTEP  100.000000E-12  100.000000E-12  100.000000E-12 
+      S0NAME 0               X               X               
+       S0VHI     .55             .5             2            
+       S0VLO   -1.3             -.5              .8          
+      S1NAME 1               0               0               
+       S1VHI    1.3             -.5              .8          
+       S1VLO     .33           -3              -1.5          
+      S2NAME                 R               R               
+       S2VHI                     .05            1.4          
+       S2VLO                    -.5              .8          
+      S3NAME                 R               R               
+       S3VHI                     .5             2            
+       S3VLO                    -.05            1.3          
+      S4NAME                 X               X               
+       S4VHI                     .5             2            
+       S4VLO                    -.5              .8          
+      S5NAME                 1               1               
+       S5VHI                    3               7            
+       S5VLO                     .5             2            
+      S6NAME                 F               F               
+       S6VHI                     .5             2            
+       S6VLO                    -.05            1.3          
+      S7NAME                 F               F               
+       S7VHI                     .05            1.4          
+       S7VLO                    -.5              .8          
+
+
+**** 12/02/22 07:11:56 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "root-root_tran7"  [ D:\cad\cadence\EED3009-PSpiceFiles\root\root_tran7.sim ] 
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_HC14          D0_GATE         D_PLD_GATE      
+      TPLHMN    4.800000E-09    0               0            
+      TPLHTY   12.000000E-09    0               0            
+      TPLHMX   31.000000E-09    0               0            
+      TPHLMN    4.800000E-09    0               0            
+      TPHLTY   12.000000E-09    0               0            
+      TPHLMX   31.000000E-09    0               0            
+
+
+**** 12/02/22 07:11:56 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "root-root_tran7"  [ D:\cad\cadence\EED3009-PSpiceFiles\root\root_tran7.sim ] 
+
+
+ ****     Digital Edge Triggered FF MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_EFF          D_PLD_EFF       
+  TPCLKQLHMN    0               0            
+  TPCLKQLHTY    0               0            
+  TPCLKQLHMX    0               0            
+  TPCLKQHLMN    0               0            
+  TPCLKQHLTY    0               0            
+  TPCLKQHLMX    0               0            
+   TPPCQLHMN    0               0            
+   TPPCQLHTY    0               0            
+   TPPCQLHMX    0               0            
+   TPPCQHLMN    0               0            
+   TPPCQHLTY    0               0            
+   TPPCQHLMX    0               0            
+    TWCLKLMN    0               0            
+    TWCLKLTY    0               0            
+    TWCLKLMX    0               0            
+    TWCLKHMN    0               0            
+    TWCLKHTY    0               0            
+    TWCLKHMX    0               0            
+     TWPCLMN    0               0            
+     TWPCLTY    0               0            
+     TWPCLMX    0               0            
+   TSUDCLKMN    0               0            
+   TSUDCLKTY    0               0            
+   TSUDCLKMX    0               0            
+ TSUPCCLKHMN    0               0            
+ TSUPCCLKHTY    0               0            
+ TSUPCCLKHMX    0               0            
+    THDCLKMN    0               0            
+    THDCLKTY    0               0            
+    THDCLKMX    0               0            
+  TSUCECLKMN    0               0            
+  TSUCECLKTY    0               0            
+  TSUCECLKMX    0               0            
+   THCECLKMN    0               0            
+   THCECLKTY    0               0            
+   THCECLKMX    0               0            
+
+
+**** 12/02/22 07:11:56 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "root-root_tran7"  [ D:\cad\cadence\EED3009-PSpiceFiles\root\root_tran7.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_HC_ST        IO_4000B        IO_PLD          IO_HC           
+        INLD    3.500000E-12                                    3.500000E-12 
+        DRVL   87               1.443000E+03                   87            
+        DRVH   87               1.443000E+03                   87            
+       AtoD1 AtoD_HC_ST      AtoD_4000B                      AtoD_HC         
+       AtoD2 AtoD_HC_ST      AtoD_4000B_NX                   AtoD_HC_NX      
+       AtoD3 AtoD_HC_ST      AtoD_4000B                      AtoD_HC         
+       AtoD4 AtoD_HC_ST      AtoD_4000B_NX                   AtoD_HC_NX      
+       DtoA1 DtoA_HC         DtoA_4000B                      DtoA_HC         
+       DtoA2 DtoA_HC         DtoA_4000B                      DtoA_HC         
+       DtoA3 DtoA_HC_E       DtoA_4000B                      DtoA_HC_E       
+       DtoA4 DtoA_HC_E       DtoA_4000B                      DtoA_HC_E       
+    DIGPOWER                 CD4000_PWR                                      
+      TSWHL1    2.742000E-09    7.720000E-09                    2.742000E-09 
+      TSWHL2    2.742000E-09    7.860000E-09                    2.742000E-09 
+      TSWHL3    2.751000E-09    9.710000E-09                    2.751000E-09 
+      TSWHL4    2.751000E-09    9.630000E-09                    2.751000E-09 
+      TSWLH1    2.758000E-09    7.560000E-09                    2.758000E-09 
+      TSWLH2    2.758000E-09    7.400000E-09                    2.758000E-09 
+      TSWLH3    2.763000E-09    9.410000E-09                    2.763000E-09 
+      TSWLH4    2.763000E-09    9.240000E-09                    2.763000E-09 
+       TPWRT    2.000000E-09  100.000000E+03  100.000000E+03    2.000000E-09 
+
+
+               IO_DFT          IO_HC_DTOA      
+       AtoD1 AtoD_STD                        
+       AtoD2 AtoD_STD_NX                     
+       AtoD3 AtoD_STD                        
+       AtoD4 AtoD_STD_NX                     
+       DtoA1 DtoA_STD                        
+       DtoA2 DtoA_STD                        
+       DtoA3 DtoA_STD                        
+       DtoA4 DtoA_STD                        
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+Starting pseudo-transient algorithm.
+
+WARNING(ORPSIM-16534): Using high values of ITL4 for Speed Level > 0 may increase total simulation job time.
+
+ERROR -- Convergence problem in transient bias point calculation
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    5.0000  (  VO+)    4.0076  (  VO-)    2.7514  (C_CLK)    4.3672      
+
+(SOUND)    5.0001  (/SOUND) 748.6E-06 (N29217)    4.9253 (N29421)     .8408     
+
+(N29551)     .9497 (N29853)     .3653 (N29991)     .1778 (N29999)    5.0000     
+
+(N30031)     .9497 (N31319)     .1359 (N68585)     .3825 (N68597)    4.0183     
+
+(N68651)    2.0318 (N68669)     .2172 (N68767)    0.0000 (N68861)    2.5000     
+
+(N68879)     .1570 (N74582)    2.5621 (N74666)     .4937 (N74696)     .9497     
+
+(N84729)     .0900 (N84981)     .0900 (X_U2.1)-126.9E-06 (X_U2.2)     .4749     
+
+(X_U2.3)-3659.8000 (X_U2.4)    4.2000 (X_U2.5)    -.6291 (X_U2.6)-1088.8000     
+
+(X_U2.7)    4.2000 (X_U2.8)    -.5978 (X_U2.9) 50.53E-09 (X_U3.1) 80.39E-06     
+
+(X_U3.2)     .4749 (X_U3.3) 2970.4000 (X_U3.4)    4.2000 (X_U3.5)    4.0236     
+
+(X_U3.6)-7718.9000 (X_U3.7)    4.2000 (X_U3.8)    -.6484 (X_U3.9) 25.97E-09     
+
+(X_U6.1)   -1.1325 (X_U6.2)     .4749 (X_U6.3) -188.0900 (X_U6.4)    4.2000     
+
+(X_U6.5)  -16.4160 (X_U6.6)-4560.5000 (X_U6.7)    4.2000 (X_U6.8)    -.6348     
+
+(X_U6.9) 1.946E-06 ($G_DGND)    0.0000                   ($G_DPWR)    5.0000    
+
+(N293890)    4.0473                   (N312390)     .1433                       
+
+(X_U2.10)    5.0000                   (X_U2.11)     .2019                       
+
+(X_U2.12)    5.0000                   (X_U2.13)-126.9E-06                       
+
+(X_U2.14) 347.4E-09                   (X_U2.15)    5.0000                       
+
+(X_U2.16)    5.0000                   (X_U2.17) 129.3E-09                       
+
+(X_U2.18) 416.0E-09                   (X_U2.19) 208.0E-09                       
+
+(X_U2.20)    4.9997                   (X_U2.21)     .2022                       
+
+(X_U2.22)    4.7965                   (X_U2.23)     .1709                       
+
+(X_U2.24)    4.9999                   (X_U2.25) 104.2E-09                       
+
+(X_U3.10)    5.0000                   (X_U3.11)    2.4983                       
+
+(X_U3.12)    5.0000                   (X_U3.13) 80.39E-06                       
+
+(X_U3.14) 347.2E-09                   (X_U3.15)    5.0000                       
+
+(X_U3.16)    5.0000                   (X_U3.17)    5.0000                       
+
+(X_U3.18) 418.1E-09                   (X_U3.19) 209.5E-09                       
+
+(X_U3.20)    5.0000                   (X_U3.21)     .1516                       
+
+(X_U3.22)    2.4364                   (X_U3.23)    4.8236                       
+
+(X_U3.24) 104.8E-09                   (X_U3.25) 104.0E-09                       
+
+(X_U6.10)    5.0000                   (X_U6.11)    5.0000                       
+
+(X_U6.12)    5.0001                   (X_U6.13)   -1.1325                       
+
+(X_U6.14)-2.675E-06                   (X_U6.15)    5.0000                       
+
+(X_U6.16)    4.4813                   (X_U6.17)    3.9310                       
+
+(X_U6.18)-7.501E-06                   (X_U6.19)-3.749E-06                       
+
+(X_U6.20)    5.0043                   (X_U6.21)     .1652                       
+
+(X_U6.22)   18.1790                   (X_U6.23)  -15.6160                       
+
+(X_U6.24)   33.4730                   (X_U6.25)-495.6E-09                       
+
+(TRANSMIT)    4.9975                  (X_U2.VDD)    5.0000                      
+
+(X_U3.VDD)    5.0000                  (X_U6.VDD)    5.0000                      
+
+($G_CD4000_VDD)    5.0000             ($G_CD4000_VSS)    0.0000                 
+
+(X$C_CLK_AtoD1.NORM)     .9336        (X_U5A.xinstlm358.1)     .0802            
+
+(X_U5A.xinstlm358.2)     .9945        (X_U5A.xinstlm358.4) 18.69E-06            
+
+(X_U5A.xinstlm358.5)    1.0226        (X_U5A.xinstlm358.6)    2.4999            
+
+(X_U5A.xinstlm358.7) 1000.0000        (X_U5A.xinstlm358.9)    3.1034            
+
+(X_U5B.xinstlm358.1) 35.48E-06        (X_U5B.xinstlm358.2)    2.6694            
+
+(X_U5B.xinstlm358.4)     .0795        (X_U5B.xinstlm358.5)    2.6416            
+
+(X_U5B.xinstlm358.6)    2.0317        (X_U5B.xinstlm358.7) 1000.0000            
+
+(X_U5B.xinstlm358.9)    3.1034        (X$N29999_AtoD1.NORM)    1.0000           
+
+(X$N31319_AtoD1.NORM)     .0272       (X_U5A.xinstlm358.10)    4.0691           
+
+(X_U5A.xinstlm358.11)    3.1013       (X_U5A.xinstlm358.12)    0.0000           
+
+(X_U5A.xinstlm358.14)    2.3350       (X_U5A.xinstlm358.15)    2.3350           
+
+(X_U5A.xinstlm358.16)    -.9657       (X_U5A.xinstlm358.17)    1.0226           
+
+(X_U5A.xinstlm358.18)     .8160       (X_U5A.xinstlm358.20) 40.03E-06           
+
+(X_U5A.xinstlm358.21)    2.5227       (X_U5A.xinstlm358.22)    3.1182           
+
+(X_U5A.xinstlm358.24) 1000.8000       (X_U5A.xinstlm358.25)    4.0691           
+
+(X_U5A.xinstlm358.26)    4.7968       (X_U5A.xinstlm358.27)    3.3412           
+
+(X_U5B.xinstlm358.10)     .0024       (X_U5B.xinstlm358.11)    -.9654           
+
+(X_U5B.xinstlm358.12)    0.0000       (X_U5B.xinstlm358.14)    2.4269           
+
+(X_U5B.xinstlm358.15)    2.4269       (X_U5B.xinstlm358.16)     .9654           
+
+(X_U5B.xinstlm358.17)    2.6695       (X_U5B.xinstlm358.18)    3.9264           
+
+(X_U5B.xinstlm358.20) 40.03E-06       (X_U5B.xinstlm358.21)    -.5730           
+
+(X_U5B.xinstlm358.22)     .0086       (X_U5B.xinstlm358.24) 1000.8000           
+
+(X_U5B.xinstlm358.25)     .0024       (X_U5B.xinstlm358.26)     .7303           
+
+(X_U5B.xinstlm358.27)    -.7254       (X$TRANSMIT_DtoA1.DGND_OL)     .0022      
+
+(X$TRANSMIT_DtoA1.DPWR_OH)    4.9975  (X$C_CLK_AtoD1.XNORM.THRESHOLD)    1.5000 
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(X_CD4026_2_U1A.D1) : 1               (  N32659) : 0                            
+
+(X_CD4026_2_U1A.D2) : 1               (X_CD4026_2_U1A.RESET) : X                
+
+(X_CD4026_2_U1A.CLK4) : 1             (X_CD4026_1_U1A.D3) : 1                   
+
+(X_CD4026_2_U1A.Q4) : 0               (X_CD4026_2_U1A.CLK1) : 0                 
+
+(X_CD4026_1_U1A.CLK4) : 1             (X_CD4026_1_U1A.D4) : 1                   
+
+(X_CD4026_1_U1A.Q1BAR) : 1            (X_CD4026_2_U1A.Q1) : 0                   
+
+(X_CD4026_1_U1A.CLK1) : X             (X_CD4026_2_U1A.CLK) : 0                  
+
+(  N32671) : 0     (X_CD4026_2_U1A.Q2) : 0               (  N32655) : 0         
+
+(X_CD4026_2_U1A.Q2BAR) : 1            (X_CD4026_1_U1A.Q3) : 0                   
+
+(  N32613) : 0     (   $D_HI) : 1     (X_CD4026_1_U1A.Q4) : 0                   
+
+(C_CLK$AtoD) : X   (N29999$AtoD) : 0  (X_CD4026_2_U1A.D3) : 1                   
+
+(X_CD4026_1_U1A.RESETBAR) : X         (    ECHO) : 0                            
+
+(X_CD4026_1_U1A.Q4BAR) : 1            (  N32667) : 0     (N31319$AtoD) : 0      
+
+(M_UN0001) : 1     (X_CD4026_2_U1A.CLK2) : 1                                    
+
+(X_CD4026_2_U1A.Q1BAR) : 1            (X_CD4026_1_U1A.CLK2) : 1                 
+
+(X_CD4026_2_U1A.EN) : 1               (X_CD4026_2_U1A.Q3) : 0                   
+
+(N84729$DtoA) : 0  (  N32683) : 0     (CD4026_1_N004852) : 0                    
+
+(TRANSMIT$DtoA) : 1                   (  N31341) : 1                            
+
+(X_CD4026_1_U1A.Q3BAR) : 1            (C_CLK$AtoD2) : 0  (  N32663) : 0         
+
+(X_CD4026_2_U1A.Q4BAR) : 1            (X_CD4026_1_U1A.D1) : 1                   
+
+(TR_PULSE) : Z     (X_CD4026_2_U1A.RESETBAR) : X         (  N32679) : 0         
+
+(X_CD4026_1_U1A.RESET) : X            (M_UN0002) : 1     (  N32745) : X         
+
+(X_CD4026_2_U1A.CLK3) : 1             (X_CD4026_1_U1A.D2) : 1                   
+
+(X_CD4026_1_U1A.EN) : 1               (X_CD4026_1_U1A.CLK3) : 1                 
+
+(CD4026_2_N004852) : 0                (X_CD4026_1_U1A.Q1) : 0                   
+
+(X_CD4026_1_U1A.CLK) : X              (X_CD4026_1_U1A.Q2BAR) : 1                
+
+(  N32675) : 0     (X_CD4026_1_U1A.Q2) : 0                                      
+
+(X_CD4026_2_U1A.D4) : 1               (X_CD4026_2_U1A.Q3BAR) : 1            
+
+
+  These voltages failed to converge:
+
+    V(N293890)                =   -2.653KV  \     4.047V
+    V(VO-)                    =     5.000V  \     2.751V
+    V(N29421)                 =    -1.650V  \   840.83mV
+    V(N29853)                 =     5.000V  \   365.29mV
+    V(VO+)                    =   -2.653KV  \     4.008V
+    V(N29991)                 =     5.000V  \   177.82mV
+    V(/SOUND)                 =    16.67uV  \   748.56uV
+    V(N30031)                 =     3.333V  \   949.71mV
+    V(N29551)                 =     3.333V  \   949.71mV
+    V(N31319)                 =     18.11V  \   135.92mV
+    V(N68879)                 =     20.82V  \   156.96mV
+    V(N312390)                =     19.01V  \   143.31mV
+    V(N68651)                 =     6.160V  \     2.032V
+    V(N68669)                 =    128.95V  \   217.17mV
+    V(N74666)                 =    -1.650V  \   493.66mV
+    V(N74582)                 =     1.402V  \     2.562V
+    V(N74696)                 =     3.333V  \   949.71mV
+    V(N68585)                 =    154.25V  \   382.52mV
+    V(N68597)                 =    710.64V  \     4.018V
+    V(X_U3.2)                 =     1.667V  \   474.86mV
+    V(X_U3.3)                 =   -33.33KV  \    2.970KV
+    V(X_U3.23)                =     4.507V  \     4.824V
+    V(X_U3.5)                 =     3.707V  \     4.024V
+    V(X_U3.6)                 =    16.66KV  \   -7.719KV
+    V(X_U3.21)                =   233.31mV  \   151.59mV
+    V(X_U3.8)                 =  -566.70mV  \  -648.41mV
+    V(X_U3.22)                =     2.500V  \     2.436V
+    V(X_U2.2)                 =     1.667V  \   474.86mV
+    V(X_U2.1)                 =    4.000uV  \  -126.89uV
+    V(X_U2.13)                =    4.000uV  \  -126.89uV
+    V(X_U2.3)                 =    33.17KV  \   -3.660KV
+    V(X_U2.23)                =   431.16mV  \   170.89mV
+    V(X_U2.5)                 =  -368.84mV  \  -629.11mV
+    V(X_U2.6)                 =   -49.83KV  \   -1.089KV
+    V(X_U2.21)                =  -955.30mV  \   202.25mV
+    V(X_U2.8)                 =    -1.755V  \  -597.76mV
+    V(X_U2.20)                =     7.596V  \     5.000V
+    V(TRANSMIT)               =     9.170V  \     4.998V
+    V(X_U2.22)                =     5.543V  \     4.797V
+    V(X_U6.2)                 =     1.667V  \   474.86mV
+    V(X_U6.1)                 =    4.000uV  \    -1.133V
+    V(X_U6.13)                =    4.000uV  \    -1.133V
+    V(X_U6.3)                 =    33.17KV  \   -188.09V
+    V(X_U6.23)                =    16.40KV  \    -15.62V
+    V(X_U6.5)                 =    16.40KV  \    -16.42V
+    V(X_U6.6)                 =   -49.83KV  \   -4.561KV
+    V(X_U6.21)                =   -91.79mV  \   165.22mV
+    V(X_U6.8)                 =  -891.79mV  \  -634.78mV
+    V(X_U6.9)                 =     1.056V  \    1.946uV
+    V(C_CLK)                  =     5.000V  \     4.367V
+    V(X_U6.17)                =    1.000uV  \     3.931V
+    V(X_U6.11)                =     2.561V  \     5.000V
+    V(X_U6.16)                =     5.000V  \     4.481V
+    V(X_U6.24)                =     5.000V  \     33.47V
+    V(X_U6.22)                =     5.000V  \     18.18V
+    V(X_U5A.xinstlm358.26)    =    713.71V  \     4.797V
+    V(X_U5A.xinstlm358.27)    =    712.20V  \     3.341V
+    V(X_U5A.xinstlm358.25)    =    712.96V  \     4.069V
+    V(X_U5A.xinstlm358.22)    =    709.72V  \     3.118V
+    V(X_U5A.xinstlm358.21)    =    709.12V  \     2.523V
+    V(X_U5A.xinstlm358.10)    =    712.96V  \     4.069V
+    V(X_U5A.xinstlm358.9)     =   286.08mV  \     3.103V
+    V(X_U5A.xinstlm358.16)    =   -2.335KV  \  -965.72mV
+    V(X_U5A.xinstlm358.11)    =    710.56V  \     3.101V
+    V(X_U5A.xinstlm358.24)    =    2.488KV  \    1.001KV
+    V(X_U5A.xinstlm358.14)    =   -108.79V  \     2.335V
+    V(X_U5A.xinstlm358.18)    =   -108.94V  \   815.99mV
+    V(X_U5A.xinstlm358.4)     =   834.98uV  \    18.69uV
+    V(X_U5A.xinstlm358.5)     =    154.89V  \     1.023V
+    V(X_U5A.xinstlm358.1)     =    92.28mV  \    80.21mV
+    V(X_U5A.xinstlm358.2)     =    154.86V  \   994.53mV
+    V(X_U5A.xinstlm358.15)    =   -108.79V  \     2.335V
+    V(X_U5A.xinstlm358.17)    =    154.89V  \     1.023V
+    V(X_U5B.xinstlm358.6)     =     6.160V  \     2.032V
+    V(X_U5B.xinstlm358.26)    =    120.19V  \   730.32mV
+    V(X_U5B.xinstlm358.27)    =    118.41V  \  -725.41mV
+    V(X_U5B.xinstlm358.25)    =    119.42V  \    2.429mV
+    V(X_U5B.xinstlm358.22)    =     1.161V  \    8.598mV
+    V(X_U5B.xinstlm358.21)    =    98.14mV  \  -572.97mV
+    V(X_U5B.xinstlm358.10)    =    119.42V  \    2.429mV
+    V(X_U5B.xinstlm358.9)     =   286.08mV  \     3.103V
+    V(X_U5B.xinstlm358.16)    =   -57.08KV  \   965.39mV
+    V(X_U5B.xinstlm358.11)    =    117.02V  \  -965.39mV
+    V(X_U5B.xinstlm358.24)    =    2.488KV  \    1.001KV
+    V(X_U5B.xinstlm358.14)    =   -2.716KV  \     2.427V
+    V(X_U5B.xinstlm358.18)    =   -2.716KV  \     3.926V
+    V(X_U5B.xinstlm358.4)     =  -884.74mV  \    79.53mV
+    V(X_U5B.xinstlm358.5)     =     6.456V  \     2.642V
+    V(X_U5B.xinstlm358.1)     =    3.803mV  \    35.48uV
+    V(X_U5B.xinstlm358.2)     =     6.146V  \     2.669V
+    V(X_U5B.xinstlm358.15)    =   -2.716KV  \     2.427V
+    V(X_U5B.xinstlm358.17)    =     6.146V  \     2.670V
+    V(X$N31319_AtoD1.NORM)    =     3.622V  \    27.19mV
+    V(X$TRANSMIT_DtoA1.DPWR_OH) =     9.170V  \     4.998V
+    V(X$TRANSMIT_DtoA1.DGND_OL) =    3.985mV  \    2.172mV
+    V(X$C_CLK_AtoD1.NORM)     =     1.250V  \   933.60mV
+
+  These supply currents failed to converge:
+
+    I(X_U3.E_U6_E1CMP)        =    3.333mA  \  -296.55uA
+    I(X_U3.E_U6_E1)           =   -3.334mA  \   296.07uA
+    I(X_U3.E_U7_E1CMP)        =   -1.666mA  \   771.91uA
+    I(X_U2.E_EMIR)            =    25.90uA  \    1.303uA
+    I(X_U2.E_U6_E1CMP)        =   -3.317mA  \   365.99uA
+    I(X_U2.E_U7_E1CMP)        =    4.983mA  \   108.90uA
+    I(X_U6.E_EMIR)            =   -10.56mA  \    -9.92mA
+    I(X_U6.E_U6_E1CMP)        =   -1.677mA  \    17.25uA
+    I(X_U6.E_U6_E1)           =    16.40uA  \   -19.82nA
+    I(X_U6.E_U7_E1CMP)        =    4.983mA  \   456.06uA
+    I(X_U5A.xinstlm358.E2)    =   -25.39uA  \  -283.24nA
+    I(X_U5A.xinstlm358.EVP)   =  -722.97nA  \   -164.36A
+    I(X_U5B.xinstlm358.EU1)   =   -1.063uA  \    92.97nA
+    I(X_U5B.xinstlm358.E2)    =  -374.48uA  \    99.57nA
+    I(X_U5B.xinstlm358.EVM)   =   118.69nA  \   -162.23A
+    I(X$C_CLK_AtoD1.XNORM.EN) =   -12.50uA  \   -9.337uA
+    I(V_V1)                   =   -15.72mA  \   -6.646mA
+    I(V_V2)                   =         0A  \   621.91uA
+    I(X_U3.V_U7_V2)           =    1.666mA  \  -771.92uA
+    I(X_U2.V_U6_V2)           =    3.317mA  \  -366.01uA
+    I(X_U2.V_U7_V2)           =   -4.983mA  \  -108.92uA
+    I(X_U6.V_U6_V2)           =    20.42uA  \   -14.05uA
+    I(X_U6.V_U7_V2)           =   -4.983mA  \  -455.72uA
+    I(X_U5A.xinstlm358.VFI7)  =   -6.929uA  \   -164.36A
+    I(X_U5A.xinstlm358.VFI6)  =   -2.368uA  \   -164.36A
+    I(X_U5A.xinstlm358.VREF)  =    1.506uA  \     1.487A
+    I(X_U5B.xinstlm358.VFI7)  =  -169.35uA  \    162.23A
+    I(X_U5B.xinstlm358.VFI6)  =   -57.08uA  \   965.40pA
+    I(X_U5B.xinstlm358.VREF)  =    1.506uA  \     1.487A
+    I(X$CD4000_PWR.VVDD)      =   -5.000uA  \    97.21uA
+    I(X$CD4000_PWR.VVSS)      =   -4.945uA  \   224.90uA
+
+  These devices failed to converge:
+    D_D1      X_U3.D_U6_D2CLMP X_U3.D_U7_D1CLMP X_U2.D_U6_D1CLMP 
+    X_U2.D_U7_D1CLMP X_U6.D_U6_D2CLMP X_U6.D_U6_D1CLMP X_U6.D_U7_D1CLMP 
+    X_U5A.xinstlm358.D1 X_U5A.xinstlm358.D2 X_U5A.xinstlm358.D6 
+    X_U5A.xinstlm358.D4 X_U5A.xinstlm358.D9 X_U5B.xinstlm358.D1 
+    X_U5B.xinstlm358.D2 X_U5B.xinstlm358.D7 X_U5B.xinstlm358.D8 
+    X_U5B.xinstlm358.D6 X_U5B.xinstlm358.D4 X_U5B.xinstlm358.D9 M_M4      
+    M_M3      X_U3.M_U2_U5_M4 X_U2.M_U2_U5_M1 X_U2.M_U2_U5_M2 X_U2.M_U2_U5_M3 
+    X_U2.M_U2_U5_M4 X_U2.M_U2_U6_M2 X_U6.M_U2_U1_M4 X_U6.M_U2_U1_M3 
+    X_U6.M_U2_U1_M6 X_U6.M_U2_U1_M1 X_U6.M_U2_U1_M2 X_U5A.xinstlm358.QON 
+    X_U5A.xinstlm358.QOP X_U5A.xinstlm358.QIP X_U5B.xinstlm358.QON 
+    X_U5B.xinstlm358.QOP X_U5B.xinstlm358.QIP 
+
+**** Interrupt ****

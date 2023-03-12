@@ -1,0 +1,20 @@
+** Profile: "root-root_tran4"  [ D:\cad\cadence\EED3009-PSpiceFiles\root\root_tran4.sim ] 
+
+** Creating circuit file "root_tran4.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.INC "C:/Users/Abdurrahman/Desktop/cd4007/cd4007.lib" 
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 100ms 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\root.net" 
+
+
+.END

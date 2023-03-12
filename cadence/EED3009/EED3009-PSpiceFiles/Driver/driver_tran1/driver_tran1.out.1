@@ -1,0 +1,257 @@
+
+**** 11/23/22 18:12:38 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Driver-driver_tran1"  [ d:\cad\cadence\eed3009-pspicefiles\driver\driver_tran1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "driver_tran1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.INC "C:/Users/Abdurrahman/Desktop/cd4007/cd4007.lib" 
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+
+**** INCLUDING cd4007.lib ****
+.model nnMOS NMOS (LEVEL=2 VTo=1.4 Kp=.6m LAMBDA=0.005)
+.model ppMOS PMOS (LEVEL=2 VTo=-1.0 KP=.6m LAMBDA=0.01)
+
+**** RESUMING driver_tran1.cir ****
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 100us 0 100ns 
+.OPTIONS ADVCONV
+.OPTIONS ABSTOL= 1.0u
+.OPTIONS GMIN= 1.0E-9
+.OPTIONS VNTOL= 1.0m
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\Driver.net" 
+
+
+
+**** INCLUDING Driver.net ****
+* source EED3009
+M_M6         N09198 /CON RESET RESET ppMOS           
+V_V1         RESET 0 5V
+M_M5         N09198 /CON 0 0 nnMOS           
+M_M4         N09133 CON RESET RESET ppMOS           
+M_M3         N09133 CON 0 0 nnMOS           
+M_M2         /CON CON RESET RESET ppMOS           
+M_M1         /CON CON 0 0 nnMOS           
+C_C1         N147900 N09198  1.82nF  TC=0,0 
+R_R1         N09133 N147900  10 TC=0,0 
+V_V2         CON 0  
++PULSE 0V 5V 10us 1ns 1ns 12.5us 25us
+C_C5         0 N22991  10n  TC=0,0 
+R_R6         N22937 N22819  54.66k TC=0,0 
+C_C4         0 N22937  330pF  TC=0,0 
+R_R5         N22819 RESET  10k TC=0,0 
+X_U2         0 N22937 CON RESET N22991 N22937 N22819 RESET 555C
+
+**** RESUMING driver_tran1.cir ****
+.END
+
+**** 11/23/22 18:12:38 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Driver-driver_tran1"  [ d:\cad\cadence\eed3009-pspicefiles\driver\driver_tran1.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.DIODE      
+          IS   10.000000E-15 
+          RS     .01         
+
+
+**** 11/23/22 18:12:38 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Driver-driver_tran1"  [ d:\cad\cadence\eed3009-pspicefiles\driver\driver_tran1.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.JNEMOD     
+               NJF             
+         VTO   -2.5          
+        BETA    5.120000E-06 
+
+
+**** 11/23/22 18:12:38 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Driver-driver_tran1"  [ d:\cad\cadence\eed3009-pspicefiles\driver\driver_tran1.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               nnMOS           ppMOS           X_U2.PCHAN555   X_U2.NCHAN555   
+               NMOS            PMOS            PMOS            NMOS            
+       LEVEL    2               2               1               1            
+           L  100.000000E-06  100.000000E-06  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06  100.000000E-06  100.000000E-06 
+         VTO    1.4            -1               -.2              .2          
+          KP  600.000000E-06  600.000000E-06   20.000000E-06   20.000000E-06 
+       GAMMA    0               0               0               0            
+         PHI     .6              .6              .6              .6          
+      LAMBDA    5.000000E-03     .01            0               0            
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+        CGSO    0               0               1.000000E-12    1.000000E-12 
+        CGDO    0               0               1.000000E-12    1.000000E-12 
+        CGBO    0               0               1.000000E-12    1.000000E-12 
+         TOX  100.000000E-09  100.000000E-09    0               0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+               X_U2.PCHAN555_OUT 
+               PMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    -.2          
+          KP   20.000000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+         CBD  200.000000E-12 
+          CJ    0            
+        CJSW    0            
+        CGSO    1.000000E-12 
+        CGDO    1.000000E-12 
+        CGBO    1.000000E-12 
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+Starting pseudo-transient algorithm.
+
+ERROR -- Convergence problem in transient bias point calculation
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  CON)    0.0000  ( /CON)    4.9998  (RESET)    5.0000  (N09133)    4.9998     
+
+(N09198)-167.2E-06 (N22819)     .0108 (N22937)     .3995 (N22991)     .7993     
+
+(X_U2.1)    4.9178 (X_U2.2)     .3996 (X_U2.3)    1.8317 (X_U2.4)    4.2000     
+
+(X_U2.5)    -.4084 (X_U2.6)-3998.3000 (X_U2.7)    4.2000 (X_U2.8)    -.6314     
+
+(X_U2.9)     .5589 (N147900)    4.9998                   (X_U2.10)   18.9350    
+
+(X_U2.11)    5.0018                   (X_U2.12)-192.7E-06                       
+
+(X_U2.13)    4.9178                   (X_U2.14)    5.0005                       
+
+(X_U2.15)    5.0000                   (X_U2.16)    4.7255                       
+
+(X_U2.17)    4.6086                   (X_U2.18) 61.65E-06                       
+
+(X_U2.19) 30.40E-06                   (X_U2.20)    4.9970                       
+
+(X_U2.21)     .1686                   (X_U2.22)    2.7983                       
+
+(X_U2.23)     .3916                   (X_U2.24)    1.8002                       
+
+(X_U2.25) 7.378E-06                   (X_U2.VDD)    5.0000                  
+
+
+  These voltages failed to converge:
+
+    V(N22991)                 =     3.333V  \   799.29mV
+    V(N22937)                 =    98.04mV  \   399.46mV
+    V(N22819)                 =    98.04mV  \    10.78mV
+    V(X_U2.2)                 =     1.667V  \   399.64mV
+    V(X_U2.1)                 =    4.002uV  \     4.918V
+    V(X_U2.13)                =    4.002uV  \     4.918V
+    V(X_U2.3)                 =    15.69KV  \     1.832V
+    V(X_U2.23)                =    525.33V  \   391.59mV
+    V(X_U2.5)                 =    524.53V  \  -408.41mV
+    V(X_U2.6)                 =   -32.35KV  \   -3.998KV
+    V(X_U2.21)                =   -14.70mV  \   168.59mV
+    V(X_U2.8)                 =  -814.70mV  \  -631.41mV
+    V(X_U2.9)                 =   -56.05KV  \   558.85mV
+    V(X_U2.17)                =   201.14KV  \     4.609V
+    V(X_U2.10)                =    40.23KV  \     18.94V
+    V(X_U2.11)                =    56.06KV  \     5.002V
+    V(X_U2.16)                =   100.57KV  \     4.726V
+    V(X_U2.24)                =  -100.57KV  \     1.800V
+    V(X_U2.22)                =     2.500V  \     2.798V
+
+  These supply currents failed to converge:
+
+    I(X_U2.E_EMIR)            =    842.43A  \   -19.12mA
+    I(X_U2.E_EVAL)            =         0A  \   -1.868uA
+    I(X_U2.E_U6_E1CMP)        =   -1.516mA  \  -144.01nA
+    I(X_U2.E_U7_E1CMP)        =    3.235mA  \   399.84uA
+    I(V_V1)                   =  -559.37uA  \  -587.22uA
+    I(X_U2.V_U6_V2)           =    1.463mA  \   -72.46nA
+    I(X_U2.V_U7_V2)           =   -3.235mA  \  -400.14uA
+
+  These devices failed to converge:
+    X_U2.D_U6_D2CLMP X_U2.D_U6_D1CLMP X_U2.D_U7_D1CLMP X_U2.M_M1 
+    X_U2.M_U2_U1_M4 X_U2.M_U2_U1_M3 X_U2.M_U2_U1_M6 X_U2.M_U2_U1_M1 
+    X_U2.M_U2_U1_M2 X_U2.M_U2_U1_M5 X_U2.M_U2_U2_M2 X_U2.M_U2_U3_M1 
+    X_U2.M_U2_U3_M2 X_U2.M_U2_U3_M3 X_U2.M_U2_U3_M4 X_U2.M_U2_U6_M2 
+    X_U2.M_U2_U6_M3 
+
+ERROR(ORPSIM-15659): Discontinuing simulation due to convergence problem
+
+**** Interrupt ****

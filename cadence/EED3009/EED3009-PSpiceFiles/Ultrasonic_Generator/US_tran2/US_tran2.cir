@@ -1,0 +1,20 @@
+** Profile: "Ultrasonic_Generator-US_tran2"  [ d:\cad\cadence\eed3009-PSpiceFiles\Ultrasonic_Generator\US_tran2.sim ] 
+
+** Creating circuit file "US_tran2.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 50ms 0 1u SKIPBP 
+.OPTIONS ADVCONV
+.OPTIONS GMIN= 1.0E-9
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\Ultrasonic_Generator.net" 
+
+
+.END

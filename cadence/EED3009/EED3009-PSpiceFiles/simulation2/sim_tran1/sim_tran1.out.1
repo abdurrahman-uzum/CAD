@@ -1,0 +1,120 @@
+
+**** 12/04/22 18:20:46 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "simulation2-sim_tran1"  [ D:\cad\cadence\EED3009-PSpiceFiles\simulation2\sim_tran1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "sim_tran1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.INC "C:/Users/Abdurrahman/Desktop/cd4007/cd4007.lib" 
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+
+**** INCLUDING cd4007.lib ****
+.model nnMOS NMOS (LEVEL=2 VTo=1.4 Kp=.6m LAMBDA=0.005)
+.model ppMOS PMOS (LEVEL=2 VTo=-1.0 KP=.6m LAMBDA=0.01)
+
+**** RESUMING sim_tran1.cir ****
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 15ms 0 
+.OPTIONS ADVCONV
+.OPTIONS DIGINITSTATE= 0
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\simulation2.net" 
+
+
+
+**** INCLUDING simulation2.net ****
+* source EED3009
+E_E1         N126954 0 N128864 N127449 1
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND N126672 IO_STM IO_LEVEL=0 
++ 0 0
++ +25us 1
++REPEAT FOREVER
++ +25us 0
++  +25us 1
++ ENDREPEAT
+C_out_signal_C22         0 out_signal_N123881  10n  TC=0,0 
+X_out_signal_U3         0 out_signal_N123785 N126628 N126624 out_signal_N123881
++  out_signal_N123785 out_signal_N123613 VDD 555C
+R_out_signal_R22         out_signal_N123613 out_signal_N123785  54.66k TC=0,0 
+R_out_signal_R21         out_signal_N123613 VDD  1k TC=0,0 
+C_out_signal_C21         0 out_signal_N123785  330pF IC=-1.65V TC=0,0 
+V_V1         N126618 0  
++PULSE 0 5V 1ms 1ns 1ns 249us 1s
+V_V2         VDD 0 5V
+R_R1         0 N126954  100k TC=0,0 
+R_R2         0 N126628  100k TC=0,0 
+X_delaydd_U6         delaydd_N00908 N126672 delaydd_N00912 M_UN0001 VDD 0 DFF
+X_delaydd_U5         delaydd_N00904 N126672 delaydd_N00908 M_UN0002 VDD 0 DFF
+X_delaydd_U10         delaydd_N00924 N126672 N126624 0 VDD 0 DFF
+X_delaydd_U9         delaydd_N00920 N126672 delaydd_N00924 M_UN0003 VDD 0 DFF
+X_delaydd_U4         delaydd_N00900 N126672 delaydd_N00904 M_UN0004 VDD 0 DFF
+X_delaydd_U3         delaydd_N00896 N126672 delaydd_N00900 M_UN0005 VDD 0 DFF
+X_delaydd_U1         N126618 N126672 delaydd_N00892 M_UN0006 VDD 0 DFF
+X_delaydd_U8         delaydd_N00916 N126672 delaydd_N00920 M_UN0007 VDD 0 DFF
+X_delaydd_U2         delaydd_N00892 N126672 delaydd_N00896 M_UN0008 VDD 0 DFF
+X_delaydd_U7         delaydd_N00912 N126672 delaydd_N00916 M_UN0009 VDD 0 DFF
+V_V3         N127449 0 2.5V
+C_C1         N126628 N128864  1n  TC=0,0 
+
+**** RESUMING sim_tran1.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node 0
+*
+* Moving X_delaydd_U10.U1:QBAR1 from analog node 0 to new digital node 0$DtoA
+X$0_DtoA1
++ 0$DtoA
++ 0
++ VDD
++ 0
++ DtoAdefault
++       PARAMS: DRVH=  50     DRVL=  50     CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N126618
+*
+* Moving X_delaydd_U1.U1:D1 from analog node N126618 to new digital node N126618$AtoD
+X$N126618_AtoD1
++ N126618
++ N126618$AtoD
++ VDD
++ 0
++ AtoDdefault
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N126624
+*
+* Moving X_delaydd_U10.U1:Q1 from analog node N126624 to new digital node N126624$DtoA
+X$N126624_DtoA1
++ N126624$DtoA
++ N126624
++ VDD
++ 0
++ DtoAdefault
++       PARAMS: DRVH=  50     DRVL=  50     CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+ERROR(ORPSIM-15142): Node N128864 is floating
+

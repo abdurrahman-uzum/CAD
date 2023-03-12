@@ -1,0 +1,57 @@
+
+**** 11/20/22 15:49:36 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-testprofile"  [ D:\cad\cadence\LPF-PSpiceFiles\SCHEMATIC1\testprofile.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "testprofile.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10m 0 5 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LPF
+V_V3         N15221 0  
++PULSE 0V 5V 0 1n 1n 12.5u 25u
+X_S1    N15456 0 N15225 0 SCHEMATIC1_S1 
+X_S2    N15456 0 N15221 N15225 SCHEMATIC1_S2 
+V_V4         N15456 0  
++PULSE 0 V 5 V 0 1 ns 1 ns 250 us 6.67 ms
+---------$
+ERROR(ORPSIM-16343): At least two numeric values required
+
+.subckt SCHEMATIC1_S1 1 2 3 4  
+S_S1         3 4 1 2 _S1
+RS_S1         1 2 1G
+.MODEL         _S1 VSWITCH Roff=1e6 Ron=1.0 Voff=0.0V Von=1.0V
+.ends SCHEMATIC1_S1
+
+.subckt SCHEMATIC1_S2 1 2 3 4  
+S_S2         3 4 1 2 _S2
+RS_S2         1 2 1G
+.MODEL         _S2 VSWITCH Roff=1e6 Ron=1.0 Voff=0.0V Von=1.0V
+.ends SCHEMATIC1_S2
+
+**** RESUMING testprofile.cir ****
+.END
+

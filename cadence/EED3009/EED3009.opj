@@ -1,0 +1,311 @@
+(ExpressProject "EED3009"
+  (ProjectVersion "19981106")
+  (SoftwareVersion "17.4-2019 P001 (3823098) [10/7/2019]-[01/06/23]")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (File "c:\users\abdurrahman\desktop\cd4007\cd4007.olb"
+        (Type "Schematic Library")))
+    (Allegro Netlist Directory "allegro")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420")
+    (NoModify)
+    (File ".\eed3009.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (RootChangedForceReNetlist "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE")
+    (Board_sim_option "VHDL_flow")
+    (BOM_Scope "1")
+    (BOM_Mode "0")
+    (BOM_Report_File "D:\CAD\CADENCE\EED3009.BOM")
+    (BOM_Merge_Include "FALSE")
+    (BOM_Property_Combine_7.0 "{Item}\t{Quantity}\t{Reference}\t{Value}")
+    (BOM_Header "Item\tQuantity\tReference\tPart")
+    (BOM_Include_File "D:\CAD\CADENCE\EED3009.INC")
+    (BOM_Include_File_Combine_7.0 "{Item}\t{Quantity}\t{Reference}\t{Value}")
+    (BOM_One_Part_Per_Line "FALSE")
+    (Open_BOM_in_Excel "TRUE")
+    (BOM_View_Output "FALSE"))
+  (Folder "Layout")
+  (Folder "Outputs"
+    (File ".\eed3009-pspicefiles\lpf\lpf.net"
+      (Type "Report"))
+    (File ".\eed3009-pspicefiles\ultrasonic_generator\ultrasonic_generator.net"
+      (Type "Report"))
+    (File ".\eed3009-pspicefiles\us_cmos\us_cmos.net"
+      (Type "Report"))
+    (File ".\eed3009-pspicefiles\driver\driver.net"
+      (Type "Report"))
+    (File ".\eed3009-pspicefiles\counter\counter.net"
+      (Type "Report"))
+    (File ".\eed3009-pspicefiles\cd4026\cd4026.net"
+      (Type "Report"))
+    (File ".\eed3009-pspicefiles\test\test.net"
+      (Type "Report"))
+    (File ".\eed3009-pspicefiles\preamp\preamp.net"
+      (Type "Report"))
+    (File ".\eed3009-pspicefiles\counter2\counter2.net"
+      (Type "Report"))
+    (File ".\eed3009-pspicefiles\root\root.net"
+      (Type "Report"))
+    (File ".\eed3009-pspicefiles\counter_pair\counter_pair.net"
+      (Type "Report"))
+    (File ".\eed3009-pspicefiles\lpf2\lpf2.net"
+      (Type "Report"))
+    (File ".\eed3009-pspicefiles\shifty\shifty.net"
+      (Type "Report"))
+    (File ".\eed3009-pspicefiles\simulation2\simulation2.net"
+      (Type "Report"))
+    (File ".\eed3009.bom"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\lpf\lpf_tran1.sim"
+        (DisplayName "LPF-LPF_tran1")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\ultrasonic_generator\us_tran1.sim"
+        (DisplayName "Ultrasonic_Generator-US_tran1")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\ultrasonic_generator\us_tran2.sim"
+        (DisplayName "Ultrasonic_Generator-US_tran2")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\us_cmos\us_cmos_tran1.sim"
+        (DisplayName "US_CMOS-us_cmos_tran1")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\driver\driver_tran1.sim"
+        (DisplayName "Driver-driver_tran1")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\counter_scary\counter_tran1.sim"
+        (DisplayName "counter_scary-counter_tran1")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\test\test_dff.sim"
+        (DisplayName "test-test_dff")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\preamp\preamp_tran1.sim"
+        (DisplayName "Preamp-preamp_tran1")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\cd4026_replica\counter2_tran1.sim"
+        (DisplayName "cd4026_replica-counter2_tran1")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\root\root_tran1.sim"
+        (DisplayName "root-root_tran1")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\counter_pair\temporary.sim"
+        (DisplayName "counter_pair-temporary")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\root\root_tran2.sim"
+        (DisplayName "root-root_tran2")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\root\root_tran3.sim"
+        (DisplayName "root-root_tran3")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\root\root_tran4.sim"
+        (DisplayName "root-root_tran4")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\root\root_tran6.sim"
+        (DisplayName "root-root_tran6")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\root\root_tran7.sim"
+        (DisplayName "root-root_tran7")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\root\root_tran8.sim"
+        (DisplayName "root-root_tran8")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\lpf2\lpf2_tran1.sim"
+        (DisplayName "LPF2-lpf2_tran1")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\lpf2\lpf2_tran3.sim"
+        (DisplayName "LPF2-lpf2_tran3")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\lpf2\lpf2_3.sim"
+        (DisplayName "LPF2-lpf2_3")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\shifty\shifty.sim"
+        (DisplayName "shifty-shifty")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\root\root_tran9.sim"
+        (DisplayName "root-root_tran9")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\simulation2\sim_tran1.sim"
+        (DisplayName "simulation2-sim_tran1")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\root\root_tran10.sim"
+        (DisplayName "root-root_tran10")
+        (Type "PSpice Profile"))
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\eed3009-pspicefiles\root\root_tran11.sim"
+        (DisplayName "root-root_tran11")
+        (Type "PSpice Profile"))
+      (ActiveProfile ".\eed3009-pspicefiles\root\root_tran11.sim"))
+    (Folder "Model Libraries"
+      (Sort User))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)
+      (File "C:\Users\Abdurrahman\Desktop\cd4007\cd4007.lib"
+        (Type "PSpiceLibrary")
+        (DisplayName "C:\Users\Abdurrahman\Desktop\cd4007\cd4007.lib"))))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (Folder "Logs")
+  (PartMRUSelector
+    (NAN2
+      (FullPartName "NAN2.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\DIG_PRIM.OLB")
+      (DeviceIndex "0"))
+    ($D_LO
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    ($D_HI
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (7474
+      (FullPartName "7474.Normal")
+      (LibraryName "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\7400.OLB")
+      (DeviceIndex "0"))
+    (INV
+      (FullPartName "INV.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\DIG_PRIM.OLB")
+      (DeviceIndex "0"))
+    (OR2
+      (FullPartName "OR2.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\DIG_PRIM.OLB")
+      (DeviceIndex "0"))
+    (C
+      (FullPartName "C.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (PORTLEFT-L
+      (LibraryName "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (0
+      (LibraryName "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (PORTRIGHT-R
+      (LibraryName "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (VDC
+      (FullPartName "VDC.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (S
+      (FullPartName "S.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\TCLSCRIPTS\CAPPSPICEMODELAPP\SWITCH\HYBRID\SUPPORTFILES\SWITCH.OLB")
+      (DeviceIndex "0"))
+    (kbreak
+      (FullPartName "kbreak.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\BREAKOUT.OLB")
+      (DeviceIndex "0"))
+    (GND
+      (LibraryName "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\CAPSYM.OLB")
+      (DeviceIndex "0"))
+    (POT
+      (FullPartName "POT.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\BREAKOUT.OLB")
+      (DeviceIndex "0"))
+    (E
+      (FullPartName "E.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (74174
+      (FullPartName "74174.Normal")
+      (LibraryName "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\7400.OLB")
+      (DeviceIndex "0"))
+    (VPULSE
+      (FullPartName "VPULSE.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (74278
+      (FullPartName "74278.Normal")
+      (LibraryName "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\7400.OLB")
+      (DeviceIndex "0"))
+    (74198
+      (FullPartName "74198.Normal")
+      (LibraryName "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\7400.OLB")
+      (DeviceIndex "0"))
+    (74164
+      (FullPartName "74164.Normal")
+      (LibraryName "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\7400.OLB")
+      (DeviceIndex "0"))
+    (VRNDMN
+      (FullPartName "VRNDMN.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\TCLSCRIPTS\CAPPSPICESOURCEAPP\HYBRID\SUPPORTFILES\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (VSFFM
+      (FullPartName "VSFFM.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\TCLSCRIPTS\CAPPSPICESOURCEAPP\HYBRID\SUPPORTFILES\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (LM393
+      (FullPartName "LM393.Normal")
+      (LibraryName "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\OPAMP.OLB")
+      (DeviceIndex "0")))
+  (LastUsedLibraryBrowseDirectory "D:\cad\cadence")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" "D:\cad\cadence\EED3009\eed3009.dsn")
+      (Path "Design Resources" "D:\cad\cadence\EED3009\eed3009.dsn" "root")
+      (Select "Design Resources" "D:\cad\cadence\EED3009\eed3009.dsn" "root"
+         "PAGE1"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 804"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 5 1674 24 822")
+        (Scroll "1388 1326")
+        (Zoom "198")
+        (Occurrence "/"))
+      (Path "D:\CAD\CADENCE\EED3009\EED3009.DSN")
+      (Schematic "root")
+      (Page "PAGE1")))
+  (MPSSessionName "Abdurrahman"))

@@ -1,0 +1,43 @@
+Output:
+-------
+
+<<<<<<< HEAD
+Starting new simulation on Tue 22. Nov 2022 at 00:41:00:154
+=======
+Starting new simulation on Mon 09. May 2022 at 22:44:28:326
+>>>>>>> 0bb8ee1fa4fd09a9d58a0b28153e1e3b2485ae64
+
+creating netlist... done.
+Starting C:/Program Files/QUCS/bin/qucsator.exe
+
+project location: 
+modules to load: 0
+factorycreate.size() is 0
+factorycreate has registered:
+parsing netlist...
+checking netlist...
+netlist content
+<<<<<<< HEAD
+      1 DigiSource instances
+      2 NAND instances
+      1 TR instances
+creating netlist...
+
+Simulation ended on Tue 22. Nov 2022 at 00:41:00:645
+=======
+      1 L instances
+      1 R instances
+      1 Vac instances
+      1 TR instances
+creating netlist...
+
+Simulation ended on Mon 09. May 2022 at 22:44:28:615
+>>>>>>> 0bb8ee1fa4fd09a9d58a0b28153e1e3b2485ae64
+Ready.
+
+
+
+Errors and Warnings:
+--------------------
+
+

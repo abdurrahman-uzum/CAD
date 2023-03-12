@@ -1,0 +1,78 @@
+
+**** 12/02/22 01:46:35 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "root-root_tran4"  [ D:\cad\cadence\EED3009-PSpiceFiles\root\root_tran4.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "root_tran4.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.INC "C:/Users/Abdurrahman/Desktop/cd4007/cd4007.lib" 
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+
+**** INCLUDING cd4007.lib ****
+.model nnMOS NMOS (LEVEL=2 VTo=1.4 Kp=.6m LAMBDA=0.005)
+.model ppMOS PMOS (LEVEL=2 VTo=-1.0 KP=.6m LAMBDA=0.01)
+
+**** RESUMING root_tran4.cir ****
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 100ms 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\root.net" 
+
+
+
+**** INCLUDING root.net ****
+* source EED3009
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND N01676 IO_STM IO_LEVEL=0 
++ 0 0
++ +.5uS 1
++REPEAT FOREVER
++ +.5uS 0
++  +.5uS 1
++ ENDREPEAT
+X_asfsadgfDGZDFGS<DFSD_cd4026_rep1_U3        
++  asfsadgfDGZDFGSLTDFSD_cd4026_rep1_N004852 asfsadgfDGZDFGSLTDFSD_N01259 N01729
++  M_UN0001 $G_DPWR $G_DGND DFF
+X_asfsadgfDGZDFGS<DFSD_cd4026_rep1_U2         N01713 N01725
++  asfsadgfDGZDFGSLTDFSD_cd4026_rep1_N004852  $G_DPWR $G_DGND AND2
+
+ERROR(ORPSIM-15089): Can not re-define X_asfsadgfDGZDFGS. X_asfsadgfDGZDFGS is either a system defined variable or has already been defined
+X_asfsadgfDGZDFGS<DFSD_cd4026_rep1_U1A         asfsadgfDGZDFGSLTDFSD_N01259
++  $D_LO $D_HI N01713 N01717 N01721 N01725 $G_CD4000_VDD $G_CD4000_VSS CD4518B
++  PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+
+ERROR(ORPSIM-15089): Can not re-define X_asfsadgfDGZDFGS. X_asfsadgfDGZDFGS is either a system defined variable or has already been defined
+X_asfsadgfDGZDFGS<DFSD_cd4026_rep_U3        
++  asfsadgfDGZDFGSLTDFSD_cd4026_rep_N004852 N01676 asfsadgfDGZDFGSLTDFSD_N01259
++  M_UN0002 $G_DPWR $G_DGND DFF
+
+ERROR(ORPSIM-15089): Can not re-define X_asfsadgfDGZDFGS. X_asfsadgfDGZDFGS is either a system defined variable or has already been defined
+X_asfsadgfDGZDFGS<DFSD_cd4026_rep_U2         N01697 N01709
++  asfsadgfDGZDFGSLTDFSD_cd4026_rep_N004852  $G_DPWR $G_DGND AND2
+
+ERROR(ORPSIM-15089): Can not re-define X_asfsadgfDGZDFGS. X_asfsadgfDGZDFGS is either a system defined variable or has already been defined
+X_asfsadgfDGZDFGS<DFSD_cd4026_rep_U1A         N01676 $D_LO $D_HI N01697 N01701
++  N01705 N01709 $G_CD4000_VDD $G_CD4000_VSS CD4518B PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+
+ERROR(ORPSIM-15089): Can not re-define X_asfsadgfDGZDFGS. X_asfsadgfDGZDFGS is either a system defined variable or has already been defined
+
+**** RESUMING root_tran4.cir ****
+.END
+

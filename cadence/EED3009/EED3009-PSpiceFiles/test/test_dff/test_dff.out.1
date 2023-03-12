@@ -1,0 +1,87 @@
+
+**** 11/30/22 15:39:52 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "test-test_dff"  [ D:\cad\cadence\EED3009-PSpiceFiles\test\test_dff.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "test_dff.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.INC "C:/Users/Abdurrahman/Desktop/cd4007/cd4007.lib" 
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+
+**** INCLUDING cd4007.lib ****
+.model nnMOS NMOS (LEVEL=2 VTo=1.4 Kp=.6m LAMBDA=0.005)
+.model ppMOS PMOS (LEVEL=2 VTo=-1.0 KP=.6m LAMBDA=0.01)
+
+**** RESUMING test_dff.cir ****
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 15ms 0 
+.OPTIONS ADVCONV
+.OPTIONS DIGINITSTATE= 0
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\test.net" 
+
+
+
+**** INCLUDING test.net ****
+* source EED3009
+X_U53A         0 N58791 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+V_V3         VCC 0 5V
+V_V4         CLK 0  
++PULSE 0V 5V 0 1ns 1ns 0.5ms 1ms
+X_U52A         N58791 N58705 CLK M_UN0001 N58753 N58705 VDD 0 7474 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_X2         0 LTPwr_NodeGT LTGnd_NodeGT DIGIFPWR  PARAMS: VOLTAGE=5V
++  REFERENCE=0V
+
+**** RESUMING test_dff.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node 0
+*
+* Moving X_U53A.U1:IN1 from analog node 0 to new digital node 0$AtoD
+X$0_AtoD1
++ 0
++ 0$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface for node CLK
+*
+* Moving X_U52A.UFF1:CLK from analog node CLK to new digital node CLK$AtoD
+X$CLK_AtoD1
++ CLK
++ CLK$AtoD
++ VDD
++ 0
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+ERROR(ORPSIM-15141): Less than 2 connections at node VDD.
+

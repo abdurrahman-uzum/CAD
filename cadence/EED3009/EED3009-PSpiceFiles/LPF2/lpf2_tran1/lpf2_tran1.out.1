@@ -1,0 +1,273 @@
+
+**** 12/03/22 14:46:29 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF2-lpf2_tran1"  [ D:\cad\cadence\EED3009-PSpiceFiles\LPF2\lpf2_tran1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "lpf2_tran1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.INC "C:/Users/Abdurrahman/Desktop/cd4007/cd4007.lib" 
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+
+**** INCLUDING cd4007.lib ****
+.model nnMOS NMOS (LEVEL=2 VTo=1.4 Kp=.6m LAMBDA=0.005)
+.model ppMOS PMOS (LEVEL=2 VTo=-1.0 KP=.6m LAMBDA=0.01)
+
+**** RESUMING lpf2_tran1.cir ****
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 2ms 1ms 1us 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\LPF2.net" 
+
+
+
+**** INCLUDING LPF2.net ****
+* source EED3009
+R_R12         N80591 N80505  1k TC=0,0 
+C_C1         N82491 N80591  1uF IC=-2.50V TC=0,0 
+R_R3         N80891 VDD  10k TC=0,0 
+R_R4         0 N80891  10k TC=0,0 
+R_R10         N80591 VDD  10k TC=0,0 
+R_R13         0 N80591  10k TC=0,0 
+R_R11         VDD N80571  10k TC=0,0 
+R_R15         0 N80571  10k TC=0,0 
+R_R9         N80505 N80517  22k TC=0,0 
+X_U5A         N80891 N80505 N80517 VDD 0 awblm358 PARAMS: AVOL=1E+5 VOS=2E-3
++  GBW=1E+6 IBOS=5E-9 IB=45E-9 CMRR=3.16228E+3 PSRR=1E+5 SR=0.5E+6 ISOURCE=40E-3
++  VPDIF=1
+X_U6B         N80571 N80517 N80903 VDD 0 awblm358 PARAMS: AVOL=1E+5 VOS=2E-3
++  GBW=1E+6 IBOS=5E-9 IB=45E-9 CMRR=3.16228E+3 PSRR=1E+5 SR=0.5E+6 ISOURCE=40E-3
++  VPDIF=1
+R_R14         N80903 N80571  20k TC=0,0 
+V_V3         VDD 0 5V
+V_V4         N817510 0  
++PULSE -50mV 50mV 0 0.5us 0.5us 12.5us 25us
+R_R16         N817510 N82491  10m TC=0,0 
+R_R18         0 N80903  1M TC=0,0 
+
+**** RESUMING lpf2_tran1.cir ****
+.END
+
+**** 12/03/22 14:46:29 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF2-lpf2_tran1"  [ D:\cad\cadence\EED3009-PSpiceFiles\LPF2\lpf2_tran1.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               nnMOS           ppMOS           
+               NMOS            PMOS            
+       LEVEL    2               2            
+           L  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06 
+         VTO    1.4            -1            
+          KP  600.000000E-06  600.000000E-06 
+       GAMMA    0               0            
+         PHI     .6              .6          
+      LAMBDA    5.000000E-03     .01         
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .8              .8          
+        PBSW     .8              .8          
+          CJ    0               0            
+        CJSW    0               0            
+        CGSO    0               0            
+        CGDO    0               0            
+        CGBO    0               0            
+         TOX  100.000000E-09  100.000000E-09 
+          XJ    0               0            
+       UCRIT   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+**** 12/03/22 14:46:29 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF2-lpf2_tran1"  [ D:\cad\cadence\EED3009-PSpiceFiles\LPF2\lpf2_tran1.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    5.0000  (N80505)    2.4981 (N80517)    3.5546 (N80571)    2.0004     
+
+(N80591)    2.4500 (N80891)    2.5002 (N80903) 111.8E-09 (N82491)    -.0500     
+
+(N817510)    -.0500                   (X_U5A.xinstlm358.1)     .0398            
+
+(X_U5A.xinstlm358.2)    3.0920        (X_U5A.xinstlm358.4)     .0396            
+
+(X_U5A.xinstlm358.5)    3.0920        (X_U5A.xinstlm358.6)    2.5002            
+
+(X_U5A.xinstlm358.7) 1000.0000        (X_U5A.xinstlm358.9)    3.1034            
+
+(X_U6B.xinstlm358.1) 32.86E-09        (X_U6B.xinstlm358.2)    2.6381            
+
+(X_U6B.xinstlm358.4)     .0796        (X_U6B.xinstlm358.5)    2.6102            
+
+(X_U6B.xinstlm358.6)    2.0003        (X_U6B.xinstlm358.7) 1000.0000            
+
+(X_U6B.xinstlm358.9)    3.1034        (X_U5A.xinstlm358.10)    3.5915           
+
+(X_U5A.xinstlm358.11)    2.6048       (X_U5A.xinstlm358.12)    0.0000           
+
+(X_U5A.xinstlm358.14)    2.4999       (X_U5A.xinstlm358.15)    2.4999           
+
+(X_U5A.xinstlm358.16)    -.4900       (X_U5A.xinstlm358.17)    3.1059           
+
+(X_U5A.xinstlm358.18)    2.4996       (X_U5A.xinstlm358.20) 40.03E-06           
+
+(X_U5A.xinstlm358.21)    2.0590       (X_U5A.xinstlm358.22)    2.6546           
+
+(X_U5A.xinstlm358.24) 1000.8000       (X_U5A.xinstlm358.25)    3.5915           
+
+(X_U5A.xinstlm358.26)    4.3193       (X_U5A.xinstlm358.27)    2.8636           
+
+(X_U6B.xinstlm358.10)     .0024       (X_U6B.xinstlm358.11)    -.9654           
+
+(X_U6B.xinstlm358.12)    0.0000       (X_U6B.xinstlm358.14)    2.4999           
+
+(X_U6B.xinstlm358.15)    2.4999       (X_U6B.xinstlm358.16)     .9654           
+
+(X_U6B.xinstlm358.17)    2.6381       (X_U6B.xinstlm358.18)    4.0005           
+
+(X_U6B.xinstlm358.20) 40.03E-06       (X_U6B.xinstlm358.21)    -.5776           
+
+(X_U6B.xinstlm358.22) 6.122E-09       (X_U6B.xinstlm358.24) 1000.8000           
+
+(X_U6B.xinstlm358.25)     .0024       (X_U6B.xinstlm358.26)     .7303           
+
+(X_U6B.xinstlm358.27)    -.7255       
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V3        -1.376E-03
+    V_V4         5.806E-05
+    X_U5A.xinstlm358.VFI7  -1.689E-06
+    X_U5A.xinstlm358.VFI6  -1.689E-06
+    X_U5A.xinstlm358.VREF   1.487E+00
+    X_U6B.xinstlm358.VFI7   1.623E+02
+    X_U6B.xinstlm358.VFI6   9.754E-13
+    X_U6B.xinstlm358.VREF   1.487E+00
+
+    TOTAL POWER DISSIPATION  -2.97E+03  WATTS
+
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+
+ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  9.262E-06.
+         Time step =  227.4E-21, minimum allowable step size =  1.000E-18
+
+  These voltages failed to converge:
+
+    V(X_U5A.xinstlm358.16)    =  -389.89mV  \  -385.96mV
+
+  These supply currents failed to converge:
+
+    I(X_U5A.xinstlm358.EVM)   =    59.61nA  \         0A
+    I(V_V4)                   =    1.139mA  \  -154.62uA
+    I(X_U5A.xinstlm358.VFI7)  =   -34.85nA  \   -30.26nA
+    I(X_U5A.xinstlm358.VFI6)  =   -34.85nA  \   -30.26nA
+
+  These devices failed to converge:
+    X_U5A.xinstlm358.D4 
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    5.0000  (N80505)    2.5079 (N80517)    1.5841 (N80571)    2.0000     
+
+(N80591)    2.5498 (N80891)    2.5003 (N80903) 40.11E-06 (N82491)     .0500     
+
+(N817510)     .0500                   (X_U5A.xinstlm358.1)     .0349            
+
+(X_U5A.xinstlm358.2)    3.0984        (X_U5A.xinstlm358.4)     .0445            
+
+(X_U5A.xinstlm358.5)    3.0950        (X_U5A.xinstlm358.6)    2.5002            
+
+(X_U5A.xinstlm358.7) 1000.0000        (X_U5A.xinstlm358.9)    3.1034            
+
+(X_U6B.xinstlm358.1)     .0798        (X_U6B.xinstlm358.2)    2.1959            
+
+(X_U6B.xinstlm358.4) 49.11E-09        (X_U6B.xinstlm358.5)    2.2239            
+
+(X_U6B.xinstlm358.6)    2.0000        (X_U6B.xinstlm358.7) 1000.0000            
+
+(X_U6B.xinstlm358.9)    3.1034        (X_U5A.xinstlm358.10)    1.6008           
+
+(X_U5A.xinstlm358.11)     .6330       (X_U5A.xinstlm358.12)    0.0000           
+
+(X_U5A.xinstlm358.14)    2.4999       (X_U5A.xinstlm358.15)    2.4999           
+
+(X_U5A.xinstlm358.16)    -.3899       (X_U5A.xinstlm358.17)    3.1106           
+
+(X_U5A.xinstlm358.18)    2.5000       (X_U5A.xinstlm358.20) 40.03E-06           
+
+(X_U5A.xinstlm358.21)     .0885       (X_U5A.xinstlm358.22)     .6841           
+
+(X_U5A.xinstlm358.24) 1000.8000       (X_U5A.xinstlm358.25)    1.6008           
+
+(X_U5A.xinstlm358.26)    2.3286       (X_U5A.xinstlm358.27)     .8729           
+
+(X_U6B.xinstlm358.10)     .9105       (X_U6B.xinstlm358.11)-33.06E-18           
+
+(X_U6B.xinstlm358.12)    0.0000       (X_U6B.xinstlm358.14)    2.4998           
+
+(X_U6B.xinstlm358.15)    2.4998       (X_U6B.xinstlm358.16)    -.5719           
+
+(X_U6B.xinstlm358.17)    2.2239       (X_U6B.xinstlm358.18)    2.5001           
+
+(X_U6B.xinstlm358.20) 40.03E-06       (X_U6B.xinstlm358.21)    -.5776           
+
+(X_U6B.xinstlm358.22) 2.180E-06       (X_U6B.xinstlm358.24) 1000.8000           
+
+(X_U6B.xinstlm358.25)     .9105       (X_U6B.xinstlm358.26)     .9066           
+
+(X_U6B.xinstlm358.27)     .1826       
+
+
+**** Interrupt ****

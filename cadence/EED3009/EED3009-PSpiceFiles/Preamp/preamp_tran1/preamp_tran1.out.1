@@ -1,0 +1,375 @@
+
+**** 12/01/22 12:17:40 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Preamp-preamp_tran1"  [ D:\cad\cadence\eed3009-pspicefiles\preamp\preamp_tran1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "preamp_tran1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.INC "C:/Users/Abdurrahman/Desktop/cd4007/cd4007.lib" 
+
+**** INCLUDING cd4007.lib ****
+.model nnMOS NMOS (LEVEL=2 VTo=1.4 Kp=.6m LAMBDA=0.005)
+.model ppMOS PMOS (LEVEL=2 VTo=-1.0 KP=.6m LAMBDA=0.01)
+
+**** RESUMING preamp_tran1.cir ****
+.INC "c:/cadence/spb_17.4/tools/capture/library/external/ina321/ina321.lib" 
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+
+**** INCLUDING ina321.lib ****
+
+* INA321
+*****************************************************************************
+* (C) Copyright 2011 Texas Instruments Incorporated. All rights reserved.                                            
+*****************************************************************************
+** This model is designed as an aid for customers of Texas Instruments.
+** TI and its licensors and suppliers make no warranties, either expressed
+** or implied, with respect to this model, including the warranties of 
+** merchantability or fitness for a particular purpose.  The model is
+** provided solely on an "as is" basis.  The entire risk as to its quality
+** and performance is with the customer.
+*****************************************************************************
+*
+* This model is subject to change without notice. Texas Instruments
+* Incorporated is not responsible for updating this model.
+*
+*****************************************************************************
+*
+** Released by: Analog eLab Design Center, Texas Instruments Inc.
+* Part: INA321
+* Date: 22JUL2011
+* Model Type: ALL IN ONE
+* Simulator: PSPICE
+* Simulator Version: 16.0.0.p001
+* EVM Order Number: N/A
+* EVM Users Guide: N/A
+* Datasheet: SBOS168D - DECEMBER 2000 - REVISED JANUARY 2006
+*
+* Model Version: 1.0
+*
+*****************************************************************************
+*
+* Updates:
+*
+* Version 1.0 : 
+* Release to Web
+*
+*****************************************************************************
+* Connections:   non-inverting input
+*                |  inverting input
+*                    |  |   gainset
+*                |  |   |  
+*                |  |   |  reference
+*                |  |   |  |  positive power supply
+*                |  |   |  |  |  negative power supply
+*                |  |   |  |  |  |  output
+*                |  |   |  |  |  |  |
+.SUBCKT INA321 IN+ IN- RG REF V+ V- OUT
+
+R2         A1OUT A2NEG  40K 
+R1         A2NEG A2OUT  160K  
+R4         A1NEG A1OUT  40K  
+R3         REF A1NEG  160K  
+XA1        IN- A1NEG V+ V- A1OUT OPAMP12
+XA2        IN+ A2NEG V+ V- A2OUT OPAMP12
+XA3        A2OUT RG V+ V- OUT OPAMP3
+.ENDS INA321
+
+************************************
+.subckt OPAMP12   1 2 3 4 5
+************************************
+  c1   11 12 785.88E-15
+  c2    6  7 1.500E-12
+  css  10 99 1.000E-30
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 6.3662E9 -1E3 1E3 6E9 -6E9
+  ga    6  0 11 12 6.2832E-6
+  gcm   0  6 10 99 6.2832E-12
+  iss   3 10 dc 300.00E-9
+  hlim 90  0 vlim 1K
+  m1   11  2 10 3 mp l=2E-6 w=20E-6 m=1
+  m2   12  1 10 3 mp l=2E-6 w=20E-6 m=1
+  r2    6  9 100.00E3
+  rd1   4 11 159.15E3
+  rd2   4 12 159.15E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 357.14E3
+  rss  10 99 666.67E6
+  vb    9  0 dc 0
+  vc    3 53 dc .8047
+  ve   54  4 dc .8047
+  vlim  7  8 dc 0
+  vlp  91  0 dc 12
+  vln   0 92 dc 12
+.model mp pmos(vto=-0.75 kp=205.5u rd=1 rs=1 rg=1 rb=1 cgso=4e-9
++cgdo=4e-9 cgbo=16.667e-9 cbs=2.34e-13 cbd=2.34e-13)
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.ends OPAMP12
+************************************
+.subckt OPAMP3   1 2 3 4 5
+************************************
+  c1   11 12 385.88E-15
+  c2    6  7 2.00E-12
+  css  10 99 1.000E-30
+  dc    5 53 dy
+  de   54  5 dy
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 6.3662E9 -1E3 1E3 6E9 -6E9
+  ga    6  0 11 12 6.2832E-6
+  gcm   0  6 10 99 6.2832E-12
+  iss   3 10 dc 450.00E-9
+  hlim 90  0 vlim 1K
+  m1   11  2 10 3 mp l=1E-6 w=10E-6 m=1
+  m2   12  1 10 3 mp l=1E-6 w=10E-6 m=1
+  r2    6  9 100.00E3
+  rd1   4 11 159.15E3
+  rd2   4 12 159.15E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 357.14E3
+  rss  10 99 666.67E6
+  vb    9  0 dc 0
+  vc    3 53 dc .8047
+  ve   54  4 dc .8047
+  vlim  7  8 dc 0
+  vlp  91  0 dc 12
+  vln   0 92 dc 12
+.model mp pmos(vto=-0.75 kp=205.5u rd=1 rs=1 rg=1 rb=1 cgso=4e-9
++cgdo=4e-9 cgbo=16.667e-9 cbs=2.34e-13 cbd=2.34e-13)
+.model dx D(Is=800.00E-18)
+.model dy D(Is=800.00E-18 Rs=1m Cjo=10p)
+.ends OPAMP3
+*
+
+**** RESUMING preamp_tran1.cir ****
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 5ms 0 5us 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\Preamp.net" 
+
+
+
+**** INCLUDING Preamp.net ****
+* source EED3009
+X_U1A         0 N60867 N60760 VDD 0 awblm358 PARAMS: AVOL=1E+5 VOS=2E-3
++  GBW=1E+6 IBOS=5E-9 IB=45E-9 CMRR=3.16228E+3 PSRR=1E+5 SR=0.5E+6 ISOURCE=40E-3
++  VPDIF=1
+V_V1         N60452 0  
++SIN 0 100mV 1kHz 0 0 0
+V_V2         VDD 0 5V
+R_R1         N60452 N60867  1k TC=0,0 
+R_R2         N60867 N60857  10k TC=0,0 
+D_D1         N60760 N60857 MBR0520LT1 
+D_D2         N60867 N60760 MBR0520LT1 
+
+**** RESUMING preamp_tran1.cir ****
+.END
+
+**** 12/01/22 12:17:40 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Preamp-preamp_tran1"  [ D:\cad\cadence\eed3009-pspicefiles\preamp\preamp_tran1.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               MBR0520LT1      
+          IS    1.000000E-06 
+           N     .874519     
+          BV   20            
+         IBV   20.000000E-06 
+          RS     .125754     
+          TT    1.000000E-09 
+         CJO  202.130000E-12 
+          VJ     .386524     
+           M     .463876     
+          EG     .6          
+         XTI    2.49881      
+
+
+**** 12/01/22 12:17:40 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Preamp-preamp_tran1"  [ D:\cad\cadence\eed3009-pspicefiles\preamp\preamp_tran1.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               nnMOS           ppMOS           
+               NMOS            PMOS            
+       LEVEL    2               2            
+           L  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06 
+         VTO    1.4            -1            
+          KP  600.000000E-06  600.000000E-06 
+       GAMMA    0               0            
+         PHI     .6              .6          
+      LAMBDA    5.000000E-03     .01         
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .8              .8          
+        PBSW     .8              .8          
+          CJ    0               0            
+        CJSW    0               0            
+        CGSO    0               0            
+        CGDO    0               0            
+        CGBO    0               0            
+         TOX  100.000000E-09  100.000000E-09 
+          XJ    0               0            
+       UCRIT   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+**** 12/01/22 12:17:40 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Preamp-preamp_tran1"  [ D:\cad\cadence\eed3009-pspicefiles\preamp\preamp_tran1.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    5.0000  (N60452)    0.0000 (N60760)     .0588 (N60857)     .0297     
+
+(N60867)     .0036 (X_U1A.xinstlm358.1)     .0374                               
+
+(X_U1A.xinstlm358.2)     .5959        (X_U1A.xinstlm358.4)     .0430            
+
+(X_U1A.xinstlm358.5)     .5939        (X_U1A.xinstlm358.6)-50.00E-06            
+
+(X_U1A.xinstlm358.7) 1000.0000        (X_U1A.xinstlm358.9)    3.1034            
+
+(X_U1A.xinstlm358.10)     .0743       (X_U1A.xinstlm358.11)    -.8935           
+
+(X_U1A.xinstlm358.12)    0.0000       (X_U1A.xinstlm358.14)    2.4999           
+
+(X_U1A.xinstlm358.15)    2.4999       (X_U1A.xinstlm358.16)     .8935           
+
+(X_U1A.xinstlm358.17)     .6090       (X_U1A.xinstlm358.18)    2.5935           
+
+(X_U1A.xinstlm358.20) 40.03E-06       (X_U1A.xinstlm358.21)    -.5760           
+
+(X_U1A.xinstlm358.22)     .0032       (X_U1A.xinstlm358.24) 1000.8000           
+
+(X_U1A.xinstlm358.25)     .0743       (X_U1A.xinstlm358.26)     .8021           
+
+(X_U1A.xinstlm358.27)    -.6536       
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         3.568E-06
+    V_V2        -2.530E-04
+    X_U1A.xinstlm358.VFI7   1.008E+01
+    X_U1A.xinstlm358.VFI6   9.035E-13
+    X_U1A.xinstlm358.VREF   1.487E+00
+
+    TOTAL POWER DISSIPATION  -1.49E+03  WATTS
+
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+
+ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  650.3E-06.
+         Time step =  568.5E-21, minimum allowable step size =  1.000E-18
+
+  These voltages failed to converge:
+
+    V(X_U1A.xinstlm358.11)    =    3.725KV  \    1.863KV
+
+  These supply currents failed to converge:
+
+    I(X_U1A.xinstlm358.EVM)   =    3.725nA  \    1.863nA
+    I(X_U1A.xinstlm358.VFI7)  =  -334.67nA  \  -335.68nA
+    I(X_U1A.xinstlm358.VFI6)  =  -334.66nA  \  -335.68nA
+
+  These devices failed to converge:
+    D_D2      
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    5.0000  (N60452)    -.0810 (N60760)     .8721 (N60857)     .7734     
+
+(N60867)    -.0020 (X_U1A.xinstlm358.1)     .0402                               
+
+(X_U1A.xinstlm358.2)     .5922        (X_U1A.xinstlm358.4)     .0402            
+
+(X_U1A.xinstlm358.5)     .5922        (X_U1A.xinstlm358.6)-50.00E-06            
+
+(X_U1A.xinstlm358.7) 1000.0000        (X_U1A.xinstlm358.9)    3.1034            
+
+(X_U1A.xinstlm358.10)     .9127       (X_U1A.xinstlm358.11) 3725.3000           
+
+(X_U1A.xinstlm358.12)    0.0000       (X_U1A.xinstlm358.14)    2.4999           
+
+(X_U1A.xinstlm358.15)    2.4999       (X_U1A.xinstlm358.16)    -.4481           
+
+(X_U1A.xinstlm358.17)     .6062       (X_U1A.xinstlm358.18)    2.5001           
+
+(X_U1A.xinstlm358.20) 40.03E-06       (X_U1A.xinstlm358.21)    -.5210           
+
+(X_U1A.xinstlm358.22)     .0730       (X_U1A.xinstlm358.24) 1000.8000           
+
+(X_U1A.xinstlm358.25)     .9127       (X_U1A.xinstlm358.26)    1.6405           
+
+(X_U1A.xinstlm358.27)     .1848       
+
+
+**** Interrupt ****

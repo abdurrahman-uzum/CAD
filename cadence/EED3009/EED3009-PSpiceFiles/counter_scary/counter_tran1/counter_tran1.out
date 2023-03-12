@@ -1,0 +1,460 @@
+
+**** 11/27/22 20:12:03 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Counter-counter_tran1"  [ d:\cad\cadence\eed3009-pspicefiles\counter\counter_tran1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "counter_tran1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.INC "C:/Users/Abdurrahman/Desktop/cd4007/cd4007.lib" 
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+
+**** INCLUDING cd4007.lib ****
+.model nnMOS NMOS (LEVEL=2 VTo=1.4 Kp=.6m LAMBDA=0.005)
+.model ppMOS PMOS (LEVEL=2 VTo=-1.0 KP=.6m LAMBDA=0.01)
+
+**** RESUMING counter_tran1.cir ****
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1ms 0 100ns 
+.OPTIONS ADVCONV
+.OPTIONS DIGINITSTATE= 0
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\Counter.net" 
+
+
+
+**** INCLUDING Counter.net ****
+* source EED3009
+R_R6         N24456 N24370  3.3k TC=0,0 
+C_C5         0 N24490  10n  TC=0,0 
+X_U2         0 N24456 0 VDD N24490 N24456 N24370 VDD 555C
+R_R5         N24370 VDD  3890 TC=0,0 
+C_C4         0 N24456  1nF IC=1.65V TC=0,0 
+V_V1         VDD 0 5V
+V_V2         N28645 0  
++PULSE 5V 0V 0 1ns 1ns 3us 7.29us
+X_U5         N28645 0 N28193 N28337 N28111 N28115 N28119 N28123 N28127 N28131
++  N28135 N28139 N28143 N32114 VDD 0 CD4040B PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+
+**** RESUMING counter_tran1.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node 0
+*
+* Moving X_U5.UCLRB:IN1 from analog node 0 to new digital node 0$AtoD
+X$0_AtoD1
++ 0
++ 0$AtoD
++ VDD
++ 0
++ AtoD_4000B
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N28645
+*
+* Moving X_U5.UBUF:IN1 from analog node N28645 to new digital node N28645$AtoD
+X$N28645_AtoD1
++ N28645
++ N28645$AtoD
++ VDD
++ 0
++ AtoD_4000B_ST
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$CD4000_PWR 0 CD4000_PWR
+
+
+**** 11/27/22 20:12:03 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Counter-counter_tran1"  [ d:\cad\cadence\eed3009-pspicefiles\counter\counter_tran1.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.DIODE      D74CLMP         
+          IS   10.000000E-15    1.000000E-15 
+          RS     .01            2            
+         CJO                    2.000000E-12 
+
+
+**** 11/27/22 20:12:03 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Counter-counter_tran1"  [ d:\cad\cadence\eed3009-pspicefiles\counter\counter_tran1.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.JNEMOD     
+               NJF             
+         VTO   -2.5          
+        BETA    5.120000E-06 
+
+
+**** 11/27/22 20:12:03 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Counter-counter_tran1"  [ d:\cad\cadence\eed3009-pspicefiles\counter\counter_tran1.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               nnMOS           ppMOS           X_U2.PCHAN555   X_U2.NCHAN555   
+               NMOS            PMOS            PMOS            NMOS            
+       LEVEL    2               2               1               1            
+           L  100.000000E-06  100.000000E-06  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06  100.000000E-06  100.000000E-06 
+         VTO    1.4            -1               -.2              .2          
+          KP  600.000000E-06  600.000000E-06   20.000000E-06   20.000000E-06 
+       GAMMA    0               0               0               0            
+         PHI     .6              .6              .6              .6          
+      LAMBDA    5.000000E-03     .01            0               0            
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+        CGSO    0               0               1.000000E-12    1.000000E-12 
+        CGDO    0               0               1.000000E-12    1.000000E-12 
+        CGBO    0               0               1.000000E-12    1.000000E-12 
+         TOX  100.000000E-09  100.000000E-09    0               0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+               X_U2.PCHAN555_OUT 
+               PMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    -.2          
+          KP   20.000000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+         CBD  200.000000E-12 
+          CJ    0            
+        CJSW    0            
+        CGSO    1.000000E-12 
+        CGDO    1.000000E-12 
+        CGBO    1.000000E-12 
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 11/27/22 20:12:03 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Counter-counter_tran1"  [ d:\cad\cadence\eed3009-pspicefiles\counter\counter_tran1.sim ] 
+
+
+ ****     Digital Output MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DO4000B         DO4000B_ST      
+    TIMESTEP  100.000000E-12  100.000000E-12 
+      S0NAME X               0               
+       S0VHI     .5              .2          
+       S0VLO    -.5            -3            
+      S1NAME 0               1               
+       S1VHI    -.5             3            
+       S1VLO   -3               -.3          
+      S2NAME R                               
+       S2VHI     .05                         
+       S2VLO    -.5                          
+      S3NAME R                               
+       S3VHI     .5                          
+       S3VLO    -.05                         
+      S4NAME X                               
+       S4VHI     .5                          
+       S4VLO    -.5                          
+      S5NAME 1                               
+       S5VHI    3                            
+       S5VLO     .5                          
+      S6NAME F                               
+       S6VHI     .5                          
+       S6VLO    -.05                         
+      S7NAME F                               
+       S7VHI     .05                         
+       S7VLO    -.5                          
+
+
+**** 11/27/22 20:12:03 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Counter-counter_tran1"  [ d:\cad\cadence\eed3009-pspicefiles\counter\counter_tran1.sim ] 
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_GATE         D_CD4040B_1     
+      TPLHMN    0              40.000000E-09 
+      TPLHTY    0             100.000000E-09 
+      TPLHMX    0             200.000000E-09 
+      TPHLMN    0              40.000000E-09 
+      TPHLTY    0             100.000000E-09 
+      TPHLMX    0             200.000000E-09 
+
+
+**** 11/27/22 20:12:03 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Counter-counter_tran1"  [ d:\cad\cadence\eed3009-pspicefiles\counter\counter_tran1.sim ] 
+
+
+ ****     Digital Edge Triggered FF MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_CD4040B_2     D_CD4040B_3     D_CD4040B_4     
+  TPCLKQLHMN   32.000000E-09    0              72.000000E-09 
+  TPCLKQLHTY   80.000000E-09    0             180.000000E-09 
+  TPCLKQLHMX  160.000000E-09    0             360.000000E-09 
+  TPCLKQHLMN   32.000000E-09    0              72.000000E-09 
+  TPCLKQHLTY   80.000000E-09    0             180.000000E-09 
+  TPCLKQHLMX  160.000000E-09    0             360.000000E-09 
+   TPPCQLHMN    0               0               0            
+   TPPCQLHTY    0               0               0            
+   TPPCQLHMX    0               0               0            
+   TPPCQHLMN    0              16.000000E-09   56.000000E-09 
+   TPPCQHLTY    0              40.000000E-09  140.000000E-09 
+   TPPCQHLMX    0              80.000000E-09  280.000000E-09 
+    TWCLKLMN  140.000000E-09    0             140.000000E-09 
+    TWCLKLTY  140.000000E-09    0             140.000000E-09 
+    TWCLKLMX  140.000000E-09    0             140.000000E-09 
+    TWCLKHMN  140.000000E-09    0             140.000000E-09 
+    TWCLKHTY  140.000000E-09    0             140.000000E-09 
+    TWCLKHMX  140.000000E-09    0             140.000000E-09 
+     TWPCLMN  200.000000E-09  200.000000E-09  200.000000E-09 
+     TWPCLTY  200.000000E-09  200.000000E-09  200.000000E-09 
+     TWPCLMX  200.000000E-09  200.000000E-09  200.000000E-09 
+   TSUDCLKMN    0               0               0            
+   TSUDCLKTY    0               0               0            
+   TSUDCLKMX    0               0               0            
+ TSUPCCLKHMN  350.000000E-09    0             350.000000E-09 
+ TSUPCCLKHTY  350.000000E-09    0             350.000000E-09 
+ TSUPCCLKHMX  350.000000E-09    0             350.000000E-09 
+    THDCLKMN    0               0               0            
+    THDCLKTY    0               0               0            
+    THDCLKMX    0               0               0            
+  TSUCECLKMN    0               0               0            
+  TSUCECLKTY    0               0               0            
+  TSUCECLKMX    0               0               0            
+   THCECLKMN    0               0               0            
+   THCECLKTY    0               0               0            
+   THCECLKMX    0               0               0            
+
+
+**** 11/27/22 20:12:03 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Counter-counter_tran1"  [ d:\cad\cadence\eed3009-pspicefiles\counter\counter_tran1.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_4000B_ST     IO_4000B        
+        DRVL    1.443000E+03    1.443000E+03 
+        DRVH    1.443000E+03    1.443000E+03 
+       AtoD1 AtoD_4000B_ST   AtoD_4000B      
+       AtoD2 AtoD_4000B_ST   AtoD_4000B_NX   
+       AtoD3 AtoD_4000B_ST   AtoD_4000B      
+       AtoD4 AtoD_4000B_ST   AtoD_4000B_NX   
+       DtoA1 DtoA_4000B      DtoA_4000B      
+       DtoA2 DtoA_4000B      DtoA_4000B      
+       DtoA3 DtoA_4000B      DtoA_4000B      
+       DtoA4 DtoA_4000B      DtoA_4000B      
+    DIGPOWER CD4000_PWR      CD4000_PWR      
+      TSWHL1    7.720000E-09    7.720000E-09 
+      TSWHL2    7.860000E-09    7.860000E-09 
+      TSWHL3    9.710000E-09    9.710000E-09 
+      TSWHL4    9.630000E-09    9.630000E-09 
+      TSWLH1    7.560000E-09    7.560000E-09 
+      TSWLH2    7.400000E-09    7.400000E-09 
+      TSWLH3    9.410000E-09    9.410000E-09 
+      TSWLH4    9.240000E-09    9.240000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+**** 11/27/22 20:12:03 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Counter-counter_tran1"  [ d:\cad\cadence\eed3009-pspicefiles\counter\counter_tran1.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    5.0000  (N24370)    1.4022 (N24456)   -1.6500 (N24490)    3.3333     
+
+(N28645)    5.0000 (X_U2.1) 417.5E-12 (X_U2.2)    1.6667 (X_U2.3) 33.17E+03     
+
+(X_U2.4)    4.2000 (X_U2.5)    4.0861 (X_U2.6)-49.83E+03 (X_U2.7)    4.2000     
+
+(X_U2.8)    -.6967 (X_U2.9) 104.4E-12 (X_U2.10)    5.0000                       
+
+(X_U2.11)    5.0000                   (X_U2.12)    5.0000                       
+
+(X_U2.13) 417.5E-12                   (X_U2.14) 347.9E-12                       
+
+(X_U2.15)    5.0000                   (X_U2.16)    5.0000                       
+
+(X_U2.17)    5.0000                   (X_U2.18) 417.5E-12                       
+
+(X_U2.19) 208.8E-12                   (X_U2.20)    5.0000                       
+
+(X_U2.21)     .1033                   (X_U2.22)    2.5000                       
+
+(X_U2.23)    4.8861                   (X_U2.24) 106.9E-12                       
+
+(X_U2.25) 104.4E-12                   (X_U2.VDD)    5.0000                      
+
+($G_CD4000_VDD)    5.0000             ($G_CD4000_VSS)    0.0000                 
+
+(X$0_AtoD1.NORM)   -1.2500            (X$N28645_AtoD1.NORM)    1.2500           
+
+(X$0_AtoD1.XNORM.THRESHOLD)    1.5000 (X$N28645_AtoD1.XNORM.THRESHOLD)    1.5000
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(X_U5.T11) : 0     (  N28143) : 0     (X_U5.T12) : 0     (X_U5.Q5I) : 0         
+
+( X_U5.T4) : 0     (  N28135) : 0     (  N28123) : 0     (X_U5.Q6I) : 0         
+
+(  N32114) : 0     (  N28119) : 0     ( X_U5.T8) : 0     (   $D_HI) : 1         
+
+(X_U5.CLRB) : 1    (X_U5.Q7I) : 0     (  N28131) : 0     ( X_U5.T5) : 0         
+
+(  N28115) : 0     ( X_U5.T6) : 0     (  N28193) : 0     ( X_U5.T3) : 0         
+
+(X_U5.Q10I) : 0    (N28645$AtoD) : 1  (  0$AtoD) : 0     ( X_U5.T9) : 0         
+
+(  N28337) : 0     (   $D_NC) : Z     ( X_U5.IN) : 1     (X_U5.Q1I) : 0         
+
+(X_U5.Q8I) : 0     (X_U5.Q11I) : 0    (  N28111) : 0     (X_U5.T10) : 0         
+
+( X_U5.T7) : 0     (X_U5.Q9I) : 0     (X_U5.Q2I) : 0     (X_U5.Q12I) : 0        
+
+(X_U5.Q1ID) : 0    (  N28127) : 0     (X_U5.Q4I) : 0     (X_U5.Q3I) : 0         
+
+(  N28139) : 0     
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -9.941E-04
+    V_V2        -5.001E-08
+    X_U2.V_U6_V2   4.096E-12
+    X_U2.V_U7_V2  -4.983E-03
+    X$CD4000_PWR.VVDD  -5.000E-06
+    X$CD4000_PWR.VVSS  -5.000E-06
+
+    TOTAL POWER DISSIPATION   8.98E-03  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 11/27/22 20:12:03 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Counter-counter_tran1"  [ d:\cad\cadence\eed3009-pspicefiles\counter\counter_tran1.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =      282.25
+  Total job time (using Solver 1)   =      320.83
+

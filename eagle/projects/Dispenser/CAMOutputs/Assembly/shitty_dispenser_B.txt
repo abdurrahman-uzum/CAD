@@ -1,0 +1,27 @@
+<<<<<<< HEAD
+Partlist exported from C:/Users/Abdurrahman/Documents/EAGLE/projects/Ali/Shitty Dispenser/shitty_dispenser_B.sch at 25.09.2021 22:19
+
+Qty Value         Device          Package      Parts            Description                MF MPN OC_FARNELL OC_NEWARK POPULARITY SPICEPREFIX
+4                 2,54/1,0        2,54/1,0     GND, M1, M2, VCC THROUGH-HOLE PAD                                       1                     
+1                 MA03-1          MA03-1       IR               PIN HEADER                        unknown    unknown   48                    
+1                 R-US_0204/7     0204/7       R1               RESISTOR, American symbol                              48         R          
+1   100           R-US_0204/7     0204/7       R2               RESISTOR, American symbol                              48         R          
+1   100k          R-US_0204/7     0204/7       R3               RESISTOR, American symbol                              48         R          
+1   10uF          C-EU025-025X050 C025-025X050 C1               CAPACITOR, European symbol                             65         C          
+1   2n7000        2N700_TO92-     TO92-        Q1               2N7000, 2N7002, NDS7002A                                                     
+1   ATTINY13-20PU ATTINY13-20PU   DIL08        IC1                                                                                           
+1   C8050         29-NPN-TO92-EBC TO92-EBC     Q2               NPN Transistror                                        0                     
+=======
+Partlist exported from C:/Users/Abdurrahman/Documents/EAGLE/projects/Ali/Shitty Dispenser/shitty_dispenser_B.sch at 25.09.2021 22:19
+
+Qty Value         Device          Package      Parts            Description                MF MPN OC_FARNELL OC_NEWARK POPULARITY SPICEPREFIX
+4                 2,54/1,0        2,54/1,0     GND, M1, M2, VCC THROUGH-HOLE PAD                                       1                     
+1                 MA03-1          MA03-1       IR               PIN HEADER                        unknown    unknown   48                    
+1                 R-US_0204/7     0204/7       R1               RESISTOR, American symbol                              48         R          
+1   100           R-US_0204/7     0204/7       R2               RESISTOR, American symbol                              48         R          
+1   100k          R-US_0204/7     0204/7       R3               RESISTOR, American symbol                              48         R          
+1   10uF          C-EU025-025X050 C025-025X050 C1               CAPACITOR, European symbol                             65         C          
+1   2n7000        2N700_TO92-     TO92-        Q1               2N7000, 2N7002, NDS7002A                                                     
+1   ATTINY13-20PU ATTINY13-20PU   DIL08        IC1                                                                                           
+1   C8050         29-NPN-TO92-EBC TO92-EBC     Q2               NPN Transistror                                        0                     
+>>>>>>> 0bb8ee1fa4fd09a9d58a0b28153e1e3b2485ae64

@@ -1,0 +1,15 @@
+<<<<<<< HEAD
+# Qucs 0.0.19  D:/cad/qucs/pulsetest.sch
+
+.TR:TR1 Type="lin" Start="0" Stop="1 us" Points="1001" IntegrationMethod="Trapezoidal" Order="2" InitialStep="1 ns" MinStep="1e-16" MaxIter="150" reltol="0.001" abstol="1 pA" vntol="1 uV" Temp="26.85" LTEreltol="1e-3" LTEabstol="1e-6" LTEfactor="1" Solver="CroutLU" relaxTSR="no" initialDC="yes" MaxStep="0"
+NAND:Y3 _net0 _net1 Vin V="1 V" t="10ns" TR="10"
+DigiSource:S1 Vin init="low" times="[200ns; 200ns]" V="1 V"
+NAND:Y4 _net1 _net0 _net0 V="1 V" t="10ns" TR="10"
+=======
+# Qucs 0.0.19  D:/cad/qucs/lab7/ind_sol_test.sch
+
+R:R1 Vi Vo R="100 Ohm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+.TR:TR1 Type="lin" Start="0" Stop="4 ms" Points="1001" IntegrationMethod="Trapezoidal" Order="2" InitialStep="1 ns" MinStep="1e-16" MaxIter="150" reltol="0.001" abstol="1 pA" vntol="1 uV" Temp="26.85" LTEreltol="1e-3" LTEabstol="1e-6" LTEfactor="1" Solver="CroutLU" relaxTSR="no" initialDC="yes" MaxStep="0"
+L:L1 Vo gnd L="1 mH" I="0 A"
+Vac:V1 Vi gnd U="1 V" f="1 kHz" Phase="90" Theta="0"
+>>>>>>> 0bb8ee1fa4fd09a9d58a0b28153e1e3b2485ae64

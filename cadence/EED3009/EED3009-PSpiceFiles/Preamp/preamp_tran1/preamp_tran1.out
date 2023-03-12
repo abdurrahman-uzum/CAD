@@ -1,0 +1,207 @@
+
+**** 12/02/22 04:39:55 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Preamp-preamp_tran1"  [ D:\cad\cadence\eed3009-pspicefiles\preamp\preamp_tran1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "preamp_tran1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.INC "C:/Users/Abdurrahman/Desktop/cd4007/cd4007.lib" 
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+
+**** INCLUDING cd4007.lib ****
+.model nnMOS NMOS (LEVEL=2 VTo=1.4 Kp=.6m LAMBDA=0.005)
+.model ppMOS PMOS (LEVEL=2 VTo=-1.0 KP=.6m LAMBDA=0.01)
+
+**** RESUMING preamp_tran1.cir ****
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 500us 0 500ns 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\Preamp.net" 
+
+
+
+**** INCLUDING Preamp.net ****
+* source EED3009
+V_V1         N60452 0  
++SIN 0V 50mV 40kHz 0 0 0
+V_V2         VDD 0 5V
+R_R1         N63130 N60867  1k TC=0,0 
+R_R2         N60867 N60760  22k TC=0,0 
+R_R3         N62260 VDD  10k TC=0,0 
+R_R4         0 N62260  10k TC=0,0 
+R_R6         0 N63130  10k TC=0,0 
+R_R5         N63130 VDD  10k TC=0,0 
+C_C1         N60452 N63130  1uF  TC=0,0 
+X_U1A         N62260 N60867 N60760 VDD 0 awblm358 PARAMS: AVOL=1E+5 VOS=2E-3
++  GBW=1E+6 IBOS=5E-9 IB=45E-9 CMRR=3.16228E+3 PSRR=1E+5 SR=0.5E+6 ISOURCE=40E-3
++  VPDIF=1
+X_U1B         N65095 N60760 N65086 VDD 0 awblm358 PARAMS: AVOL=1E+5 VOS=2E-3
++  GBW=1E+6 IBOS=5E-9 IB=45E-9 CMRR=3.16228E+3 PSRR=1E+5 SR=0.5E+6 ISOURCE=40E-3
++  VPDIF=1
+R_R7         N65095 N65086  20k TC=0,0 
+R_R8         0 N65095  10k TC=0,0 
+R_R9         VDD N65095  10k TC=0,0 
+
+**** RESUMING preamp_tran1.cir ****
+.END
+
+**** 12/02/22 04:39:55 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Preamp-preamp_tran1"  [ D:\cad\cadence\eed3009-pspicefiles\preamp\preamp_tran1.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               nnMOS           ppMOS           
+               NMOS            PMOS            
+       LEVEL    2               2            
+           L  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06 
+         VTO    1.4            -1            
+          KP  600.000000E-06  600.000000E-06 
+       GAMMA    0               0            
+         PHI     .6              .6          
+      LAMBDA    5.000000E-03     .01         
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .8              .8          
+        PBSW     .8              .8          
+          CJ    0               0            
+        CJSW    0               0            
+        CGSO    0               0            
+        CGDO    0               0            
+        CGBO    0               0            
+         TOX  100.000000E-09  100.000000E-09 
+          XJ    0               0            
+       UCRIT   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+**** 12/02/22 04:39:55 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Preamp-preamp_tran1"  [ D:\cad\cadence\eed3009-pspicefiles\preamp\preamp_tran1.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    5.0000  (N60452)    0.0000 (N60760)    2.4901 (N60867)    2.4981     
+
+(N62260)    2.5002 (N63130)    2.4984 (N65086)    2.4603 (N65095)    2.4922     
+
+(X_U1A.xinstlm358.1)     .0398        (X_U1A.xinstlm358.2)    3.0920            
+
+(X_U1A.xinstlm358.4)     .0396        (X_U1A.xinstlm358.5)    3.0920            
+
+(X_U1A.xinstlm358.6)    2.5002        (X_U1A.xinstlm358.7) 1000.0000            
+
+(X_U1A.xinstlm358.9)    3.1034        (X_U1B.xinstlm358.1)     .0398            
+
+(X_U1B.xinstlm358.2)    3.0840        (X_U1B.xinstlm358.4)     .0396            
+
+(X_U1B.xinstlm358.5)    3.0840        (X_U1B.xinstlm358.6)    2.4922            
+
+(X_U1B.xinstlm358.7) 1000.0000        (X_U1B.xinstlm358.9)    3.1034            
+
+(X_U1A.xinstlm358.10)    2.5181       (X_U1A.xinstlm358.11)    1.5248           
+
+(X_U1A.xinstlm358.12)    0.0000       (X_U1A.xinstlm358.14)    2.4999           
+
+(X_U1A.xinstlm358.15)    2.4999       (X_U1A.xinstlm358.16)    -.4084           
+
+(X_U1A.xinstlm358.17)    3.1059       (X_U1A.xinstlm358.18)    2.4999           
+
+(X_U1A.xinstlm358.20) 40.03E-06       (X_U1A.xinstlm358.21)     .9945           
+
+(X_U1A.xinstlm358.22)    1.5901       (X_U1A.xinstlm358.24) 1000.8000           
+
+(X_U1A.xinstlm358.25)    2.5181       (X_U1A.xinstlm358.26)    3.2459           
+
+(X_U1A.xinstlm358.27)    1.7902       (X_U1B.xinstlm358.10)    2.4880           
+
+(X_U1B.xinstlm358.11)    1.5248       (X_U1B.xinstlm358.12)    0.0000           
+
+(X_U1B.xinstlm358.14)    2.4999       (X_U1B.xinstlm358.15)    2.4999           
+
+(X_U1B.xinstlm358.16)    -.4082       (X_U1B.xinstlm358.17)    3.0979           
+
+(X_U1B.xinstlm358.18)    2.4999       (X_U1B.xinstlm358.20) 40.03E-06           
+
+(X_U1B.xinstlm358.21)     .9647       (X_U1B.xinstlm358.22)    1.5603           
+
+(X_U1B.xinstlm358.24) 1000.8000       (X_U1B.xinstlm358.25)    2.4880           
+
+(X_U1B.xinstlm358.26)    3.2158       (X_U1B.xinstlm358.27)    1.7601       
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+    V_V2        -1.346E-03
+    X_U1A.xinstlm358.VFI7  -7.199E-08
+    X_U1A.xinstlm358.VFI6  -7.198E-08
+    X_U1A.xinstlm358.VREF   1.487E+00
+    X_U1B.xinstlm358.VFI7  -7.140E-08
+    X_U1B.xinstlm358.VFI6  -7.139E-08
+    X_U1B.xinstlm358.VREF   1.487E+00
+
+    TOTAL POWER DISSIPATION  -2.97E+03  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 12/02/22 04:39:55 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "Preamp-preamp_tran1"  [ D:\cad\cadence\eed3009-pspicefiles\preamp\preamp_tran1.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =      291.27
+  Total job time (using Solver 1)   =         .16
+

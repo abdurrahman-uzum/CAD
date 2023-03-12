@@ -1,0 +1,6 @@
+ lib=C:\Cadence\SPB_17.4\tools\PSpice\Library\schottky.lib, offset=18212, size=186
+ lib=C:\Cadence\SPB_17.4\tools\PSpice\Library\opa.lib, offset=347351, size=510
+ lib=C:\Cadence\SPB_17.4\tools\PSpice\Library\opamp.lib, offset=116653, size=459
+ lib=C:\Cadence\SPB_17.4\tools\PSpice\Library\templates.lib, offset=2700020, size=334
+ lib=C:\Cadence\SPB_17.4\tools\PSpice\Library\templates.lib, offset=1093173, size=12766
+ lib=C:\Cadence\SPB_17.4\tools\PSpice\Library\opamp.lib, offset=111490, size=858

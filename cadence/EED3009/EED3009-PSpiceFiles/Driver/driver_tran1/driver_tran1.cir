@@ -1,0 +1,23 @@
+** Profile: "Driver-driver_tran1"  [ D:\cad\cadence\eed3009-pspicefiles\driver\driver_tran1.sim ] 
+
+** Creating circuit file "driver_tran1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.INC "C:/Users/Abdurrahman/Desktop/cd4007/cd4007.lib" 
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 30ms 10ms 1us 
+.OPTIONS ADVCONV
+.OPTIONS ABSTOL= 1.0u
+.OPTIONS GMIN= 1.0E-9
+.OPTIONS VNTOL= 1.0m
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\Driver.net" 
+
+
+.END

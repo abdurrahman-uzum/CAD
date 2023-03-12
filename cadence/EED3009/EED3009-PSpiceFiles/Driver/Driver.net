@@ -1,0 +1,22 @@
+* source EED3009
+M_M6         VO- /SOUND VDD VDD ppMOS           
+V_V1         VDD 0 5V
+M_M5         VO- /SOUND 0 0 nnMOS           
+M_M4         VO+ SOUND VDD VDD ppMOS           
+M_M3         VO+ SOUND 0 0 nnMOS           
+M_M2         /SOUND SOUND VDD VDD ppMOS           
+M_M1         /SOUND SOUND 0 0 nnMOS           
+C_C1         N147900 VO-  1.82nF  TC=0,0 
+R_R1         VO+ N147900  10 TC=0,0 
+C_C5         0 N22991  10n  TC=0,0 
+R_R6         N22937 N22819  56k TC=0,0 
+C_C4         0 N22937  330pF IC=1.65V TC=0,0 
+R_R5         N22819 VDD  1k TC=0,0 
+X_U2         0 N22937 SOUND TRANSMIT N22991 N22937 N22819 VDD 555C
+R_R7         N26138 VDD  89k TC=0,0 
+R_R8         N26232 N26138  3.6k TC=0,0 
+X_U3         0 N26232 N28083 VDD N26266 N26232 N26138 VDD 555C
+C_C7         0 N26266  10n  TC=0,0 
+C_C6         0 N26232  100nF IC=1.65V TC=0,0 
+X_U1A         N28083 TRANSMIT $G_DPWR $G_DGND 74HC14 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0

@@ -1,0 +1,20 @@
+** Profile: "US_CMOS-us_cmos_tran1"  [ d:\cad\cadence\eed3009-PSpiceFiles\US_CMOS\us_cmos_tran1.sim ] 
+
+** Creating circuit file "us_cmos_tran1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 300us 0 10ns 
+.OPTIONS ADVCONV
+.OPTIONS GMIN= 1.0E-9
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\US_CMOS.net" 
+
+
+.END

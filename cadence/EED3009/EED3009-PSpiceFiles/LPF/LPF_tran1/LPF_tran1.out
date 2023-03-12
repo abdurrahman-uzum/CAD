@@ -1,0 +1,271 @@
+
+**** 11/21/22 03:11:18 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF-LPF_tran1"  [ D:\cad\cadence\EED3009-PSpiceFiles\LPF\LPF_tran1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "LPF_tran1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 20ms 0 1us 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\LPF.net" 
+
+
+
+**** INCLUDING LPF.net ****
+* source EED3009
+V_Control         VCON 0  
++PULSE 0V 5V 1m 1n 1n 250u 6.67m
+X_S2    VCON 0 VUS VSWT LPF_S2 
+X_S1    VCON 0 VSWT 0 LPF_S1 
+V_Ultrasonic         VUS 0  
++PULSE 0V 5V 0 1n 1n 12.5u 25u
+D_D1         N17686 VOA MBR0520LT1 
+C_C2         0 VOA  1n  TC=0,0 
+R_R1         VSWT N17686  33k TC=0,0 
+R_R2         0 VOA  330k TC=0,0 
+X_U1A         VOA N18551 $G_DPWR $G_DGND 74HC14 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U1B         N18551 VOD $G_DPWR $G_DGND 74HC14 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+
+.subckt LPF_S2 1 2 3 4  
+S_S2         3 4 1 2 _S2
+RS_S2         1 2 1G
+.MODEL         _S2 VSWITCH Roff=1e6 Ron=1.0 Voff=0V Von=5V
+.ends LPF_S2
+
+.subckt LPF_S1 1 2 3 4  
+S_S1         3 4 1 2 _S1
+RS_S1         1 2 1G
+.MODEL         _S1 VSWITCH Roff=1e6 Ron=1.0 Voff=5V Von=0V
+.ends LPF_S1
+
+**** RESUMING LPF_tran1.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node VOA
+*
+* Moving X_U1A.U1:IN1 from analog node VOA to new digital node VOA$AtoD
+X$VOA_AtoD1
++ VOA
++ VOA$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_HC_ST
++       PARAMS: CAPACITANCE=   3.5000E-12
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 11/21/22 03:11:18 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF-LPF_tran1"  [ D:\cad\cadence\EED3009-PSpiceFiles\LPF\LPF_tran1.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               MBR0520LT1      
+          IS    1.000000E-06 
+           N     .874519     
+          BV   20            
+         IBV   20.000000E-06 
+          RS     .125754     
+          TT    1.000000E-09 
+         CJO  202.130000E-12 
+          VJ     .386524     
+           M     .463876     
+          EG     .6          
+         XTI    2.49881      
+
+
+**** 11/21/22 03:11:18 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF-LPF_tran1"  [ D:\cad\cadence\EED3009-PSpiceFiles\LPF\LPF_tran1.sim ] 
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_S2._S2        X_S1._S1        
+         RON    1               1            
+        ROFF    1.000000E+06    1.000000E+06 
+         VON    5               0            
+        VOFF    0               5            
+
+
+**** 11/21/22 03:11:18 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF-LPF_tran1"  [ D:\cad\cadence\EED3009-PSpiceFiles\LPF\LPF_tran1.sim ] 
+
+
+ ****     Digital Output MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DO74HC_ST       
+    TIMESTEP  100.000000E-12 
+      S0NAME 0               
+       S0VHI     .55         
+       S0VLO   -1.3          
+      S1NAME 1               
+       S1VHI    1.3          
+       S1VLO     .33         
+
+
+**** 11/21/22 03:11:18 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF-LPF_tran1"  [ D:\cad\cadence\EED3009-PSpiceFiles\LPF\LPF_tran1.sim ] 
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_HC14          
+      TPLHMN    4.800000E-09 
+      TPLHTY   12.000000E-09 
+      TPLHMX   31.000000E-09 
+      TPHLMN    4.800000E-09 
+      TPHLTY   12.000000E-09 
+      TPHLMX   31.000000E-09 
+
+
+**** 11/21/22 03:11:18 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF-LPF_tran1"  [ D:\cad\cadence\EED3009-PSpiceFiles\LPF\LPF_tran1.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_HC_ST        IO_HC           
+        INLD    3.500000E-12    3.500000E-12 
+        DRVL   87              87            
+        DRVH   87              87            
+       AtoD1 AtoD_HC_ST      AtoD_HC         
+       AtoD2 AtoD_HC_ST      AtoD_HC_NX      
+       AtoD3 AtoD_HC_ST      AtoD_HC         
+       AtoD4 AtoD_HC_ST      AtoD_HC_NX      
+       DtoA1 DtoA_HC         DtoA_HC         
+       DtoA2 DtoA_HC         DtoA_HC         
+       DtoA3 DtoA_HC_E       DtoA_HC_E       
+       DtoA4 DtoA_HC_E       DtoA_HC_E       
+      TSWHL1    2.742000E-09    2.742000E-09 
+      TSWHL2    2.742000E-09    2.742000E-09 
+      TSWHL3    2.751000E-09    2.751000E-09 
+      TSWHL4    2.751000E-09    2.751000E-09 
+      TSWLH1    2.758000E-09    2.758000E-09 
+      TSWLH2    2.758000E-09    2.758000E-09 
+      TSWLH3    2.763000E-09    2.763000E-09 
+      TSWLH4    2.763000E-09    2.763000E-09 
+       TPWRT    2.000000E-09    2.000000E-09 
+
+
+**** 11/21/22 03:11:18 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF-LPF_tran1"  [ D:\cad\cadence\EED3009-PSpiceFiles\LPF\LPF_tran1.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VOA) 238.0E-09  (  VUS)    0.0000  ( VCON)    0.0000  ( VSWT) 4.279E-12      
+
+(N17686) 141.2E-09 ($G_DGND)    0.0000                   ($G_DPWR)    5.0000    
+
+(X$VOA_AtoD1.NORM) 47.60E-09          
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(  N18551) : 1     (VOA$AtoD) : 0     (     VOD) : 0     
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Control    0.000E+00
+    V_Ultrasonic   4.279E-18
+    X$DIGIFPWR.VDPWR  -4.999E-06
+    X$DIGIFPWR.VDGND  -5.000E-06
+
+    TOTAL POWER DISSIPATION   2.50E-05  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 11/21/22 03:11:18 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF-LPF_tran1"  [ D:\cad\cadence\EED3009-PSpiceFiles\LPF\LPF_tran1.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =        5.17
+  Total job time (using Solver 1)   =         .45
+

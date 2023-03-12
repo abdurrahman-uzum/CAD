@@ -1,0 +1,100 @@
+
+**** 12/03/22 20:32:52 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "LPF2-lpf2_tran3"  [ D:\cad\cadence\eed3009-pspicefiles\lpf2\lpf2_tran3.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "lpf2_tran3.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.INC "C:/Users/Abdurrahman/Desktop/cd4007/cd4007.lib" 
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+
+**** INCLUDING cd4007.lib ****
+.model nnMOS NMOS (LEVEL=2 VTo=1.4 Kp=.6m LAMBDA=0.005)
+.model ppMOS PMOS (LEVEL=2 VTo=-1.0 KP=.6m LAMBDA=0.01)
+
+**** RESUMING lpf2_tran3.cir ****
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 2ms 1ms 1us 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\LPF2.net" 
+
+
+
+**** INCLUDING LPF2.net ****
+* source EED3009
+R_R12         N80591 N80505  1k TC=0,0 
+C_C1         VIN N80591  1uF IC=-2.50V TC=0,0 
+R_R3         N80891 VDD  10k TC=0,0 
+R_R4         0 N80891  10k TC=0,0 
+R_R10         N80591 VDD  10k TC=0,0 
+R_R13         0 N80591  10k TC=0,0 
+R_R9         N80505 VPA  22k TC=0,0 
+X_U5A         N80891 N80505 VPA VDD 0 awblm358 PARAMS: AVOL=1E+5 VOS=2E-3
++  GBW=1E+6 IBOS=5E-9 IB=45E-9 CMRR=3.16228E+3 PSRR=1E+5 SR=0.5E+6 ISOURCE=40E-3
++  VPDIF=1
+V_V3         VDD 0 5V
+X_U6A         N86495 N80891 VDD 0 VPC LM393
+R_R19         VPC VDD  1k TC=0,0 
+C_C2         0 N90235  1n IC=4V TC=0,0 
+V_Ultrasonic         VUS 0  
++PULSE -100mV 100mV 0 0.5us 0.5us 12.5u 25u
+X_S1    VCON 0 N88343 0 LPF2_S1 
+X_S2    VCON 0 VUS N88343 LPF2_S2 
+R_R16         VIN N88343  500 TC=0,0 
+X_U6B         N90763 N89030 VDD 0 VOUT LM393
+R_R25         0 N89030  33k TC=0,0 
+R_R26         N89030 VDD  22k TC=0,0 
+R_R29         VOUT VDD  1k TC=0,0 
+R_R30         VLP N90763  10k TC=0,0 
+X_U7A         N90235 VLP VLP VDD 0 awblm358 PARAMS: AVOL=1E+5 VOS=2E-3 GBW=1E+6
++  IBOS=5E-9 IB=45E-9 CMRR=3.16228E+3 PSRR=1E+5 SR=0.5E+6 ISOURCE=40E-3 VPDIF=1
+R_R31         N90763 VOUT  40k TC=0,0 
+R_R33         N86495 VPC  100k TC=0,0 
+R_R34         VPA N86495  10k TC=0,0 
+D_D1         VPC N99516 MBR0520LT1 
+R_R22         N99516 N90235  33k TC=0,0 
+R_R35         0 N90235  330k TC=0,0 
+R_R32         N999801 0  100k TC=0,0 
+X_V4         N999801 0 VRNDMN PARAMS: NVAL=5
+V_Control         M_UN0001 M_UN0002  
++PULSE 0V 5V 2m 1n 1n 250u 6.25ms
+
+.subckt LPF2_S1 1 2 3 4  
+S_S1         3 4 1 2 _S1
+RS_S1         1 2 1G
+.MODEL         _S1 VSWITCH Roff=1e6 Ron=1.0 Voff=5V Von=0V
+.ends LPF2_S1
+
+.subckt LPF2_S2 1 2 3 4  
+S_S2         3 4 1 2 _S2
+RS_S2         1 2 1G
+.MODEL         _S2 VSWITCH Roff=1e6 Ron=1.0 Voff=0V Von=5V
+.ends LPF2_S2
+
+**** RESUMING lpf2_tran3.cir ****
+.END
+
+ERROR(ORPSIM-15141): Less than 2 connections at node M_UN0001.
+
+ERROR(ORPSIM-15141): Less than 2 connections at node M_UN0002.
+
+ERROR(ORPSIM-15142): Node M_UN0001 is floating
+
+ERROR(ORPSIM-15142): Node M_UN0002 is floating
+

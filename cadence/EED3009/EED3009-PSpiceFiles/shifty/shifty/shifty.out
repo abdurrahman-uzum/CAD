@@ -1,0 +1,360 @@
+
+**** 12/04/22 02:31:14 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "shifty-shifty"  [ D:\cad\cadence\EED3009-PSpiceFiles\shifty\shifty.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "shifty.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.INC "C:/Users/Abdurrahman/Desktop/cd4007/cd4007.lib" 
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+
+**** INCLUDING cd4007.lib ****
+.model nnMOS NMOS (LEVEL=2 VTo=1.4 Kp=.6m LAMBDA=0.005)
+.model ppMOS PMOS (LEVEL=2 VTo=-1.0 KP=.6m LAMBDA=0.01)
+
+**** RESUMING shifty.cir ****
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10ms 0 
+.OPTIONS ADVCONV
+.OPTIONS DIGINITSTATE= 0
+.OPTIONS GMIN= 1.0E-9
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\shifty.net" 
+
+
+
+**** INCLUDING shifty.net ****
+* source EED3009
+.EXTERNAL INPUT INPUT
+X_U1         INPUT N00936 N00892 M_UN0001 N84486 0 DFF
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND N00936 IO_STM IO_LEVEL=0 
++ 0 0
++ +6.25us 1
++REPEAT FOREVER
++ +6.25us 0
++  +6.25us 1
++ ENDREPEAT
+X_U2         N00892 N00936 N00896 M_UN0002 N84486 0 DFF
+X_U3         N00896 N00936 N00900 M_UN0003 N84486 0 DFF
+X_U4         N00900 N00936 N00904 M_UN0004 N84486 0 DFF
+X_U5         N00904 N00936 N00908 M_UN0005 N84486 0 DFF
+X_U6         N00908 N00936 N00912 M_UN0006 N84486 0 DFF
+X_U7         N00912 N00936 N00916 M_UN0007 N84486 0 DFF
+X_U8         N00916 N00936 N00920 M_UN0008 N84486 0 DFF
+X_U9         N00920 N00936 N00924 M_UN0009 N84486 0 DFF
+X_U10         N00924 N00936 N83110 M_UN0010 N84486 0 DFF
+X_S1    N83110 0 N116411 N116475 shifty_S1 
+V_V4         0 N116561 100mV
+C_C14         N116475 N116649  1n  TC=0,0 
+X_S2    N83110 0 N116475 N116561 shifty_S2 
+V_V3         N116411 0 100mV
+V_V5         N84486 0 5V
+R_R1         0 N116649  100k TC=0,0 
+
+.subckt shifty_S1 1 2 3 4  
+S_S1         3 4 1 2 _S1
+RS_S1         1 2 1G
+.MODEL         _S1 VSWITCH Roff=1Meg Ron=1 Voff=0 Von=1
+.ends shifty_S1
+
+.subckt shifty_S2 1 2 3 4  
+S_S2         3 4 1 2 _S2
+RS_S2         1 2 1G
+.MODEL         _S2 VSWITCH Roff=1Meg Ron=1 Voff=1 Von=0
+.ends shifty_S2
+
+**** RESUMING shifty.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node N83110
+*
+* Moving X_U10.U1:Q1 from analog node N83110 to new digital node N83110$DtoA
+X$N83110_DtoA1
++ N83110$DtoA
++ N83110
++ N84486
++ 0
++ DtoAdefault
++       PARAMS: DRVH=  50     DRVL=  50     CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 12/04/22 02:31:14 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "shifty-shifty"  [ D:\cad\cadence\EED3009-PSpiceFiles\shifty\shifty.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               nnMOS           ppMOS           
+               NMOS            PMOS            
+       LEVEL    2               2            
+           L  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06 
+         VTO    1.4            -1            
+          KP  600.000000E-06  600.000000E-06 
+       GAMMA    0               0            
+         PHI     .6              .6          
+      LAMBDA    5.000000E-03     .01         
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .8              .8          
+        PBSW     .8              .8          
+          CJ    0               0            
+        CJSW    0               0            
+        CGSO    0               0            
+        CGDO    0               0            
+        CGBO    0               0            
+         TOX  100.000000E-09  100.000000E-09 
+          XJ    0               0            
+       UCRIT   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+**** 12/04/22 02:31:14 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "shifty-shifty"  [ D:\cad\cadence\EED3009-PSpiceFiles\shifty\shifty.sim ] 
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_S1._S1        X_S2._S2        
+         RON    1               1            
+        ROFF    1.000000E+06    1.000000E+06 
+         VON    1               0            
+        VOFF    0               1            
+
+
+**** 12/04/22 02:31:14 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "shifty-shifty"  [ D:\cad\cadence\EED3009-PSpiceFiles\shifty\shifty.sim ] 
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DIN74           
+      S0NAME 0               
+       S0TSW    3.500000E-09 
+       S0RLO    7.13         
+       S0RHI  389            
+      S1NAME 1               
+       S1TSW    5.500000E-09 
+       S1RLO  467            
+       S1RHI  200            
+      S2NAME X               
+       S2TSW    3.500000E-09 
+       S2RLO   42.9          
+       S2RHI  116            
+      S3NAME R               
+       S3TSW    3.500000E-09 
+       S3RLO   42.9          
+       S3RHI  116            
+      S4NAME F               
+       S4TSW    3.500000E-09 
+       S4RLO   42.9          
+       S4RHI  116            
+      S5NAME Z               
+       S5TSW    3.500000E-09 
+       S5RLO  200.000000E+03 
+       S5RHI  200.000000E+03 
+
+
+**** 12/04/22 02:31:14 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "shifty-shifty"  [ D:\cad\cadence\EED3009-PSpiceFiles\shifty\shifty.sim ] 
+
+
+ ****     Digital Edge Triggered FF MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_PLD_EFF       
+  TPCLKQLHMN    0            
+  TPCLKQLHTY    0            
+  TPCLKQLHMX    0            
+  TPCLKQHLMN    0            
+  TPCLKQHLTY    0            
+  TPCLKQHLMX    0            
+   TPPCQLHMN    0            
+   TPPCQLHTY    0            
+   TPPCQLHMX    0            
+   TPPCQHLMN    0            
+   TPPCQHLTY    0            
+   TPPCQHLMX    0            
+    TWCLKLMN    0            
+    TWCLKLTY    0            
+    TWCLKLMX    0            
+    TWCLKHMN    0            
+    TWCLKHTY    0            
+    TWCLKHMX    0            
+     TWPCLMN    0            
+     TWPCLTY    0            
+     TWPCLMX    0            
+   TSUDCLKMN    0            
+   TSUDCLKTY    0            
+   TSUDCLKMX    0            
+ TSUPCCLKHMN    0            
+ TSUPCCLKHTY    0            
+ TSUPCCLKHMX    0            
+    THDCLKMN    0            
+    THDCLKTY    0            
+    THDCLKMX    0            
+  TSUCECLKMN    0            
+  TSUCECLKTY    0            
+  TSUCECLKMX    0            
+   THCECLKMN    0            
+   THCECLKTY    0            
+   THCECLKMX    0            
+
+
+**** 12/04/22 02:31:14 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "shifty-shifty"  [ D:\cad\cadence\EED3009-PSpiceFiles\shifty\shifty.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_PLD          IO_DFT          
+        DRVL    0                                            
+        DRVH    0                                            
+       AtoD1                                 AtoD_STD        
+       AtoD2                                 AtoD_STD_NX     
+       AtoD3                                 AtoD_STD        
+       AtoD4                                 AtoD_STD_NX     
+       DtoA1 DtoA_STM                        DtoA_STD        
+       DtoA2 DtoA_STM                        DtoA_STD        
+       DtoA3 DtoA_STM                        DtoA_STD        
+       DtoA4 DtoA_STM                        DtoA_STD        
+       TPWRT  100.000000E+03  100.000000E+03  100.000000E+03 
+
+
+**** 12/04/22 02:31:14 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "shifty-shifty"  [ D:\cad\cadence\EED3009-PSpiceFiles\shifty\shifty.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N83110)     .0900 (N84486)    5.0000 ($G_DGND)    0.0000                       
+
+($G_DPWR)    5.0000                   (N116411)     .1000                       
+
+(N116475)    -.1000                   (N116561)    -.1000                       
+
+(N116649)    0.0000                   
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(M_UN0006) : 1     (  N00936) : 0     (  N00912) : 0     (  N00896) : 0         
+
+(M_UN0003) : 1     (  N00908) : 0     (M_UN0010) : 1     (  N00920) : 0         
+
+(   $D_HI) : 1     (  N00916) : 0     (M_UN0007) : 1     (M_UN0004) : 1         
+
+(M_UN0001) : 1     (  N00924) : 0     (  N00900) : 0     (M_UN0008) : 1         
+
+(N83110$DtoA) : 0  (M_UN0005) : 1     (   INPUT) : Z     (M_UN0002) : 1         
+
+(  N00892) : 0     (  N00904) : 0     (M_UN0009) : 1     
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V4        -2.742E-07
+    V_V3        -2.742E-07
+    V_V5        -1.262E-02
+    X$DIGIFPWR.VDPWR  -5.000E-06
+    X$DIGIFPWR.VDGND  -5.000E-06
+
+    TOTAL POWER DISSIPATION   6.31E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 12/04/22 02:31:14 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "shifty-shifty"  [ D:\cad\cadence\EED3009-PSpiceFiles\shifty\shifty.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =        7.40
+  Total job time (using Solver 1)   =         .03
+

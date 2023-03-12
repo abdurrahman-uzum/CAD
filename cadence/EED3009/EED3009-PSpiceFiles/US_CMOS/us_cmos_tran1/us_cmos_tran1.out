@@ -1,0 +1,560 @@
+
+**** 11/22/22 11:56:51 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "US_CMOS-us_cmos_tran1"  [ d:\cad\cadence\eed3009-PSpiceFiles\US_CMOS\us_cmos_tran1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "us_cmos_tran1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 300us 0 10ns 
+.OPTIONS ADVCONV
+.OPTIONS GMIN= 1.0E-9
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\US_CMOS.net" 
+
+
+
+**** INCLUDING US_CMOS.net ****
+* source EED3009
+X_U1         0 N09857 VOUT1 VCC N08039 N07817 N07817 VCC 555C
+C_C3         0 N07835  2.2n  TC=0,0 
+V_V1         VCC 0 5V
+C_C2         0 N08039  10n  TC=0,0 
+R_R1         N07817 VCC  5.1k TC=0,0 
+C_C1         0 N07817  2.2n  TC=0,0 
+C_C4         0 N08065  10n  TC=0,0 
+R_R2         N07835 VCC  5.1k TC=0,0 
+X_U2         0 N11331 VOUT2 VCC N08065 N07835 N07835 VCC 555C
+X_U3A         N10594 N10594 N10073 $G_DPWR $G_DGND 74HC00 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U3B         VOUT2 N10073 N09857 $G_DPWR $G_DGND 74HC00 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U3C         N10603 N10603 N10594 $G_DPWR $G_DGND 74HC00 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U3D         VOUT2 VOUT2 N10603 $G_DPWR $G_DGND 74HC00 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U4C         N11642 N11642 N11598 $G_DPWR $G_DGND 74HC00 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U5C         N11682 N11682 N11642 $G_DPWR $G_DGND 74HC00 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U4B         VOUT1 N11598 N11331 $G_DPWR $G_DGND 74HC00 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U5D         VOUT1 VOUT1 N11682 $G_DPWR $G_DGND 74HC00 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+
+**** RESUMING us_cmos_tran1.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node N09857
+*
+* Moving X_U3B.U1:OUT1 from analog node N09857 to new digital node N09857$DtoA
+X$N09857_DtoA1
++ N09857$DtoA
++ N09857
++ $G_DPWR
++ $G_DGND
++ DtoA_HC
++       PARAMS: DRVH=  87     DRVL=  87     CAPACITANCE=   0     
+*
+* Analog/Digital interface for node VOUT1
+*
+* Moving X_U5D.U1:IN2 from analog node VOUT1 to new digital node VOUT1$AtoD
+X$VOUT1_AtoD1
++ VOUT1
++ VOUT1$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_HC
++       PARAMS: CAPACITANCE=   3.5000E-12
+* Moving X_U5D.U1:IN1 from analog node VOUT1 to new digital node VOUT1$AtoD2
+X$VOUT1_AtoD2
++ VOUT1
++ VOUT1$AtoD2
++ $G_DPWR
++ $G_DGND
++ AtoD_HC
++       PARAMS: CAPACITANCE=   3.5000E-12
+* Moving X_U4B.U1:IN1 from analog node VOUT1 to new digital node VOUT1$AtoD3
+X$VOUT1_AtoD3
++ VOUT1
++ VOUT1$AtoD3
++ $G_DPWR
++ $G_DGND
++ AtoD_HC
++       PARAMS: CAPACITANCE=   3.5000E-12
+*
+* Analog/Digital interface for node N11331
+*
+* Moving X_U4B.U1:OUT1 from analog node N11331 to new digital node N11331$DtoA
+X$N11331_DtoA1
++ N11331$DtoA
++ N11331
++ $G_DPWR
++ $G_DGND
++ DtoA_HC
++       PARAMS: DRVH=  87     DRVL=  87     CAPACITANCE=   0     
+*
+* Analog/Digital interface for node VOUT2
+*
+* Moving X_U3D.U1:IN2 from analog node VOUT2 to new digital node VOUT2$AtoD
+X$VOUT2_AtoD1
++ VOUT2
++ VOUT2$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_HC
++       PARAMS: CAPACITANCE=   3.5000E-12
+* Moving X_U3D.U1:IN1 from analog node VOUT2 to new digital node VOUT2$AtoD2
+X$VOUT2_AtoD2
++ VOUT2
++ VOUT2$AtoD2
++ $G_DPWR
++ $G_DGND
++ AtoD_HC
++       PARAMS: CAPACITANCE=   3.5000E-12
+* Moving X_U3B.U1:IN1 from analog node VOUT2 to new digital node VOUT2$AtoD3
+X$VOUT2_AtoD3
++ VOUT2
++ VOUT2$AtoD3
++ $G_DPWR
++ $G_DGND
++ AtoD_HC
++       PARAMS: CAPACITANCE=   3.5000E-12
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 11/22/22 11:56:51 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "US_CMOS-us_cmos_tran1"  [ d:\cad\cadence\eed3009-PSpiceFiles\US_CMOS\us_cmos_tran1.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.DIODE      X_U2.DIODE      
+          IS   10.000000E-15   10.000000E-15 
+          RS     .01             .01         
+
+
+**** 11/22/22 11:56:51 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "US_CMOS-us_cmos_tran1"  [ d:\cad\cadence\eed3009-PSpiceFiles\US_CMOS\us_cmos_tran1.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.JNEMOD     X_U2.JNEMOD     
+               NJF             NJF             
+         VTO   -2.5            -2.5          
+        BETA    5.120000E-06    5.120000E-06 
+
+
+**** 11/22/22 11:56:51 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "US_CMOS-us_cmos_tran1"  [ d:\cad\cadence\eed3009-PSpiceFiles\US_CMOS\us_cmos_tran1.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.PCHAN555   X_U1.NCHAN555   
+               PMOS            NMOS            
+       LEVEL    1               1            
+           L  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06 
+         VTO    -.2              .2          
+          KP   20.000000E-06   20.000000E-06 
+       GAMMA    0               0            
+         PHI     .6              .6          
+      LAMBDA    0               0            
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .8              .8          
+        PBSW     .8              .8          
+          CJ    0               0            
+        CJSW    0               0            
+        CGSO    1.000000E-12    1.000000E-12 
+        CGDO    1.000000E-12    1.000000E-12 
+        CGBO    1.000000E-12    1.000000E-12 
+         TOX    0               0            
+          XJ    0               0            
+       UCRIT   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+               X_U1.PCHAN555_OUT               X_U2.PCHAN555   X_U2.NCHAN555   
+               PMOS                            PMOS            NMOS            
+       LEVEL    1                               1               1            
+           L  100.000000E-06                  100.000000E-06  100.000000E-06 
+           W  100.000000E-06                  100.000000E-06  100.000000E-06 
+         VTO    -.2                             -.2              .2          
+          KP   20.000000E-06                   20.000000E-06   20.000000E-06 
+       GAMMA    0                               0               0            
+         PHI     .6                              .6              .6          
+      LAMBDA    0                               0               0            
+          IS   10.000000E-15                   10.000000E-15   10.000000E-15 
+          JS    0                               0               0            
+          PB     .8                              .8              .8          
+        PBSW     .8                              .8              .8          
+         CBD  200.000000E-12                                                 
+          CJ    0                               0               0            
+        CJSW    0                               0               0            
+        CGSO    1.000000E-12                    1.000000E-12    1.000000E-12 
+        CGDO    1.000000E-12                    1.000000E-12    1.000000E-12 
+        CGBO    1.000000E-12                    1.000000E-12    1.000000E-12 
+         TOX    0                               0               0            
+          XJ    0                               0               0            
+       UCRIT   10.000000E+03                   10.000000E+03   10.000000E+03 
+      DIOMOD    1                               1               1            
+         VFB    0                               0               0            
+        LETA    0                               0               0            
+        WETA    0                               0               0            
+          U0    0                               0               0            
+        TEMP    0                               0               0            
+         VDD    5                               5               5            
+       XPART    0                               0               0            
+
+
+               X_U2.PCHAN555_OUT 
+               PMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    -.2          
+          KP   20.000000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+         CBD  200.000000E-12 
+          CJ    0            
+        CJSW    0            
+        CGSO    1.000000E-12 
+        CGDO    1.000000E-12 
+        CGBO    1.000000E-12 
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 11/22/22 11:56:51 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "US_CMOS-us_cmos_tran1"  [ d:\cad\cadence\eed3009-PSpiceFiles\US_CMOS\us_cmos_tran1.sim ] 
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DIN74HC         
+      S0NAME 0               
+       S0TSW    5.000000E-09 
+       S0RLO    1            
+       S0RHI  100.000000E+03 
+      S1NAME 1               
+       S1TSW    5.000000E-09 
+       S1RLO  100.000000E+03 
+       S1RHI    1            
+      S2NAME X               
+       S2TSW    5.000000E-09 
+       S2RLO  110            
+       S2RHI  100            
+      S3NAME R               
+       S3TSW    5.000000E-09 
+       S3RLO  110            
+       S3RHI  100            
+      S4NAME F               
+       S4TSW    5.000000E-09 
+       S4RLO  110            
+       S4RHI  100            
+      S5NAME Z               
+       S5TSW    5.000000E-09 
+       S5RLO  200.000000E+03 
+       S5RHI  200.000000E+03 
+
+
+**** 11/22/22 11:56:51 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "US_CMOS-us_cmos_tran1"  [ d:\cad\cadence\eed3009-PSpiceFiles\US_CMOS\us_cmos_tran1.sim ] 
+
+
+ ****     Digital Output MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DO74HC          
+    TIMESTEP  100.000000E-12 
+      S0NAME X               
+       S0VHI     .7          
+       S0VLO     .2          
+      S1NAME 0               
+       S1VHI     .2          
+       S1VLO    -.3          
+      S2NAME R               
+       S2VHI     .55         
+       S2VLO     .2          
+      S3NAME R               
+       S3VHI     .7          
+       S3VLO     .45         
+      S4NAME X               
+       S4VHI     .7          
+       S4VLO     .2          
+      S5NAME 1               
+       S5VHI    1.3          
+       S5VLO     .7          
+      S6NAME F               
+       S6VHI     .7          
+       S6VLO     .45         
+      S7NAME F               
+       S7VHI     .55         
+       S7VLO     .2          
+
+
+**** 11/22/22 11:56:51 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "US_CMOS-us_cmos_tran1"  [ d:\cad\cadence\eed3009-PSpiceFiles\US_CMOS\us_cmos_tran1.sim ] 
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_HC00          
+      TPLHMN    3.600000E-09 
+      TPLHTY    9.000000E-09 
+      TPLHMX   23.000000E-09 
+      TPHLMN    3.600000E-09 
+      TPHLTY    9.000000E-09 
+      TPHLMX   23.000000E-09 
+
+
+**** 11/22/22 11:56:51 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "US_CMOS-us_cmos_tran1"  [ d:\cad\cadence\eed3009-PSpiceFiles\US_CMOS\us_cmos_tran1.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_HC           IO_HC_DTOA      
+        INLD    3.500000E-12                 
+        DRVL   87                            
+        DRVH   87                            
+       AtoD1 AtoD_HC                         
+       AtoD2 AtoD_HC_NX                      
+       AtoD3 AtoD_HC                         
+       AtoD4 AtoD_HC_NX                      
+       DtoA1 DtoA_HC                         
+       DtoA2 DtoA_HC                         
+       DtoA3 DtoA_HC_E                       
+       DtoA4 DtoA_HC_E                       
+      TSWHL1    2.742000E-09                 
+      TSWHL2    2.742000E-09                 
+      TSWHL3    2.751000E-09                 
+      TSWHL4    2.751000E-09                 
+      TSWLH1    2.758000E-09                 
+      TSWLH2    2.758000E-09                 
+      TSWLH3    2.763000E-09                 
+      TSWLH4    2.763000E-09                 
+       TPWRT    2.000000E-09  100.000000E+03 
+
+
+**** 11/22/22 11:56:51 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "US_CMOS-us_cmos_tran1"  [ d:\cad\cadence\eed3009-PSpiceFiles\US_CMOS\us_cmos_tran1.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VCC)    5.0000  (VOUT1) 1.667E-06  (VOUT2) 1.667E-06  (N07817)     .0204     
+
+(N07835)     .0204 (N08039)    3.3333 (N08065)    3.3333 (N09857)    4.9975     
+
+(N11331)    4.9975 (X_U1.1)    5.0000 (X_U1.2)    1.6667 (X_U1.3)-33.31E+03     
+
+(X_U1.4)    4.2000 (X_U1.5)    -.6863 (X_U1.6)-33.13E+03 (X_U1.7)    4.2000     
+
+(X_U1.8)    -.6861 (X_U1.9)    5.0000 (X_U2.1)    5.0000 (X_U2.2)    1.6667     
+
+(X_U2.3)-33.31E+03 (X_U2.4)    4.2000 (X_U2.5)    -.6863 (X_U2.6)-33.13E+03     
+
+(X_U2.7)    4.2000 (X_U2.8)    -.6861 (X_U2.9)    5.0000 ($G_DGND)    0.0000    
+
+($G_DPWR)    5.0000                   (X_U1.10) 347.2E-09                       
+
+(X_U1.11)    5.0000                   (X_U1.12) 104.2E-09                       
+
+(X_U1.13)    5.0000                   (X_U1.14)    5.0000                       
+
+(X_U1.15)    5.0000                   (X_U1.16)    5.0000                       
+
+(X_U1.17) 104.2E-09                   (X_U1.18) 416.7E-09                       
+
+(X_U1.19) 208.3E-09                   (X_U1.20)    4.9999                       
+
+(X_U1.21)     .1139                   (X_U1.22)    4.7990                       
+
+(X_U1.23)     .1137                   (X_U1.24)    4.9999                       
+
+(X_U1.25) 104.2E-09                   (X_U2.10) 347.2E-09                       
+
+(X_U2.11)    5.0000                   (X_U2.12) 104.2E-09                       
+
+(X_U2.13)    5.0000                   (X_U2.14)    5.0000                       
+
+(X_U2.15)    5.0000                   (X_U2.16)    5.0000                       
+
+(X_U2.17) 104.2E-09                   (X_U2.18) 416.7E-09                       
+
+(X_U2.19) 208.3E-09                   (X_U2.20)    4.9999                       
+
+(X_U2.21)     .1139                   (X_U2.22)    4.7990                       
+
+(X_U2.23)     .1137                   (X_U2.24)    4.9999                       
+
+(X_U2.25) 104.2E-09                   (X_U1.VDD)    5.0000                      
+
+(X_U2.VDD)    5.0000                  (X$VOUT1_AtoD1.NORM) 333.3E-09            
+
+(X$VOUT1_AtoD2.NORM) 333.3E-09        (X$VOUT1_AtoD3.NORM) 333.3E-09            
+
+(X$VOUT2_AtoD1.NORM) 333.3E-09        (X$VOUT2_AtoD2.NORM) 333.3E-09            
+
+(X$VOUT2_AtoD3.NORM) 333.3E-09        (X$N09857_DtoA1.DGND_OL)     .0022        
+
+(X$N09857_DtoA1.DPWR_OH)    4.9975    (X$N11331_DtoA1.DGND_OL)     .0022        
+
+(X$N11331_DtoA1.DPWR_OH)    4.9975    
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(VOUT1$AtoD) : 0   (VOUT2$AtoD) : 0   (  N11682) : 1     (VOUT1$AtoD3) : 0      
+
+(  N10073) : 1     (N09857$DtoA) : 1  (VOUT2$AtoD2) : 0  (  N10603) : 1         
+
+(  N11642) : 0     (VOUT2$AtoD3) : 0  (  N10594) : 0     (  N11598) : 1         
+
+(N11331$DtoA) : 1  (VOUT1$AtoD2) : 0  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -2.091E-03
+    X_U1.V_U6_V2  -3.331E-03
+    X_U1.V_U7_V2  -3.313E-03
+    X_U2.V_U6_V2  -3.331E-03
+    X_U2.V_U7_V2  -3.313E-03
+    X$DIGIFPWR.VDPWR  -1.049E-04
+    X$DIGIFPWR.VDGND  -5.030E-06
+
+    TOTAL POWER DISSIPATION   2.16E-02  WATTS
+
+
+**** Interrupt ****
+
+
+          JOB CONCLUDED
+
+**** 11/22/22 11:56:51 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "US_CMOS-us_cmos_tran1"  [ d:\cad\cadence\eed3009-PSpiceFiles\US_CMOS\us_cmos_tran1.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =      169.84
+  Total job time (using Solver 1)   =        8.94
+

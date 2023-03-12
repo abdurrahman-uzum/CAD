@@ -1,0 +1,128 @@
+
+**** 12/04/22 02:30:56 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "shifty-shifty"  [ D:\cad\cadence\EED3009-PSpiceFiles\shifty\shifty.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "shifty.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.INC "C:/Users/Abdurrahman/Desktop/cd4007/cd4007.lib" 
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+
+**** INCLUDING cd4007.lib ****
+.model nnMOS NMOS (LEVEL=2 VTo=1.4 Kp=.6m LAMBDA=0.005)
+.model ppMOS PMOS (LEVEL=2 VTo=-1.0 KP=.6m LAMBDA=0.01)
+
+**** RESUMING shifty.cir ****
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10ms 0 
+.OPTIONS ADVCONV
+.OPTIONS DIGINITSTATE= 0
+.OPTIONS GMIN= 1.0E-9
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\shifty.net" 
+
+
+
+**** INCLUDING shifty.net ****
+* source EED3009
+.EXTERNAL INPUT INPUT
+X_U1         INPUT N00936 N00892 M_UN0001 N84486 INPUT DFF
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND N00936 IO_STM IO_LEVEL=0 
++ 0 0
++ +6.25us 1
++REPEAT FOREVER
++ +6.25us 0
++  +6.25us 1
++ ENDREPEAT
+X_U2         N00892 N00936 N00896 M_UN0002 N84486 INPUT DFF
+X_U3         N00896 N00936 N00900 M_UN0003 N84486 INPUT DFF
+X_U4         N00900 N00936 N00904 M_UN0004 N84486 INPUT DFF
+X_U5         N00904 N00936 N00908 M_UN0005 N84486 INPUT DFF
+X_U6         N00908 N00936 N00912 M_UN0006 N84486 INPUT DFF
+X_U7         N00912 N00936 N00916 M_UN0007 N84486 INPUT DFF
+X_U8         N00916 N00936 N00920 M_UN0008 N84486 INPUT DFF
+X_U9         N00920 N00936 N00924 M_UN0009 N84486 INPUT DFF
+X_U10         N00924 N00936 N83110 M_UN0010 N84486 INPUT DFF
+X_S1    N83110 INPUT N116411 N116475 shifty_S1 
+V_V4         INPUT N116561 100mV
+C_C14         N116475 N116649  1n  TC=0,0 
+X_S2    N83110 INPUT N116475 N116561 shifty_S2 
+V_V3         N116411 INPUT 100mV
+V_V5         N84486 INPUT 5V
+R_R1         INPUT N116649  100k TC=0,0 
+
+.subckt shifty_S1 1 2 3 4  
+S_S1         3 4 1 2 _S1
+RS_S1         1 2 1G
+.MODEL         _S1 VSWITCH Roff=1Meg Ron=1 Voff=0 Von=1
+.ends shifty_S1
+
+.subckt shifty_S2 1 2 3 4  
+S_S2         3 4 1 2 _S2
+RS_S2         1 2 1G
+.MODEL         _S2 VSWITCH Roff=1Meg Ron=1 Voff=1 Von=0
+.ends shifty_S2
+
+**** RESUMING shifty.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node INPUT
+*
+* Moving X_U1.U1:D1 from analog node INPUT to new digital node INPUT$AtoD
+X$INPUT_AtoD1
++ INPUT
++ INPUT$AtoD
++ N84486
++ INPUT
++ AtoDdefault
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N83110
+*
+* Moving X_U10.U1:Q1 from analog node N83110 to new digital node N83110$DtoA
+X$N83110_DtoA1
++ N83110$DtoA
++ N83110
++ N84486
++ INPUT
++ DtoAdefault
++       PARAMS: DRVH=  50     DRVL=  50     CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+ERROR(ORPSIM-15142): Node INPUT is floating
+
+ERROR(ORPSIM-15142): Node N116561 is floating
+
+ERROR(ORPSIM-15142): Node N116475 is floating
+
+ERROR(ORPSIM-15142): Node N116649 is floating
+
+ERROR(ORPSIM-15142): Node N116411 is floating
+
+ERROR(ORPSIM-15142): Node N84486 is floating
+
+ERROR(ORPSIM-15142): Node N83110 is floating
+

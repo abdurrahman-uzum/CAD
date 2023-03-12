@@ -1,0 +1,19 @@
+* source LPF
+V_Control         N15456 0  
++PULSE 0V 5V 1m 1n 1n 250u 6.67m
+X_S1    N15456 0 N16694 0 SCHEMATIC1_S1 
+X_S2    N15456 0 N16936 N16694 SCHEMATIC1_S2 
+V_Ultrasonic         N16936 0  
++PULSE 0V 5V 0 1n 1n 12.5u 25u
+
+.subckt SCHEMATIC1_S1 1 2 3 4  
+S_S1         3 4 1 2 _S1
+RS_S1         1 2 1G
+.MODEL         _S1 VSWITCH Roff=1e6 Ron=1.0 Voff=5V Von=0V
+.ends SCHEMATIC1_S1
+
+.subckt SCHEMATIC1_S2 1 2 3 4  
+S_S2         3 4 1 2 _S2
+RS_S2         1 2 1G
+.MODEL         _S2 VSWITCH Roff=1e6 Ron=1.0 Voff=0V Von=5V
+.ends SCHEMATIC1_S2

@@ -1,0 +1,499 @@
+
+**** 12/03/22 22:50:20 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "counter_pair-temporary"  [ D:\cad\cadence\eed3009-pspicefiles\counter_pair\temporary.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "temporary.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.INC "C:/Users/Abdurrahman/Desktop/cd4007/cd4007.lib" 
+* From [PSPICE NETLIST] section of D:\cad\cadence\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+
+**** INCLUDING cd4007.lib ****
+.model nnMOS NMOS (LEVEL=2 VTo=1.4 Kp=.6m LAMBDA=0.005)
+.model ppMOS PMOS (LEVEL=2 VTo=-1.0 KP=.6m LAMBDA=0.01)
+
+**** RESUMING temporary.cir ****
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10ms 0 
+.OPTIONS ADVCONV
+.OPTIONS DIGINITSTATE= 0
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\counter_pair.net" 
+
+
+
+**** INCLUDING counter_pair.net ****
+* source EED3009
+C_C8         0 N110061  1nF IC=1.65V TC=0,0 
+X_CD4026_2_U1A         N84945 $D_LO $D_HI N84955 N84969 N84975 N84985
++  $G_CD4000_VDD $G_CD4000_VSS CD4518B PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_CD4026_2_U2         N84955 N84985 CD4026_2_N004852  $G_DPWR $G_DGND AND2
+X_CD4026_2_U3         CD4026_2_N004852 N84945 N85019 M_UN0001 $G_DPWR $G_DGND
++  DFF
+C_C9         0 N110087  10n  TC=0,0 
+R_R17         N110061 N109977  3.3k TC=0,0 
+X_U6         0 N110061 N84923 VDD N110087 N110061 N109977 VDD 555C
+R_R16         VDD N109977  3890 TC=0,0 
+X_CD4026_1_U1A         N84923 $D_LO $D_HI N84905 N84911 N84917 N84931
++  $G_CD4000_VDD $G_CD4000_VSS CD4518B PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_CD4026_1_U2         N84905 N84931 CD4026_1_N004852  $G_DPWR $G_DGND AND2
+X_CD4026_1_U3         CD4026_1_N004852 N84923 N84945 M_UN0002 $G_DPWR $G_DGND
++  DFF
+V_V1         VDD 0 5V
+
+**** RESUMING temporary.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node N84923
+*
+* Moving X_CD4026_1_U3.U1:CLK from analog node N84923 to new digital node N84923$AtoD
+X$N84923_AtoD1
++ N84923
++ N84923$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoDdefault
++       PARAMS: CAPACITANCE=   0     
+* Moving X_CD4026_1_U1A.UCD4518BLOG:IN1 from analog node N84923 to new digital node N84923$AtoD2
+X$N84923_AtoD2
++ N84923
++ N84923$AtoD2
++ $G_CD4000_VDD
++ $G_CD4000_VSS
++ AtoD_4000B
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$CD4000_PWR 0 CD4000_PWR
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 12/03/22 22:50:20 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "counter_pair-temporary"  [ D:\cad\cadence\eed3009-pspicefiles\counter_pair\temporary.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U6.DIODE      D74CLMP         
+          IS   10.000000E-15    1.000000E-15 
+          RS     .01            2            
+         CJO                    2.000000E-12 
+
+
+**** 12/03/22 22:50:20 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "counter_pair-temporary"  [ D:\cad\cadence\eed3009-pspicefiles\counter_pair\temporary.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U6.JNEMOD     
+               NJF             
+         VTO   -2.5          
+        BETA    5.120000E-06 
+
+
+**** 12/03/22 22:50:20 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "counter_pair-temporary"  [ D:\cad\cadence\eed3009-pspicefiles\counter_pair\temporary.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               nnMOS           ppMOS           X_U6.PCHAN555   X_U6.NCHAN555   
+               NMOS            PMOS            PMOS            NMOS            
+       LEVEL    2               2               1               1            
+           L  100.000000E-06  100.000000E-06  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06  100.000000E-06  100.000000E-06 
+         VTO    1.4            -1               -.2              .2          
+          KP  600.000000E-06  600.000000E-06   20.000000E-06   20.000000E-06 
+       GAMMA    0               0               0               0            
+         PHI     .6              .6              .6              .6          
+      LAMBDA    5.000000E-03     .01            0               0            
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+        CGSO    0               0               1.000000E-12    1.000000E-12 
+        CGDO    0               0               1.000000E-12    1.000000E-12 
+        CGBO    0               0               1.000000E-12    1.000000E-12 
+         TOX  100.000000E-09  100.000000E-09    0               0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+               X_U6.PCHAN555_OUT 
+               PMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    -.2          
+          KP   20.000000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+         CBD  200.000000E-12 
+          CJ    0            
+        CJSW    0            
+        CGSO    1.000000E-12 
+        CGDO    1.000000E-12 
+        CGBO    1.000000E-12 
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 12/03/22 22:50:20 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "counter_pair-temporary"  [ D:\cad\cadence\eed3009-pspicefiles\counter_pair\temporary.sim ] 
+
+
+ ****     Digital Output MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DO74            DO4000B         
+    TIMESTEP  100.000000E-12  100.000000E-12 
+      S0NAME X               X               
+       S0VHI    2                .5          
+       S0VLO     .8             -.5          
+      S1NAME 0               0               
+       S1VHI     .8             -.5          
+       S1VLO   -1.5            -3            
+      S2NAME R               R               
+       S2VHI    1.4              .05         
+       S2VLO     .8             -.5          
+      S3NAME R               R               
+       S3VHI    2                .5          
+       S3VLO    1.3             -.05         
+      S4NAME X               X               
+       S4VHI    2                .5          
+       S4VLO     .8             -.5          
+      S5NAME 1               1               
+       S5VHI    7               3            
+       S5VLO    2                .5          
+      S6NAME F               F               
+       S6VHI    2                .5          
+       S6VLO    1.3             -.05         
+      S7NAME F               F               
+       S7VHI    1.4              .05         
+       S7VLO     .8             -.5          
+
+
+**** 12/03/22 22:50:20 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "counter_pair-temporary"  [ D:\cad\cadence\eed3009-pspicefiles\counter_pair\temporary.sim ] 
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_GATE         D_PLD_GATE      
+      TPLHMN    0               0            
+      TPLHTY    0               0            
+      TPLHMX    0               0            
+      TPHLMN    0               0            
+      TPHLTY    0               0            
+      TPHLMX    0               0            
+
+
+**** 12/03/22 22:50:20 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "counter_pair-temporary"  [ D:\cad\cadence\eed3009-pspicefiles\counter_pair\temporary.sim ] 
+
+
+ ****     Digital Edge Triggered FF MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_EFF          D_PLD_EFF       
+  TPCLKQLHMN    0               0            
+  TPCLKQLHTY    0               0            
+  TPCLKQLHMX    0               0            
+  TPCLKQHLMN    0               0            
+  TPCLKQHLTY    0               0            
+  TPCLKQHLMX    0               0            
+   TPPCQLHMN    0               0            
+   TPPCQLHTY    0               0            
+   TPPCQLHMX    0               0            
+   TPPCQHLMN    0               0            
+   TPPCQHLTY    0               0            
+   TPPCQHLMX    0               0            
+    TWCLKLMN    0               0            
+    TWCLKLTY    0               0            
+    TWCLKLMX    0               0            
+    TWCLKHMN    0               0            
+    TWCLKHTY    0               0            
+    TWCLKHMX    0               0            
+     TWPCLMN    0               0            
+     TWPCLTY    0               0            
+     TWPCLMX    0               0            
+   TSUDCLKMN    0               0            
+   TSUDCLKTY    0               0            
+   TSUDCLKMX    0               0            
+ TSUPCCLKHMN    0               0            
+ TSUPCCLKHTY    0               0            
+ TSUPCCLKHMX    0               0            
+    THDCLKMN    0               0            
+    THDCLKTY    0               0            
+    THDCLKMX    0               0            
+  TSUCECLKMN    0               0            
+  TSUCECLKTY    0               0            
+  TSUCECLKMX    0               0            
+   THCECLKMN    0               0            
+   THCECLKTY    0               0            
+   THCECLKMX    0               0            
+
+
+**** 12/03/22 22:50:20 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "counter_pair-temporary"  [ D:\cad\cadence\eed3009-pspicefiles\counter_pair\temporary.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_4000B        IO_PLD          IO_DFT          
+        DRVL    1.443000E+03                                 
+        DRVH    1.443000E+03                                 
+       AtoD1 AtoD_4000B                      AtoD_STD        
+       AtoD2 AtoD_4000B_NX                   AtoD_STD_NX     
+       AtoD3 AtoD_4000B                      AtoD_STD        
+       AtoD4 AtoD_4000B_NX                   AtoD_STD_NX     
+       DtoA1 DtoA_4000B                      DtoA_STD        
+       DtoA2 DtoA_4000B                      DtoA_STD        
+       DtoA3 DtoA_4000B                      DtoA_STD        
+       DtoA4 DtoA_4000B                      DtoA_STD        
+    DIGPOWER CD4000_PWR                                      
+      TSWHL1    7.720000E-09                                 
+      TSWHL2    7.860000E-09                                 
+      TSWHL3    9.710000E-09                                 
+      TSWHL4    9.630000E-09                                 
+      TSWLH1    7.560000E-09                                 
+      TSWLH2    7.400000E-09                                 
+      TSWLH3    9.410000E-09                                 
+      TSWLH4    9.240000E-09                                 
+       TPWRT  100.000000E+03  100.000000E+03  100.000000E+03 
+
+
+**** 12/03/22 22:50:20 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "counter_pair-temporary"  [ D:\cad\cadence\eed3009-pspicefiles\counter_pair\temporary.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)    5.0000  (N84923)    5.0000 (X_U6.1) 417.5E-12 (X_U6.2)    1.6667     
+
+(X_U6.3) 33.17E+03 (X_U6.4)    4.2000 (X_U6.5)    4.0861 (X_U6.6)-49.83E+03     
+
+(X_U6.7)    4.2000 (X_U6.8)    -.6967 (X_U6.9) 26.15E-12 ($G_DGND)    0.0000    
+
+($G_DPWR)    5.0000                   (N109977)    1.4022                       
+
+(N110061)   -1.6500                   (N110087)    3.3333                       
+
+(X_U6.10)    5.0000                   (X_U6.11)    2.5000                       
+
+(X_U6.12)    5.0000                   (X_U6.13) 417.5E-12                       
+
+(X_U6.14) 347.9E-12                   (X_U6.15)    5.0000                       
+
+(X_U6.16)    5.0000                   (X_U6.17)    5.0000                       
+
+(X_U6.18) 417.5E-12                   (X_U6.19) 208.8E-12                       
+
+(X_U6.20)    5.0000                   (X_U6.21)     .1033                       
+
+(X_U6.22)    2.5000                   (X_U6.23)    4.8861                       
+
+(X_U6.24) 106.9E-12                   (X_U6.25) 104.4E-12                       
+
+(X_U6.VDD)    5.0000                  ($G_CD4000_VDD)    5.0000                 
+
+($G_CD4000_VSS)    0.0000             (X$N84923_AtoD2.NORM)    1.2500           
+
+(X$N84923_AtoD2.XNORM.THRESHOLD)    1.5000               
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(X_CD4026_2_U1A.D1) : 1               (  N84905) : 0                            
+
+(X_CD4026_2_U1A.D2) : 1               (X_CD4026_2_U1A.RESET) : 0                
+
+(X_CD4026_2_U1A.CLK4) : 1             (X_CD4026_1_U1A.D3) : 1                   
+
+(X_CD4026_2_U1A.Q4) : 0               (X_CD4026_2_U1A.CLK1) : 0                 
+
+(X_CD4026_1_U1A.CLK4) : 1             (X_CD4026_1_U1A.D4) : 1                   
+
+(X_CD4026_1_U1A.Q1BAR) : 1            (X_CD4026_2_U1A.Q1) : 0                   
+
+(X_CD4026_1_U1A.CLK1) : 1             (X_CD4026_2_U1A.CLK) : 0                  
+
+(  N84985) : 0     (  N84975) : 0     (X_CD4026_2_U1A.Q2) : 0                   
+
+(  N85019) : 0     (X_CD4026_2_U1A.Q2BAR) : 1                                   
+
+(X_CD4026_1_U1A.Q3) : 0               (   $D_HI) : 1                            
+
+(X_CD4026_1_U1A.Q4) : 0               (  N84931) : 0                            
+
+(X_CD4026_2_U1A.D3) : 1               (X_CD4026_1_U1A.RESETBAR) : 1             
+
+(X_CD4026_1_U1A.Q4BAR) : 1            (N84923$AtoD) : 1  (M_UN0001) : 1         
+
+(X_CD4026_2_U1A.CLK2) : 1             (  N84955) : 0                            
+
+(X_CD4026_2_U1A.Q1BAR) : 1            (X_CD4026_1_U1A.CLK2) : 1                 
+
+(X_CD4026_2_U1A.EN) : 1               (X_CD4026_2_U1A.Q3) : 0                   
+
+(  N84917) : 0     (CD4026_1_N004852) : 0                (  N84969) : 0         
+
+(  N84945) : 0     (  N84911) : 0     (   $D_LO) : 0                            
+
+(X_CD4026_1_U1A.Q3BAR) : 1            (N84923$AtoD2) : 1                        
+
+(X_CD4026_2_U1A.Q4BAR) : 1            (X_CD4026_1_U1A.D1) : 1                   
+
+(X_CD4026_2_U1A.RESETBAR) : 1         (X_CD4026_1_U1A.RESET) : 0                
+
+(M_UN0002) : 1     (X_CD4026_2_U1A.CLK3) : 1                                    
+
+(X_CD4026_1_U1A.D2) : 1               (X_CD4026_1_U1A.EN) : 1                   
+
+(X_CD4026_1_U1A.CLK3) : 1             (CD4026_2_N004852) : 0                    
+
+(X_CD4026_1_U1A.Q1) : 0               (X_CD4026_1_U1A.CLK) : 1                  
+
+(X_CD4026_1_U1A.Q2BAR) : 1            (X_CD4026_1_U1A.Q2) : 0                   
+
+(X_CD4026_2_U1A.D4) : 1               (X_CD4026_2_U1A.Q3BAR) : 1            
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -9.940E-04
+    X_U6.V_U6_V2   4.096E-12
+    X_U6.V_U7_V2  -4.983E-03
+    X$CD4000_PWR.VVDD  -5.000E-06
+    X$CD4000_PWR.VVSS  -4.950E-06
+    X$DIGIFPWR.VDPWR  -5.000E-06
+    X$DIGIFPWR.VDGND  -5.000E-06
+
+    TOTAL POWER DISSIPATION   9.01E-03  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 12/03/22 22:50:20 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "counter_pair-temporary"  [ D:\cad\cadence\eed3009-pspicefiles\counter_pair\temporary.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =       57.44
+
