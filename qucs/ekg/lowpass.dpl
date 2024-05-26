@@ -1,0 +1,28 @@
+<Qucs Schematic 0.0.19>
+<Properties>
+  <View=0,0,800,800,1.77156,0,259>
+  <Grid=10,10,0>
+  <DataSet=lowpass.dat>
+  <DataDisplay=lowpass.sch>
+  <OpenDisplay=1>
+  <Script=lowpass.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 240 536 357 319 3 #c0c0c0 1 11 1 1 1 10000 1 1 1 30 1 -1 0.2 1 315 0 225 "Frequency [ Hz ]" "Magnitude [ dB ]" "">
+	<"voact.v" #0000ff 2 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>

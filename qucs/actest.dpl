@@ -1,0 +1,34 @@
+<Qucs Schematic 0.0.19>
+<Properties>
+  <View=0,60,1467,1136,1.331,90,346>
+  <Grid=10,10,0>
+  <DataSet=actest.dat>
+  <DataDisplay=actest.sch>
+  <OpenDisplay=1>
+  <Script=actest.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 960 518 375 298 3 #c0c0c0 1 11 1 1 1 3000 1 0.3 1 1 1 -1 0.2 1 315 0 225 "Frequency [ Hz ]" "Normalised Magnitude [ dB ]" "">
+	<"vout.v" #0000ff 2 3 0 0 0>
+  </Rect>
+  <Rect 1180 820 240 160 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 "" "" "">
+	<"voact.V" #0000ff 0 3 0 0 0>
+  </Rect>
+  <Rect 310 836 357 319 3 #c0c0c0 1 11 1 1 1 10000 1 1 1 30 1 -1 0.2 1 315 0 225 "Frequency [ Hz ]" "Magnitude [ dB ]" "">
+	<"voact.v" #0000ff 2 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>

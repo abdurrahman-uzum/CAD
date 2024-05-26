@@ -1,33 +1,21 @@
-# Qucs 0.0.19  D:/cad/qucs/bs170/elifinbeceremediğidevre.sch
+# Qucs 0.0.19  D:/cad/qucs/ekg/notch_accoup.sch
 
-.Def:NMOSFETs_BS170 _net1 _net3 _net2
-    L:LS _net5 _net2 L="7n"
-    L:LD _net95 _net3 L="5n"
-    R:RG _net4 _net11 R="5.5m"
-    R:RS _net5 _net76 R="1117m"
-    Diode:D170 _net95 _net76 Cj0="0.025n" Rs="50m" Tt="30n" Is="300p" Bv="60" N="1" M="0.5" Vj="0.7"
-    # .MODEL:DREV  D (CJO=0.025N RS=50M TT=30N IS=300P BV=60) 
-    MOSFET:M170 _net11 _net86 _net76 _net76 Type="nfet" Vt0="1.235" Kp="0.158" Is="1e-14" N="1" Lambda="0" Gamma="0" Phi="0.6"
-    # .MODEL:MBUZ  NMOS (VTO=1.235 KP=0.158) 
-    MOSFET:M2 _net86 _net11 _net8 _net8 Type="nfet" Vt0="0.001" Kp="5" Is="1e-14" N="1" Lambda="0" Gamma="0" Phi="0.6"
-    # .MODEL:MSW  NMOS (VTO=0.001 KP=5) 
-    MOSFET:M3 _net11 _net86 _net8 _net8 Type="nfet" Vt0="0.001" Kp="5" Is="1e-14" N="1" Lambda="0" Gamma="0" Phi="0.6"
-    C:COX _net11 _net8 C="0.09n"
-    Diode:DGD _net86 _net8 Cj0="0.287n" M="0.539" Vj="0.985" Is="1e-15" N="1"
-    # .MODEL:DCGD  D (CJO=0.287N M=0.539 VJ=0.985) 
-    C:CGS _net76 _net11 C="0.03n"
-    MOSFET:MRDR _net86 _net86 _net95 _net86 Type="nfet" Vt0="-10.7" Kp="0.135" Is="1e-14" N="1" Lambda="0" Gamma="0" Phi="0.6"
-    # .MODEL:MVRD  NMOS (VTO=-10.7 KP=0.135) 
-    L:LG _net4 _net1 L="7n"
-  .Def:End
-  
-
-R:R3 _net0 _net1 R="50 Ohm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
-R:R1 VGS _net1 R="1M" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
-R:R2 gnd VGS R="Rsw" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
-Sub:T1 VGS VD VS Type="NMOSFETs_BS170"
-IProbe:Pr1 _net0 VD
-Vdc:V1 _net1 gnd U="15 V"
+R:R4 _net2 vout R="1 kOhm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+R:R5 vin _net2 R="1 kOhm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+R:R6 _net0 vout R="33 kOhm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+R:R3 _net3 _net1 R="33 kOhm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+C:C2 _net3 _net0 C="100 nF" V=""
+R:R1 gnd _net1 R="330 kOhm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+C:C1 vin _net1 C="100 nF" V=""
+R:R2 vin _net1 R="330 kOhm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+Vdc:V2 _net4 _net5 U="1.7 V"
 .DC:DC1 Temp="26.85" reltol="0.001" abstol="1 pA" vntol="1 uV" saveOPs="no" MaxIter="150" saveAll="no" convHelper="none" Solver="CroutLU"
-.SW:SW1 Sim="DC1" Type="lin" Param="Rsw" Start="0 Ohm" Stop="1M" Points="1000"
-R:R4 gnd VS R="50.1 Ohm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+.TR:TR1 Type="lin" Start="0" Stop="1 s" Points="1001" IntegrationMethod="Trapezoidal" Order="2" InitialStep="1 ns" MinStep="1e-16" MaxIter="150" reltol="0.001" abstol="1 pA" vntol="1 uV" Temp="26.85" LTEreltol="1e-3" LTEabstol="1e-6" LTEfactor="1" Solver="CroutLU" relaxTSR="no" initialDC="yes" MaxStep="0"
+Vac:V1 vin _net4 U="0.5" f="10 Hz" Phase="0" Theta="0"
+Vdc:V3 _net5 gnd U="1.65 V"
+C:C3 vout voutac C="10 uF" V=""
+R:R7 gnd voutac R="1 MOhm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+Vdc:V4 _net6 gnd U="3.3 V"
+R:R8 voutac _net6 R="10 MOhm" Temp="26.85" Tc1="0.0" Tc2="0.0" Tnom="26.85"
+OpAmp:OP1 _net0 _net1 vout G="1e6" Umax="5 V"
+OpAmp:OP2 _net0 _net2 _net3 G="1e6" Umax="5 V"

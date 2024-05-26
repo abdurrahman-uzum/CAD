@@ -1,0 +1,28 @@
+<Qucs Schematic 0.0.19>
+<Properties>
+  <View=0,-14,933,740,1.4641,0,44>
+  <Grid=10,10,0>
+  <DataSet=notch.dat>
+  <DataDisplay=notch.sch>
+  <OpenDisplay=1>
+  <Script=notch.m>
+  <RunScript=0>
+  <showFrame=0>
+  <FrameText0=Title>
+  <FrameText1=Drawn By:>
+  <FrameText2=Date:>
+  <FrameText3=Revision:>
+</Properties>
+<Symbol>
+</Symbol>
+<Components>
+</Components>
+<Wires>
+</Wires>
+<Diagrams>
+  <Rect 300 454 408 304 3 #c0c0c0 1 11 1 1 1 300 0 0.01 1 1.2 1 -1 0.5 1 315 0 225 "Frequency [ Hz ]" "Normalised Magnitude [ dB ]" "">
+	<"vout.v" #0000ff 2 3 0 0 0>
+  </Rect>
+</Diagrams>
+<Paintings>
+</Paintings>

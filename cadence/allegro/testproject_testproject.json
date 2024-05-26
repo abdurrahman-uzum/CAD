@@ -1,0 +1,18 @@
+{
+	"Gate Swap" : [],
+	"Ref Des" : [],
+	"Pin Swap" : [],
+	"Component Property" : [],
+	"Net Property" : [],
+	"Pin Property" : [],
+	"Component" : [
+		{
+			"Name" : "R1",
+			"C_PATH" : "@testproject.schematic1(sch_1):ins612@analog.\\r.normal\\(chips)",
+			"Logical" : "R1",
+			"Physical" : null
+		}
+	],
+	"Net" : [],
+	"Connection" : []
+}

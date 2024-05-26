@@ -296,14 +296,14 @@
     (Doc
       (Type "COrCapturePMDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 804"))
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 798"))
       (Tab 0))
     (Doc
       (Type "COrSchematicDoc")
       (Frame
-        (Placement "44 0 1 -1 -1 -1 -1 5 1674 24 822")
-        (Scroll "1388 1326")
-        (Zoom "198")
+        (Placement "44 0 1 -1 -1 -1 -1 5 1674 24 816")
+        (Scroll "-149 0")
+        (Zoom "81")
         (Occurrence "/"))
       (Path "D:\CAD\CADENCE\EED3009\EED3009.DSN")
       (Schematic "root")

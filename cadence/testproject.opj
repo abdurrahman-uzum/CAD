@@ -1,0 +1,88 @@
+(ExpressProject "testproject"
+  (ProjectVersion "19981106")
+  (SoftwareVersion "17.4-2019 P001 (3823098) [10/7/2019]-[11/02/23]")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library")
+    ("Allegro Netlist Directory" "allegro")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420")
+    (NoModify)
+    (File ".\testproject.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (Board_sim_option "Verilog_Flow")
+    ("Allegro Netlist Output Board File" ".\allegro\testproject.brd"))
+  (Folder "Layout"
+    (File ".\allegro\testproject.brd"
+      (Type "Board File")
+      (OutputBoard ".\allegro\testproject.brd")
+      (NetListPath ".\allegro")
+      (ActiveBoard "1")))
+  (Folder "Outputs"
+    (File ".\allegro\pstxnet.dat"
+      (Type "Report")
+      (DisplayName "pstxnet.dat"))
+    (File ".\allegro\pstxprt.dat"
+      (Type "Report")
+      (DisplayName "pstxprt.dat"))
+    (File ".\allegro\pstchip.dat"
+      (Type "Report")
+      (DisplayName "pstchip.dat")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles")
+    (Folder "Model Libraries"
+      (Sort User))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (Folder "Logs")
+  (PartMRUSelector
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (ATSAMD21G18A-MUT
+      (FullPartName "ATSAMD21G18A-MUT.Normal")
+      (LibraryName
+         "D:\CAD\CADENCE\CDSSETUP\ORCAD_CAPTURE\17.4.0\ORCAPTUREDOWNLOAD.OLB")
+      (DeviceIndex "0"))
+    (ATSAMD21G18A-AUT
+      (FullPartName "ATSAMD21G18A-AUT.Normal")
+      (LibraryName
+         "D:\CAD\CADENCE\CDSSETUP\ORCAD_CAPTURE\17.4.0\ORCAPTUREDOWNLOAD.OLB")
+      (DeviceIndex "0"))
+    (0
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0")))
+  (MPSSessionName "Abdurrahman")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" "D:\cad\cadence\testproject.dsn")
+      (Path "Design Resources" "D:\cad\cadence\testproject.dsn" "SCHEMATIC1")
+      (Path "Design Resources" "D:\cad\cadence\testproject.dsn" "Design Cache")
+      (Path "Layout")
+      (Path "Outputs")
+      (Path "PSpice Resources"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 798"))
+      (Tab 0))
+    (Doc
+      (Type "COrSchematicDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 5 24 5 1267 24 816")
+        (Scroll "-96 0")
+        (Zoom "107")
+        (Occurrence "/"))
+      (Path "D:\CAD\CADENCE\TESTPROJECT.DSN")
+      (Schematic "SCHEMATIC1")
+      (Page "PAGE1"))))

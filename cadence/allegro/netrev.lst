@@ -1,0 +1,99 @@
+(---------------------------------------------------------------------)
+(                                                                     )
+(    Allegro Netrev Import Logic                                      )
+(                                                                     )
+(    Drawing          : testproject.brd                               )
+(    Software Version : unreleased                                    )
+(    Date/Time        : Thu Nov  2 20:40:40 2023                      )
+(                                                                     )
+(---------------------------------------------------------------------)
+
+
+------ Directives ------------
+
+Ripup etch:                  No
+Ripup delete first segment:  No
+Ripup retain bondwire:       No
+Ripup symbols:               Always
+Missing symbol has error:    No
+DRC update:                  Yes
+Schematic directory:         'D:\cad\cadence\allegro'
+Design Directory:            'D:/cad/cadence/allegro'
+Old design name:             'D:/cad/cadence/allegro/testproject.brd'
+New design name:             'D:/cad/cadence/allegro/testproject.brd'
+
+CmdLine: netrev -i D:\cad\cadence\allegro -y 1 -q netrev_constraint_report.xml D:/cad/cadence/allegro/#Taaaabd05056.tmp
+
+------ Preparing to read pst files ------
+
+Starting to read D:/cad/cadence/allegro/pstchip.dat 
+   Finished reading D:/cad/cadence/allegro/pstchip.dat (00:00:00.01)
+Starting to read D:/cad/cadence/allegro/pstxprt.dat 
+   Finished reading D:/cad/cadence/allegro/pstxprt.dat (00:00:00.00)
+Starting to read D:/cad/cadence/allegro/pstxnet.dat 
+   Finished reading D:/cad/cadence/allegro/pstxnet.dat (00:00:00.00)
+
+------ Oversights/Warnings/Errors ------
+
+
+#1   WARNING(SPMHNI-192): Device/Symbol check warning detected. [help]
+
+WARNING(SPMHNI-194): Symbol 'TQFP48_7X7MC_MCH' used by RefDes U1 for device 'ATSAMD21G18A-AUT_TQFP48_7X7MC_M' not found. 
+The symbol either does not exist in the library path (PSMPATH) or is an old symbol from a previous release.  
+
+Set the correct library path if not set or use dbdoctor to migrate 
+
+------ Library Paths ------
+MODULEPATH =  . 
+           C:/Cadence/SPB_17.4/share/local/pcb/modules 
+
+PSMPATH =  . 
+           symbols 
+           .. 
+           ../symbols 
+           C:/Cadence/SPB_17.4/share/local/pcb/symbols 
+           C:/Cadence/SPB_17.4/share/pcb/pcb_lib/symbols 
+           C:/Cadence/SPB_17.4/share/pcb/allegrolib/symbols 
+           D:/cad/cadence/cdssetup/OrCAD_Capture/17.4.0/downloaded_parts/allegropcb 
+
+PADPATH =  . 
+           symbols 
+           .. 
+           ../symbols 
+           C:/Cadence/SPB_17.4/share/local/pcb/padstacks 
+           C:/Cadence/SPB_17.4/share/pcb/pcb_lib/symbols 
+           C:/Cadence/SPB_17.4/share/pcb/allegrolib/symbols 
+           D:/cad/cadence/cdssetup/OrCAD_Capture/17.4.0/downloaded_parts/allegropcb 
+
+
+------ Summary Statistics ------
+
+
+netrev run on Nov 2 20:40:40 2023
+   DESIGN NAME : 'TESTPROJECT'
+   PACKAGING ON Oct  7 2019 04:16:49
+
+   COMPILE 'logic'
+   CHECK_PIN_NAMES OFF
+   CROSS_REFERENCE OFF
+   FEEDBACK OFF
+   INCREMENTAL OFF
+   INTERFACE_TYPE PHYSICAL
+   MAX_ERRORS 500
+   MERGE_MINIMUM 5
+   NET_NAME_CHARS '#%&()*+-./:=>?@[]^_`|'
+   NET_NAME_LENGTH 24
+   OVERSIGHTS ON
+   REPLACE_CHECK OFF
+   SINGLE_NODE_NETS ON
+   SPLIT_MINIMUM 0
+   SUPPRESS   20
+   WARNINGS ON
+
+ No error detected
+ No oversight detected
+  1 warnings detected
+
+cpu time      0:02:08
+elapsed time  0:00:01
+
